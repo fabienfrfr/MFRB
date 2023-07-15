@@ -8,3 +8,5 @@ Pour rejoindre : https://www.revenudebase.info/
 Chaine youtube : https://youtu.be/LNBoC3SST8k
 
 GPTs are GPTs : https://arxiv.org/abs/2303.10130 (Impact probable d'un simple LLM sur l'emploi)
+
+Tribune : https://www.revenudebase.info/actualites/intelligence-artificielle-et-revenu-de-base-par-fabien-furfaro/
