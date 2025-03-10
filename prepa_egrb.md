@@ -91,18 +91,30 @@ L'économie écologique critique l'utilisation du PIB comme indicateur principal
 
 Dans cette modélisation, l'objectif n'est pas de maximiser la fonction d'utilité globale, mais de simuler les interactions entre plusieurs variables comme un système dynamique "physique". L'objectif est de mesurer l'économie en tant que fonction de transformation d'énergie (travail + ressources) en production. Soit : 
 
-1. **Population** : $ \frac{dP}{dt} = B - D $
+1. **Population** : 
 
-2. **Capital industriel** : $ \frac{dK}{dt} = I - \delta K $
+$$ \frac{dP}{dt} = B - D $$
 
-3. **Pollution** : $ \frac{dPoll}{dt} = \alpha Y - \beta Poll $
+2. **Capital industriel** : 
 
-4. **Ressources naturelles** : $ \frac{dR}{dt} = - \gamma Y $
+$$ \frac{dK}{dt} = I - \delta K $$
 
-5. **Production alimentaire** : $ \frac{dF}{dt} = \phi L - \theta F $
+3. **Pollution** : 
+
+$$ \frac{dPoll}{dt} = \alpha Y - \beta Poll $$
+
+4. **Ressources naturelles** : 
+
+$$ \frac{dR}{dt} = - \gamma Y $$
+
+5. **Production alimentaire** : 
+
+$$ \frac{dF}{dt} = \phi L - \theta F $$
 
 Suivant cette approche, le revenu de base est financé par une redistribution des ressources économiques totales et par taxation. Il est défini comme une fonction adaptative dépendant des ressources disponibles ($R_t$), de la production économique ($Y$), et du capital industriel ($K$). Nous pouvons y ajouter le revenu de base comme une nouvelle equation dynamique :
 
-6. **Revenu de Base** : $   R_t = f(Y, K, P) $
+6. **Revenu de Base** : 
+
+$$ R_t = f(Y, K, P) $$
 
 Le revenu de base est ici vu comme un outil permettant de maximiser les ressources des individus tout en minimisant la consommation des ressources. Si le modele economique precedant ne prendrais pas les ressources disponibles comme étant fixe ($\omega_t = \omega_0$), alors, cette conclusion est paradoxale, car l'équilibre de Pareto n'implique pas une diminution de la consommation globale, mais une augmentation de la productivité.
