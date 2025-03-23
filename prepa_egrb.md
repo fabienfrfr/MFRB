@@ -54,7 +54,7 @@ Personnellement, je pense qu’un jour notre monde sera différent – j'espère
 
 | Paragraphe          | Mots-clés                                     |
 |----------------------|-----------------------------------------------|
-| Avant-propos        | IA, Économie, Revenu de base                 |
+| Avant-propos        | Ingénieur-chercheur, IA, Économie, Revenu de base                 |
 | Omniprésence de l'IA| IA partout, ChatGPT, Agents autonomes         |
 | Remplacement des emplois | IA généralisée, Compétences humaines, Efficacité |
 | Dynamique économique| Compétitivité, Investissements, Adaptation  |
@@ -66,6 +66,16 @@ Personnellement, je pense qu’un jour notre monde sera différent – j'espère
 | Droit à l'existence | Droit fondamental, Besoins essentiels, Société |
 | Vision d'un monde différent | Monde juste/équitable, Fin économie de marché, Transition |
 
+
+| Paragraphe                  | Phrase d'accroche                                                                 |
+|-----------------------------|---------------------------------------------------------------------------|
+| Omniprésence de l'IA        | L'IA n'est plus l'avenir, elle est déjà notre présent.                   |
+| Remplacement des emplois    | L'IA ne remplace pas seulement des tâches, elle redéfinit le travail lui-même. |
+| Dynamique économique        | Oui, le travail va disparaître, et alors ?  |
+| Conséquences sur le travail | Sans alternative, l'efficacité de l'IA pourrait devenir notre plus grande vulnérabilité. |
+| Revenu universel            | Le revenu universel : une sécurité pour tous, face à l'incertitude technologique. |
+| Paradoxe économique         | Comment consommer dans une économie où les consommateurs disparaissent ? |
+| Droit à l'existence         | Garantir le droit à l'existence, c'est assurer la dignité de chacun face aux bouleversements. |
 
 
 ### Partie Économique
