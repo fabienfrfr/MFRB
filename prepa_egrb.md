@@ -30,11 +30,13 @@ Interaction avec le public pour répondre aux questions et recueillir des perspe
 
 ### Pitch Fabien FURFARO
 
-Merci pour cette introduction sur l'intelligence artificielle et le revenu de base. Mon propos porte sur l'impact de l'intelligence artificielle sur l'économie, en montrant particulièrement les limites de l'économie de marché et pourquoi je pense que le revenu de base pourrait atténuer les effets négatifs de l'IA sur la société.
+Merci pour cette introduction sur l'intelligence artificielle et le revenu de base. Mon propos porte sur l'impact de l'intelligence artificielle sur l'économie, en montrant les limites de l'économie de marché et pourquoi je pense que le revenu de base pourrait atténuer les effets négatifs de l'IA sur la société.
 
 Personnellement, j’ai la conviction que l’intelligence artificielle va vraiment tout changer. Déjà, elle commence à être partout, et tout évolue très vite. ChatGPT, par exemple, a à peine deux ans depuis sa démocratisation, et pourtant, il a déjà bouleversé de nombreux secteurs, notamment avec l'apparition d'agents autonomes. Des technologies qui interagissent avec l'environnement numérique pour faire des actions de bureautique ou de recherche. Mais nous allons devoir faire face à une réalité : dans le monde du travail, l’intelligence artificielle a de fortes chances de remplacer l'ensemble des emplois.
 
-Premièrement, si nous parvenons à développer une IA capable de généraliser ses compétences sur l’ensemble des tâches humaines – qu’il s’agisse de créativité, de technique ou même de compréhension psychologique, et pas seulement une simple automatisation – et qu’elle le fait avec moins d’énergie et plus d’efficacité, alors elle pourra potentiellement exécuter la majorité des métiers actuels. Deuxièmement, dans un système économique libéral comme le nôtre, les entreprises cherchent toujours à maximiser leur productivité pour rester compétitives. Si une entreprise n’utilise pas l’IA alors que ses concurrentes le font, elle sera désavantagée. On commence déjà à voir les premières conséquences de cette dynamique avec des investissements massifs dans l’IA par les entreprises et les États. Imaginez : les investissements mondiaux en IA étaient de 20 milliards en 2022, aujourd'hui on parle de 1 000 milliards. La course se fait à l'échelle planétaire et ce n'est pas prêt de s'arreter. Et nous parlions jusqu'ici uniquement du domaine du numérique, vous verrez que très prochainement, on nous parlera des investissements dans la robotique pour les tâches manuelles. Contrairement aux précédentes révolutions technologiques, où l'adaptation était possible, cette technologie pourra maîtriser l'ensemble des compétences humaines, tant réflexives que manuelles.
+Premièrement, si nous parvenons à développer une IA capable de généraliser ses compétences sur l’ensemble des tâches humaines – qu’il s’agisse de créativité, de technique ou même de compréhension psychologique, et pas seulement une simple automatisation – et qu’elle le fait avec moins d’énergie et plus d’efficacité, alors elle pourra potentiellement exécuter la majorité des métiers actuels. Deuxièmement, dans un système économique libéral comme le nôtre, les entreprises cherchent toujours à maximiser leur productivité pour rester compétitives. Si une entreprise n’utilise pas l’IA alors que ses concurrentes le font, elle sera désavantagée. On commence déjà à voir les premières conséquences de cette dynamique avec des investissements massifs dans l’IA par les entreprises et les États. Imaginez : les investissements mondiaux en IA étaient de 20 milliards en 2022, aujourd'hui on parle de 1 000 milliards. La course se fait à l'échelle planétaire et ce n'est pas prêt de s'arreter. 
+
+Et nous parlions jusqu'ici uniquement du domaine du numérique, vous verrez que très prochainement, on nous parlera des investissements dans la robotique pour les tâches manuelles. Vous n'avez juste qu'a regarder ce que propose NVIDIA aujourd'hui. Contrairement aux précédentes révolutions technologiques, où l'adaptation était possible, cette technologie pourra maîtriser l'ensemble des compétences humaines, tant réflexives que manuelles.
 
 Pour autant, nous ne pouvons pas nous passer du travail dans notre société actuelle. C’est grâce au travail que nous contribuons à la société et que nous subvenons à nos besoins. Le travail est aussi ce qui fait fonctionner notre économie et nos systèmes de redistribution. Demain, sans alternative économique, c’est une crise humaine et sociale sans précédent qui pourrait nous attendre.
 
@@ -49,6 +51,22 @@ C’est pourquoi je pense que le revenu universel pourrait être une solution fa
 Car finalement, ce n’est pas tant le revenu universel lui-même qui est important : c’est l’idée qu’il représente un outil pour garantir notre droit fondamental à l’existence et répondre durablement à nos besoins essentiels, et cela, à l'échelle de toute la société.
 
 Personnellement, je pense qu’un jour notre monde sera différent – j'espère plus juste – et je crois même que l’argent pourrait finir par disparaître, c'est-à-dire la fin de l'économie de marché. Mais pour que cela advienne, il faudra y mettre les moyens dès aujourd’hui. Nous devons accepter et nous préparer à une réalité où l'IA remplacera probablement tous nos emplois "économiques" – c'est-à-dire ceux qui ont pour but principal d'être rentables dans notre système actuel. Et selon moi, l'un des outils qui permettra d’atteindre un monde plus équitable, durable et de manière efficace face à cette transition, c'est le revenu universel.
+
+| Paragraphe          | Mots-clés                                     |
+|----------------------|-----------------------------------------------|
+| Avant-propos        | IA, Économie, Revenu de base                 |
+| Omniprésence de l'IA| IA partout, ChatGPT, Agents autonomes         |
+| Remplacement des emplois | IA généralisée, Compétences humaines, Efficacité |
+| Dynamique économique| Compétitivité, Investissements, Adaptation  |
+| Conséquences sur le travail | Travail, Contribution, Crise sociale       |
+| Sensibilisation et solutions | Problématiques, Réflexion, Politiques actuelles |
+| Revenu universel    | Redistribution, Sécurité, Changements         |
+| Paradoxe économique | Emplois, Productivité, Consommation           |
+| Avantages du revenu universel | Redistribution, Flexibilité, Expérimentations |
+| Droit à l'existence | Droit fondamental, Besoins essentiels, Société |
+| Vision d'un monde différent | Monde juste/équitable, Fin économie de marché, Transition |
+
+
 
 ### Partie Économique
 
