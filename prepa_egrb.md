@@ -30,7 +30,7 @@ Interaction avec le public pour répondre aux questions et recueillir des perspe
 
 ### Pitch Fabien FURFARO
 
-Merci pour cette introduction sur l'intelligence artificielle et le revenu de base. Mon propos porte sur l'impact de l'intelligence artificielle sur l'économie, en montrant les limites de l'économie de marché et pourquoi je pense que le revenu de base pourrait atténuer les effets négatifs de l'IA sur la société.
+Merci pour cette introduction sur l'intelligence artificielle et le revenu de base. Bonjour à tous, je m'appelle Fabien FURFARO, je suis Ingénieur chercheur en IA, et militant pour l'introduction du revenu de base en France. Mon propos porte sur l'impact de l'intelligence artificielle sur l'économie, en montrant les limites de l'économie de marché et pourquoi je pense que le revenu de base pourrait atténuer les effets négatifs de l'IA sur la société.
 
 Personnellement, j’ai la conviction que l’intelligence artificielle va vraiment tout changer. Déjà, elle commence à être partout, et tout évolue très vite. ChatGPT, par exemple, a à peine deux ans depuis sa démocratisation, et pourtant, il a déjà bouleversé de nombreux secteurs, notamment avec l'apparition d'agents autonomes. Des technologies qui interagissent avec l'environnement numérique pour faire des actions de bureautique ou de recherche. Mais nous allons devoir faire face à une réalité : dans le monde du travail, l’intelligence artificielle a de fortes chances de remplacer l'ensemble des emplois.
 
