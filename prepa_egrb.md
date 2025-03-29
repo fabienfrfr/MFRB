@@ -18,13 +18,11 @@ Le facilitateur va faire le lien entre les différents parcours et présentation
 
 4. Débats : Défis Éthiques et Sociaux (20 min):
 
-Débat sur les défis éthiques et sociaux posés par l'IA et le revenu de base. (Proposition). Le facilitateur pourra passer la main et définir un ensemble de questions. Il pourra egalement commencer avec des questions fermées (vrai/faux, pour/contre, oui/non) pour l'animation.
+Débat sur les défis éthiques et sociaux posés par l'IA et le revenu de base. (Proposition : Est-ce-que l'IA est un obstacle ou une chance pour le revenu universelle ? Discussion au delà du revenu et du temps libéré). Le facilitateur pourra passer la main et définir un ensemble de questions. Il pourra egalement commencer avec des questions fermées (vrai/faux, pour/contre, oui/non) pour l'animation.
 
 5. Questions du Public et Conclusion (10 min):
 
 Interaction avec le public pour répondre aux questions et recueillir des perspectives.
-
-
 
 ## Arguments
 
