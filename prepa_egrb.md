@@ -28,9 +28,11 @@ Interaction avec le public pour répondre aux questions et recueillir des perspe
 
 ### Pitch Fabien FURFARO
 
+Exercice : Limiter les interjections ! Mais ok pendant un Débat
+
 Merci pour cette introduction sur l'intelligence artificielle et le revenu de base. Bonjour à tous, je m'appelle Fabien FURFARO, je suis Ingénieur chercheur en IA, et militant pour l'introduction du revenu de base en France. Mon propos porte sur l'impact de l'intelligence artificielle sur l'économie, en montrant les limites de l'économie de marché et pourquoi je pense que le revenu de base pourrait atténuer les effets négatifs de l'IA sur la société.
 
-Personnellement, L'IA n'est plus l'avenir, elle est déjà notre présente partout. ChatGPT, par exemple, a à peine deux ans depuis sa démocratisation, et pourtant, il a déjà bouleversé de nombreux secteurs, et plus recemment avec l'apparition d'agents autonomes. Des technologies qui interagissent avec l'environnement numérique pour faire des actions dans un ordinateur et faciliter les actions de bureau. Mais nous allons devoir faire face à une réalité : dans le monde du travail, l’intelligence artificielle a de fortes chances de remplacer l'ensemble des emplois.
+Personnellement, L'IA n'est plus l'avenir, elle est déjà notre présente partout. ChatGPT ou l'IA generatrice en generale, par exemple, a à peine deux ans depuis sa démocratisation, et pourtant, il a déjà changé nos habitudes, et recemment les secteurs du service avec l'apparition d'agents autonomes. Des technologies qui interagissent avec l'environnement numérique pour faire des actions dans un ordinateur et faciliter les actions de bureau. Mais nous allons devoir faire face à une réalité : dans le monde du travail, l’intelligence artificielle a de fortes chances de remplacer l'ensemble des emplois.
 
 Premièrement, si on admet l'hypothèse qu'on arrivera à développer une IA capable de généraliser ses compétences sur l’ensemble des tâches humaines – qu’il s’agisse de créativité, de technique ou même de compréhension psychologique, et pas seulement une simple automatisation – et qu’elle le fait avec moins d’énergie et plus d’efficacité, alors elle pourra potentiellement exécuter la majorité des métiers actuels. Deuxièmement, dans un système économique libéral comme le nôtre, les entreprises cherchent toujours à maximiser leur productivité pour rester compétitives. Si une entreprise n’utilise pas l’IA alors que ses concurrentes le font, elle sera désavantagée. On commence déjà à voir les premières conséquences de cette dynamique avec des investissements massifs dans l’IA par les entreprises et les États. Imaginez : les investissements mondiaux en IA étaient de 20 milliards en 2022, aujourd'hui on parle de 1 000 milliards. La course se fait à l'échelle planétaire et ce n'est pas prêt de s'arreter. 
 
@@ -44,7 +46,7 @@ Et c’est là que je pense que le revenu universel peut répondre à ce besoin.
 
 Prenons un exemple concret : dans notre modèle libéral actuel, nous allons bientôt faire face à un paradoxe. D’un côté, les IA pourront remplacer une grande partie des emplois humains tout en augmentant massivement la productivité ; mais d’un autre côté, si les emplois disparaissent, comment les gens pourront-ils consommer ? De plus, cette logique pourrait accélérer l’épuisement des ressources naturelles dans une course à la production… mais comment consommer si une grande partie de la population n’a même pas les moyens financiers pour subvenir à ses besoins essentiels ? Dans ce paradoxe, (ou l'effet rebond serait tellement fort que) l'économie de marché pourrait ne pas marché.
 
-C’est pourquoi je pense que le revenu universel pourrait être une solution face à ces incertitudes et instabilités pour nous aider à la transition vers un nouveau monde. Ce revenu permettrait non seulement de redistribuer automatiquement les ressources mais aussi d’offrir une flexibilité face aux changements imprévisibles du futur. Parce qu'il s'adapte directement à l'économie, il est beaucoup plus facile à financer qu'un ensemble de taxes pouvant rapidement devenir obsolètes. Ce n'est pas qu'on ne peut pas le financer, c'est, est ce qu'on veut se donner les moyens de le faire ? D'ailleurs, les expérimentations menées jusqu’à présent montrent déjà des résultats intéressants : amélioration du bien-être général, meilleure santé mentale et regain de confiance en l’avenir. Et pour certains, cela a même permis d'entreprendre de nouveaux projets.
+C’est pourquoi je pense que le revenu universel n'est pas là pour sauver le modele liberale, pourrait être une solution face à ces incertitudes et instabilités pour nous aider à la transition vers un nouveau monde. Ce revenu permettrait non seulement de redistribuer automatiquement les ressources mais aussi d’offrir une flexibilité face aux changements imprévisibles du futur. Parce qu'il s'adapte directement à l'économie, il est beaucoup plus facile à financer qu'un ensemble de taxes pouvant rapidement devenir obsolètes. Ce n'est pas qu'on ne peut pas le financer, c'est, est ce qu'on veut se donner les moyens de le faire ? D'ailleurs, les expérimentations menées jusqu’à présent montrent déjà des résultats intéressants : amélioration du bien-être général, meilleure santé mentale et regain de confiance en l’avenir. Et pour certains, cela a même permis d'entreprendre de nouveaux projets.
 
 Car finalement, ce n’est pas tant le revenu universel lui-même qui est important : c’est l’idée qu’il représente un outil pour garantir notre droit fondamental à l’existence et répondre durablement à nos besoins essentiels, et cela, à l'échelle de toute la société.
 
@@ -72,6 +74,18 @@ Personnellement, je pense qu’un jour notre monde sera différent – j'espère
 | Revenu universel            | Le revenu universel : une sécurité pour tous, face à l'incertitude technologique. |
 | Paradoxe économique         | Comment consommer dans une économie où les consommateurs disparaissent ? |
 | Droit à l'existence         | Garantir le droit à l'existence, c'est assurer la dignité de chacun. |
+
+
+L'omniprésence de l'intelligence artificielle va nous amener au limite de l'économie, accélérant l'automatisation et réduisant la dépendance au travail humain. Ce changement met en lumière un paradoxe économique : une productivité accrue, mais une économie de marché fragilisée par la diminution des opportunités d'emploi. Face à cette transition, le revenu de base apparaît comme une solution politique pour garantir un droit à l'existence et permettre une adaptation sociale durable dans un monde où le travail rémunéré devient secondaire.
+
+
+#### Sources :
+
+- GPTs are GPTs https://arxiv.org/abs/2303.10130
+- https://ai-2027.com/
+- https://github.com/johanndiep/language-models-trajectory-generators/blob/main_mistral/README.Mistral.md
+- Deskilling and upskilling with AI systems (2025)
+
 
 
 ### Partie Économique
