@@ -88,6 +88,10 @@ L'omniprésence de l'intelligence artificielle va nous amener au limite de l'éc
 - https://github.com/johanndiep/language-models-trajectory-generators/blob/main_mistral/README.Mistral.md
 - Deskilling and upskilling with AI systems (2025)
 
+#### D'autre idée :
+
+- travailler l'esprit critique, creativité et curiosité
+- RIC pour impact democratique
 
 
 ### Partie Économique
