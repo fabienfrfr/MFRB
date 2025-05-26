@@ -87,6 +87,7 @@ L'omniprésence de l'intelligence artificielle va nous amener au limite de l'éc
 - https://ai-2027.com/
 - https://github.com/johanndiep/language-models-trajectory-generators/blob/main_mistral/README.Mistral.md
 - Deskilling and upskilling with AI systems (2025)
+- Absolute-Zero & AlphaEvolve (2025)
 - Vending-Bench: A Benchmark for Long-Term Coherence of Autonomous Agents (2025) https://arxiv.org/abs/2502.15840
 
 #### D'autre idée :
