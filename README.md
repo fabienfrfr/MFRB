@@ -11,4 +11,9 @@ GPTs are GPTs : https://arxiv.org/abs/2303.10130 (Impact probable d'un simple LL
 
 Tribune : https://www.revenudebase.info/actualites/intelligence-artificielle-et-revenu-de-base-par-fabien-furfaro/
 
+
+```sh
+chmod +x convert_2_podcast.sh
+```
+
 **Attribution required : Fabien Furfaro (CC 4.0 BY NC ND SA)**
