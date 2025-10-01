@@ -154,6 +154,8 @@ La creation n'est pas divine ou un truc magique, c'est qu'un processus de mutati
 
 Les comparaisons historique douteuse, les luddisme et le report au capitalisme
 
+aussi, le manicheisme ou le complot : les entreprise de l'ia vont faire le mal pour garder le pouvoir ! tout ce genre d'affirmation doit etre associé à des preuves, pas uniquement des opinions/ressenti
+
 Néanmoins, logique de compet dangeureux, valoriser la cooperation !
 
 
