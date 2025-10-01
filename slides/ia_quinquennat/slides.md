@@ -13,6 +13,8 @@ mdc: true
 # L'IA en un Quinquennat
 *Le revenu universel, une necessité*
 
+## Fabien FURFARO - 2025
+
 
 ---
 
@@ -104,6 +106,14 @@ Y = A \cdot K^{\alpha} \cdot \big((1-u)N\big)^\beta \cdot IA^\gamma
 $$
 
 Avec $u$ = taux de chômage. Si le chômage monte, $L = (1-u)N$ baisse, la production baisse même si IA monte[web:26][web:38].
+
+manquement dans les modele : 
+
+
+| Type de modèle                     | Objectif principal                             | Intégration IA actuelle                                                                                   |
+|-----------------------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| Macromodèles (DSGE, CGE etc.)     | Croissance, PIB, productivité, emploi         | IA comme choc technologique sur productivité, innovation et emploi (modèles étendus Cobb-Douglas) - Modele Mesange ou Opale étendu          |
+| Micromodèles (micro-simulations)  | Redistribution, fiscalité, emploi par ménage  | IA pour simuler changements de tâches, revenus, formations, redistribution (ex : TaxIPP étendu)            |
 
 
 ---
