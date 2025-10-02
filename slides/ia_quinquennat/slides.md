@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: seriph
+theme: default
 title: Projet Quinquennat - IA
 background: https://cover.sli.dev
 class: text-center
@@ -17,41 +17,71 @@ mdc: true
 
 
 ---
+layout: default
+---
 
 ## Evolution du marché de l'emploi depuis 1960
 ***Une mutation vers le tertiaire***
 
-Le secteur tertiaire, dernier rempart contre l’automatisation ?
+
+
+<div grid="~ cols-2 gap-4">
+  <div style="font-size: 10px; text-align: center; line-height: 1.2;">
 
 <div style="text-align: center;">
-
 ```mermaid {theme: 'neutral', scale: 0.5}
 ---
 config:
   themeVariables:
     xyChart:
-      plotColorPalette: '#2E8B57, #1E90FF, #FF8C00, #800080, #DC143C'
+      showDataLabel: true
+      plotColorPalette: ' #2E8B57, #1E90FF, #FF8C00, #800080, #DC143C'
 ---
 xychart
 title "Evolution des secteurs d'activité et taux de chômage en France"
-x-axis "Années" [1962, 1975, 1990, 2007, 2018, 2025]
-y-axis "Pourcentage (%)" 0 --> 80
+x-axis "Années" [1962, 1975, 1990, 2007, 2018]
+y-axis "Pourcentage (%)" 0 --> 100
 
+bar "Agriculture" [100, 100, 100, 100, 100]
+bar "Industrie" [80, 85, 90, 96, 97.5]
+bar "Construction" [41, 55, 63, 74, 84.2]
+bar "Tertiaire" [32, 45, 60, 67, 76.1]
+bar "Taux de chômage" [2, 7, 9, 8, 8.5]
+```
+</div>
+  
+<!-- 
+Calculer les ecarts à 100 sur :
 bar "Agriculture" [20, 15, 10, 4, 2.5, 2.5]
 bar "Industrie" [39, 30, 27, 22, 13.3, 13]
 bar "Construction" [6.7, 7, 6, 7, 6.7, 6.7]
 bar "Tertiaire" [34, 38, 57, 67, 76.1, 76]
 bar "Taux de chômage" [2, 7, 9, 8, 8.5, 7.5]
+-->
 
-```
+🟩 Agriculture
+🟦 Industrie
+🟧 Construction
+🟪 Tertiaire
+🟥 Taux de chômage
 
-</div>
+  </div>
+  <div>
+  
+Le secteur tertiaire, dernier rempart contre l’automatisation ?
 
 Le mythe de la destruction créatrice
 
 Les métiers du tertiaire seront les plus touchés par les IA modernes
 
 Les métiers “manuels” les seuls à ne pas être impacté par cette technologie ?
+
+  
+  </div>
+</div>
+
+Pourquoi ?
+
 
 
 ---
