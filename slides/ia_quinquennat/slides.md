@@ -21,7 +21,7 @@ layout: default
 ---
 
 ## Evolution du marché de l'emploi depuis 1960
-***Une mutation vers le tertiaire***
+***Automatisation et Abondance : Une mutation vers le tertiaire***
 
 
 
@@ -43,21 +43,14 @@ x-axis "Années" [1962, 1975, 1990, 2007, 2018]
 y-axis "Pourcentage (%)" 0 --> 100
 
 bar "Agriculture" [100, 100, 100, 100, 100]
-bar "Industrie" [80, 85, 90, 96, 97.5]
-bar "Construction" [41, 55, 63, 74, 84.2]
-bar "Tertiaire" [32, 45, 60, 67, 76.1]
-bar "Taux de chômage" [2, 7, 9, 8, 8.5]
+bar "Industrie" [80.39, 84.54, 90.83, 96.30, 98.11]
+bar "Construction" [42.16, 53.61, 66.06, 75.93, 85.85]
+bar "Tertiaire" [35.29, 46.39, 60.55, 69.44, 79.25]
+bar "Taux de chômage" [1.96, 7.22, 8.26, 7.41, 7.55]
 ```
 </div>
   
-<!-- 
-Calculer les ecarts à 100 sur :
-bar "Agriculture" [20, 15, 10, 4, 2.5, 2.5]
-bar "Industrie" [39, 30, 27, 22, 13.3, 13]
-bar "Construction" [6.7, 7, 6, 7, 6.7, 6.7]
-bar "Tertiaire" [34, 38, 57, 67, 76.1, 76]
-bar "Taux de chômage" [2, 7, 9, 8, 8.5, 7.5]
--->
+<!-- Voir les données dans le tableur ods -->
 
 🟩 Agriculture
 🟦 Industrie
@@ -66,21 +59,68 @@ bar "Taux de chômage" [2, 7, 9, 8, 8.5, 7.5]
 🟥 Taux de chômage
 
   </div>
-  <div>
+  <div style="font-size: 12px;">
   
-Le secteur tertiaire, dernier rempart contre l’automatisation ?
+📻 1950 : Transistor.    🛢️ 1970 : 1er Pic.    🌐 1990 : Internet.
 
-Le mythe de la destruction créatrice
+**Destruction creatrice :** Processus économique où l'innovation remplace les anciennes activités, stimulant la croissance.
 
-Les métiers du tertiaire seront les plus touchés par les IA modernes
+*On remarque qu'on a surtout une transition des secteurs d'activités vers le tertiaire, dans une période en abondance énergétique.*
 
-Les métiers “manuels” les seuls à ne pas être impacté par cette technologie ?
+Selon le **OCDE**, d’ici 2030, 30% des emplois seront confrontés à des transformations structurelles majeures et près de **50%** des métier du tertiaire.
 
   
   </div>
 </div>
 
-Pourquoi ?
+Est-ce-que l'intelligence artificielle va stimuler la croissance ?
+
+<div style="text-align: right; font-size: 0.75em;">
+
+***Sources :*** <a href="https://www.insee.fr/fr/statistiques/1283207" target="_blank">INSEE</a>, <a href="https://www.clubofrome.org/publication/the-limits-to-growth/" target="_blank">Rapport Meadows (1972)</a>, <a href="https://www.oecd.org/en/topics/ai-and-work.html" target="_blank">OCDE</a>
+
+</div>
+
+
+---
+layout: two-cols-header
+---
+
+## Pourquoi la course à l'IA a commencé ?
+***Entre compétition et cout d'opportunité***
+
+<div style="font-size: 12px;">
+
+**La formule de Cobb-Douglas :**
+
+</div>
+
+$$
+Y = A \cdot K^{\alpha} \cdot L^{\beta} \cdot IA^{\gamma}
+$$
+
+::left::
+
+$$
+\Delta Y = \frac{1}{1-c} \cdot \Delta R
+$$
+
+::right::
+
+(\( c \) : propension marginale à consommer)[web:7][web:24]
+- Scénario dual :  
+  - Emplois qualifiés : +reconversion, +emplois « augmentés »
+  - Non qualifiés : risque chômage structurel 30–40 % (OCDE)[web:21][web:27]
+
+
+<div style="text-align: right; font-size: 0.75em;">
+
+***Sources :*** <a href="https://economic-research.bnpparibas.com/html/fr-FR/Productivite-croissance-emploi-IA-synthese-litterature-economique-05/09/2025,51811" target="_blank">BNP Paribas</a>
+
+</div>
+
+
+
 
 
 
@@ -330,4 +370,3 @@ Soutient production en période de chômage grâce à R.
 ## Sources principales
 EY, Insee, OCDE, Anthropic, ONU, BNP Paribas, Trésor Éco, Wikipedia, Mouvement Français Revenu de Base, Fondapol, Terra Nova, INSEE, Aghion & Antonin
 ---
-download: true
