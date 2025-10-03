@@ -82,28 +82,44 @@ Est-ce-que l'intelligence artificielle va stimuler la croissance ?
 </div>
 
 
+
+
 ---
 layout: two-cols-header
+class: px-10
 ---
 
 ## Pourquoi la course à l'IA a commencé ?
 ***Entre compétition et cout d'opportunité***
 
-<div style="font-size: 12px;">
+<div grid="~ cols-2 gap-4">
 
-**La formule de Cobb-Douglas :**
+<div style="font-size: 15px;">
+
+**La formule de Cobb-Douglas :** $Y = A \cdot K^{\alpha} \cdot L^{\beta} \cdot IA^{\gamma}$
+</div>
+
+<div style="font-size: 15px;">
+
+**Le multiplicateur keynésien :** $\Delta Y = \frac{1}{1-c} \cdot \Delta R$
+</div>
 
 </div>
 
-$$
-Y = A \cdot K^{\alpha} \cdot L^{\beta} \cdot IA^{\gamma}
-$$
 
 ::left::
 
-$$
-\Delta Y = \frac{1}{1-c} \cdot \Delta R
-$$
+- **Y** : Production totale (quantité de biens et services produits)  
+- **A** : Productivité globale des facteurs (niveau technologique)  
+- **K** : Capital physique (machines, infrastructures, équipements)  
+- **L** : Travail (quantité de travail humain)  
+- **IA** : Intensité de l’automatisation (usage de l’IA dans la production)  
+- **α, β, γ** : Élasticités de la production par rapport aux facteurs capital, travail et automatisation, indiquant leur poids dans la production  
+
+- **ΔY** : Variation totale de la production ou du revenu national  
+- **ΔR** : Variation initiale de la demande (consommation, investissement ou dépense publique)  
+- **c** : Propension marginale à consommer (part du revenu additionnel dépensé par les agents économiques)  
+
 
 ::right::
 
