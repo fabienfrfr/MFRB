@@ -1,0 +1,31 @@
+/* Police moderne proche de Slidev (inter ou system-ui) */
+.reveal {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #fafafa;
+    /* fond clair doux */
+    color: #1a202c;
+    /* texte gris-bleu foncé */
+    font-size: 18px;
+}
+
+/* Titres */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Soulignement léger sous les titres */
+.reveal h2 {
+    border-bottom: 2px solid #3b82f6;
+    /* bleu clair Tailwind */
+    padding-bottom: 0.25rem;
+}
+
+/* Espacements et alignements */
+.reveal p {
+    line-height: 1.5;
+    max-width: 900px;
+    margin: auto;
+}

@@ -1,0 +1,109 @@
+:revealjs_theme: white
+:revealjs_customtheme: custom.css
+
+
+== IA en un Quinquennat
+
+
+_Le revenu universel, une necessité_
+
+Fabien FURFARO - 2025
+
+
+== Evolution du marché de l'emploi depuis 1960
+_Automatisation et Abondance : Une mutation vers le tertiaire_
+
+
+[mermaid]
+....
+---
+config:
+  themeVariables:
+    xyChart:
+      showDataLabel: true
+      plotColorPalette: ' #2E8B57, #1E90FF, #FF8C00, #800080, #DC143C'
+---
+xychart
+title "Evolution des secteurs d'activité et taux de chômage en France"
+x-axis "Années" [1962, 1975, 1990, 2007, 2018]
+y-axis "Pourcentage (%)" 0 --> 100
+
+bar "Agriculture" [100, 100, 100, 100, 100]
+bar "Industrie" [80.39, 84.54, 90.83, 96.30, 98.11]
+bar "Construction" [42.16, 53.61, 66.06, 75.93, 85.85]
+bar "Tertiaire" [35.29, 46.39, 60.55, 69.44, 79.25]
+bar "Taux de chômage" [1.96, 7.22, 8.26, 7.41, 7.55]
+....
+
+
+[cols="1,1", options="header"]
+|===
+|Graphique |Données et explications
+
+|
+
+[mermaid]
+....
+ graph LR
+     s([Source]) --> a[[aquamarine]]
+     r[[rustdoc]] --> f([Docs w/ Mermaid!])
+     subgraph rustc[Rust Compiler]
+     a -. inject mermaid.js .-> r
+     end
+....
+
+🟩 Agriculture  
+🟦 Industrie  
+🟧 Construction  
+🟪 Tertiaire  
+🟥 Taux de chômage
+
+|1950 : Transistor.    🛢️ 1970 : 1er Pic.    🌐 1990 : Internet.
+
+'''Destruction creatrice :''' Processus économique où l'innovation remplace les anciennes activités, stimulant la croissance.
+
+*On remarque qu'on a surtout une transition des secteurs d'activités vers le tertiaire, dans une période en abondance énergétique.*
+
+Selon le **OCDE**, d’ici 2030, 30% des emplois seront confrontés à des transformations structurelles majeures et près de **50%** des métiers du tertiaire.
+
+Est-ce-que l'intelligence artificielle va stimuler la croissance ?
+
+.Source : INSEE, Rapport Meadows (1972), OCDE
+|https://www.insee.fr/fr/statistiques/1283207, https://www.clubofrome.org/publication/the-limits-to-growth/, https://www.oecd.org/en/topics/ai-and-work.html
+|===
+
+
+== Pourquoi la course à l'IA a commencé ?
+_Entre compétition et cout d'opportunité_
+
+[cols="1,1"]
+|===
+|La formule de Cobb-Douglas
+
+$Y = A * K^α * L^β * IA^γ$
+
+- Y : Production totale (quantité de biens et services produits)
+- A : Productivité globale des facteurs (niveau technologique)
+- K : Capital physique (machines, infrastructures, équipements)
+- L : Travail (quantité de travail humain)
+- IA : Intensité de l’automatisation (usage de l’IA dans la production)
+- α, β, γ : Élasticités de la production par rapport aux facteurs capital, travail et automatisation, indiquant leur poids dans la production
+
+- ΔY : Variation totale de la production ou du revenu national
+- ΔR : Variation initiale de la demande (consommation, investissement ou dépense publique)
+- c : Propension marginale à consommer (part du revenu additionnel dépensé par les agents économiques)
+
+|Le multiplicateur keynésien
+
+ΔY = 1/(1-c) * ΔR
+
+( c : propension marginale à consommer)
+
+Scénario dual :
+
+- Emplois qualifiés : +reconversion, +emplois « augmentés »
+- Non qualifiés : risque chômage structurel 30–40% (OCDE)
+
+.Source : BNP Paribas
+|https://economic-research.bnpparibas.com/html/fr-FR/Productivite-croissance-emploi-IA-synthese-litterature-economique-05/09/2025,51811
+|===
