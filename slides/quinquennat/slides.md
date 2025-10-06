@@ -2,7 +2,7 @@
 marp: true
 theme: default
 title: Projet Quinquennat - IA
-background: https://cover.sli.dev
+background: generated_bg.jpg
 class: text-center
 drawings:
   persist: false
@@ -103,10 +103,13 @@ La course à l’IA est motivée par la nécessité d’éviter de perdre un ava
 de croissance face à la montée en puissance rapide de cette technologie, malgré les coûts qu’elle implique.
 ```
 
-::left::
-
 **La formule de Cobb-Douglas :** $Y = A \cdot K^{\alpha} \cdot L^{\beta}$
 
+**Le multiplicateur keynésien :** $\Delta Y = \frac{1}{1-c} \cdot \Delta R$
+
+
+
+::left::
 
 - **Y** : Production totale (PIB)
 - **A** : Niveau technologique (PGF)
@@ -119,7 +122,6 @@ de croissance face à la montée en puissance rapide de cette technologie, malgr
 
 ::right::
 
-**Le multiplicateur keynésien :** $\Delta Y = \frac{1}{1-c} \cdot \Delta R$
 
 - **Scénario dual :**  
   - Emplois qualifiés : emplois « augmentés »
@@ -188,8 +190,8 @@ layout: two-cols-header
 ***Ce n'est pas qu'une question de décomposition de tache, mais de généralisation humaine (micro-économie)***
 
 ```text
-La meilleurs solution serait d'avoir des entreprises qui garde leur employer pour qu'il consomme (optimum de Pareto), 
-mais le probleme vient de la stabilité dans la competition (analogie avec Loi de Hotelling)
+La solution idéale serait que les entreprises maintiennent leurs employés pour qu'ils 'consomment' 
+(optimum de Pareto), mais la compétition avec la concurrence nous amènera à aucune solution collective.
 ```
 
 ::left::
@@ -198,255 +200,82 @@ $$\vert --^a -- A \overbrace{---}^x ------ B --^b -- \vert$$
 
 Pour $a=b$, l'équilibre de Cournot-Nash est :
 
-$$\frac{\partial \Pi_A}{\partial p_A}=\frac{\partial \Pi_B}{\partial p_B}=0 \to p_A=p_B=u + cL$$
+$$\frac{\partial \Pi_A}{\partial p_A}=\frac{\partial \Pi_B}{\partial p_B}=0 \to p_A=p_B=\frac{L}{2}$$
 
-Dans un systeme libérale en compétition, la conséquence est que toute les entreprises vont converger en n'utilisant que de l'IA.
-(il n'y a pas d'optimum de pareto obtenu)
+
+Dans une économie libérale en compétition, cette dynamique force toutes les entreprises à utiliser l’IA. **Résultat :** Aucun optimum de Pareto n’est atteint $(\pm L/3)$, car chaque entreprise cherche à maximiser ses performances de vente.
 
 
 ::right::
 
-Energetiquement possible : loi d'echelle revolu et machine a capacité de frigo
-Pas d'adaptation humaine possible
-Paradoxe de Hotelling
+*Empreinte carbone d’un robot Unitree :* environ 2 tonnes de CO2, soit l’équivalent de la fabrication de 3 réfrigérateurs.
 
-Rapport AI 2027 (caricature), scenario à 50% de proba en 2035, mais 90% en 2045 (source)
-Temps pour la transition possible, mais urgent
+<ins>Prévision pour l’AGI :</ins>
+- Date médiane : 2040.
+- Probabilité moyenne : 50% d’ici 2032.
+- **Remarque :** Le rapport AI-2027 est polarisant.
 
+Si les ressources necessaires sont inférieurs à celle d'un humain, alors le remplacement est inévitable.
 
+<div style="text-align: right; font-size: 0.75em;">
 
----
-layout: two-cols-header
----
-
----
-layout: two-cols-header
----
-
----
-layout: two-cols-header
----
-
-
----
-
-## Est-ce-que l'IA est une révolution technologique ?
-***Une révolution technogolique transforme tout les secteurs***
-
-Le mythe de la destruction créatrice
-
-Des IA de plus en plus compact.
-
-La loi d'echelle a montré ces limites. Evaluation par niveau de confiance et raisonnement.
-
-Lorsque l'IA sera appliqué à la robotique, tout les métiers seront impacté
-
-
----
-
-## Un paradoxe evident oublié des économistes
-***Comment une société basé sur la consommation peut fonctionner sans travail ?***
-
-La logique de l'AGI est d'avoir une entité capable de realiser toute les activité humaines. Dans une logique de rentabilité, tout les métiers vont disparaitre, de l'executif jusqu'à la prise de decision.
-
-Si on introduit le taux de chomage dans les modeles, Fonction de production élargie :
-
-$$
-Y = A \cdot K^{\alpha} \cdot \big((1-u)N\big)^\beta \cdot IA^\gamma
-$$
-
-Avec $u$ = taux de chômage. Si le chômage monte, $L = (1-u)N$ baisse, la production baisse même si IA monte[web:26][web:38].
-
-manquement dans les modele : 
-
-
-| Type de modèle                     | Objectif principal                             | Intégration IA actuelle                                                                                   |
-|-----------------------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Macromodèles (DSGE, CGE etc.)     | Croissance, PIB, productivité, emploi         | IA comme choc technologique sur productivité, innovation et emploi (modèles étendus Cobb-Douglas) - Modele Mesange ou Opale étendu          |
-| Micromodèles (micro-simulations)  | Redistribution, fiscalité, emploi par ménage  | IA pour simuler changements de tâches, revenus, formations, redistribution (ex : TaxIPP étendu)            |
-
-
----
-
-## Le revenu de base une outil necessaire pour une transition sociale
-***Comment le revenu de base va stabiliser la societe ?***
-
-
-Consommation totale :
-
-$$
-C = c_1 \cdot Y_{travail} + c_2 \cdot Y_{chomage} + N \cdot R
-$$
-
-- Sans revenu de base ($R=0$), C chute si chômage monte.
-- Avec revenu de base ($R>0$), C se maintient même en chômage élevé[web:7][web:41][web:38].
-
-Boucle macroéconomique :
-```mermaid
-flowchart TD
-IA["↑ IA"]
-L["↓ Emploi (L)"]
-U["↑ Chômage (u)"]
-Y["↓ Production (Y)"]
-C["↓ Consommation (C)"]
-D["↓ Demande"]
-R["Revenu de base (R)"]
-
-    IA --> L --> U --> Y --> C --> D --> L
-    R --> C
-```
-
-
----
-
-## Quelque debunkage sur l'IA
-***Ce n'est pas ce que l'on croit***
-
-Le capitalisme n'est pas la nature de l'homme --> propriété + paradoxe de hotelling
-
-néanmoins, besoin d'accumulation de ressource (argent % ressource % pollution) et notre besoin d'etre superieur est à reduire.
-
-AI 2027 est une caricature, les chinois sont ceux qui mettent le plus de techno open source contrairement au USA
-
-Une economique ne marche pas en forcant les gens à travaillé si eux meme peuvent deleguer à un robot
-
-La creation n'est pas divine ou un truc magique, c'est qu'un processus de mutation/selection
-
-Les comparaisons historique douteuse, les luddisme et le report au capitalisme
-
-aussi, le manicheisme ou le complot : les entreprise de l'ia vont faire le mal pour garder le pouvoir ! tout ce genre d'affirmation doit etre associé à des preuves, pas uniquement des opinions/ressenti
-
-Néanmoins, logique de compet dangeureux, valoriser la cooperation !
-
-
----
-
-## Le revenu de base une outil necessaire pour une transition sociale
-***Comment le revenu de base va transformer la societe ?***
-
-Fin du systeme actuel, une utopie est possible, mais sans moyen, le risque est eleve ! 
-
-Ou le revenu de base est un outils qui favorise la cooperation et le partage, des logiques souhaitable pour un monde comme le notre en crise d'individualisme.
-
----
-
-## Evolution du marché de l'emploi
-#### De 1960 à demain
-
-
-
-
-
-
-
-
----
-
-## Evolution du marché de l'emploi
-#### De 1960 à demain
-
-<div style="text-align: center;">
-
-```mermaid {theme: 'neutral', scale: 0.5}
----
-config:
-  themeVariables:
-    xyChart:
-      plotColorPalette: '#2E8B57, #1E90FF, #FF8C00, #800080, #DC143C'
----
-xychart
-title "Evolution des secteurs d'activité et taux de chômage en France"
-x-axis "Années" [1962, 1975, 1990, 2007, 2018, 2025]
-y-axis "Pourcentage (%)" 0 --> 80
-
-bar "Agriculture" [20, 15, 10, 4, 2.5, 2.5]
-bar "Industrie" [39, 30, 27, 22, 13.3, 13]
-bar "Construction" [6.7, 7, 6, 7, 6.7, 6.7]
-bar "Tertiaire" [34, 38, 57, 67, 76.1, 76]
-bar "Taux de chômage" [2, 7, 9, 8, 8.5, 7.5]
-
-```
-
+***Sources :*** <a href="https://arxiv.org/pdf/2502.15840" target="_blank">Vending-Bench</a>, <a href="https://ai-2027.com/" target="_blank">AI-2027</a>, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4496418" target="_blank">Oxford</a>
 </div>
 
-| Couleur       | Catégorie      |
-|---------------|----------------|
-| ![#2E8B57](https://via.placeholder.com/15/2E8B57/000000?text=+) | Agriculture    |
-| ![#1E90FF](https://via.placeholder.com/15/1E90FF/000000?text=+) | Industrie      |
-| ![#FF8C00](https://via.placeholder.com/15/FF8C00/000000?text=+) | Construction   |
-| ![#800080](https://via.placeholder.com/15/800080/000000?text=+) | Tertiaire      |
-| ![#DC143C](https://via.placeholder.com/15/DC143C/000000?text=+) | Taux de chômage|
-
-### Sources
-
-- INSEE, "50 ans de mutations de l’emploi" [insee.fr/statistiques/1283207](https://www.insee.fr/fr/statistiques/1283207)  
-- INSEE, Évolution du chômage France (BIT / enquêtes emploi)  
-- TradingEconomics, taux de chômage France 1975-2025 [tradingeconomics.com/france/unemployment-rate](https://fr.tradingeconomics.com/france/unemployment-rate)  
-- Wikipedia, Histoire du chômage en France [fr.wikipedia.org/wiki/Histoire_du_chômage_en_France](https://fr.wikipedia.org/wiki/Histoire_du_chômage_en_France)
 
 
 ---
-
-## 1. Impact IA sur l’emploi
-- 27% tâches mondiales automatisées d’ici 2030 (EY, Insee)
-- Jusqu’à 20% chômage dans métiers exposés à l’IA (Anthropic, ONU)
-
-
-
+layout: two-cols-header
 ---
 
-## 2. Fonction de production élargie
+## Le revenu universel est nécessaire pendant la transition
+***Modèle macroéconomique étendu avec chômage et le RBU***
 
 $$
-Y = A \cdot K^{\alpha} \cdot \big((1-u)N\big)^\beta \cdot IA^\gamma
+Y = A \cdot K^{\alpha} \cdot \big((1-u) \cdot N\big)^{\beta}
 $$
 
-Avec $u$ = taux de chômage. Si le chômage monte, $L = (1-u)N$ baisse, la production baisse même si IA monte[web:26][web:38].
+- $u$ : taux de chômage, $N$ : population active potentielle, $c_i$ : consommation des acteurs
+
+La production totale $Y$ diminue lorsque le chômage augmente, même si la productivité liée à l’IA progresse. Une représentation simplifiée pour la consommation totale $C$ peut s’écrire :
+
+$$
+C = c_1 \cdot Y_{\text{travail}} + c_2 \cdot Y_{\text{chômage}} + N \cdot R
+$$
+
+- $R$ : revenu universel attribué à chaque individu, qui soutient la consommation même si le chômage augmente.  
+
+En France, les modèlisations sont en cours d'amélioration (Mésange, TaxIPP, etc.) pour la prévoir les impacts de l'intelligence artificielle sur l'économie.
+
+<div style="text-align: right; font-size: 0.75em;">
+
+***Sources :*** <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4843046" target="_blank">MIT</a>, <a href="https://www.tresor.economie.gouv.fr/Articles/2025/02/07/l-ia-au-coeur-des-analyses-de-la-dg-tresor" target="_blank">DG-Tresor</a>
+</div>
+
+
+
 
 ---
+layout: two-cols-header
+---
 
-## 3. Boucle macroéconomique (Mermaid)
-```mermaid
-flowchart TD
-IA["↑ IA"]
-L["↓ Emploi (L)"]
-U["↑ Chômage (u)"]
-Y["↓ Production (Y)"]
-C["↓ Consommation (C)"]
-D["↓ Demande"]
-R["Revenu de base (R)"]
+## Au dela du revenu de base
+***Paradoxes, choix sociaux et voies politiques***
 
-    IA --> L --> U --> Y --> C --> D --> L
-    R --> C
+*Paradoxe central :* Dans un monde sans travail, il n'y a plus de consommateur. Le revenu universel va stabiliser la demande lorsque la société sera en transition, mais ne résoudra pas la redistribution du pouvoir économique en cas d'AGI.
+
+*Scénarios plausibles pre-AGI :* (1) baisse tendancielle du taux de profit, (2) recomposition sociale redistributive et (3) concentration autoritaire des rentes technologiques.
+
+Considérer le RUB comme un outil qui permettra de changer de logique socio-économique pour s'orienter vers un monde post-économique coopératif (dans l'hypothèse où l'on atteind l'AGI).
+
+```text
+Refusons les récits simplistes — ni le luddisme pur ni l’essentialisme. Nous sommes face à un changement sans 
+precedant historique, notre défi aujourd'hui est de trouver des solutions pour nous préparer positivement à l'avenir.
 ```
 
----
 
-## 4. Consommation totale
 
-$$
-C = c_1 \cdot Y_{travail} + c_2 \cdot Y_{chomage} + N \cdot R
-$$
+<div style="text-align: right; font-size: 0.75em;">
 
-- Sans revenu de base ($R=0$), C chute si chômage monte.
-- Avec revenu de base ($R>0$), C se maintient même en chômage élevé[web:7][web:41][web:38].
-
----
-
-## 5. Effet multiplicateur
-$$
-\Delta Y = \frac{1}{1-c} \cdot \Delta R
-$$
-Soutient production en période de chômage grâce à R.
-
----
-
-## 6. Conclusion
-- IA = productivité, mais risque chômage élevé et contraction de la demande
-- Le revenu de base stabilise la demande et la production, cassant le cercle négatif
-
----
-
-## Sources principales
-EY, Insee, OCDE, Anthropic, ONU, BNP Paribas, Trésor Éco, Wikipedia, Mouvement Français Revenu de Base, Fondapol, Terra Nova, INSEE, Aghion & Antonin
----
+***Sources :*** <a href="https://arxiv.org/abs/2505.18687" target="_blank">Carnegie-Mellon</a>, <a href="https://academic.oup.com/oep/article/76/4/945/7630148" target="_blank">Oxford</a>, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4802513" target="_blank">Bath</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9193369/" target="_blank">ILO</a>
+</div>
