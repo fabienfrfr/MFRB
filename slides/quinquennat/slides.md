@@ -178,7 +178,7 @@ L'**AGI** <ins>par définition</ins> pourrait remplacer tout les métiers de fa�
 
 <div style="text-align: right; font-size: 0.75em;">
 
-***Sources :*** <a href="https://openai.com/index/planning-for-agi-and-beyond/" target="_blank">OpenAI</a>, <a href="https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-ai-market" target="_blank">GVR</a>, <a href="https://www.enseignementsup-recherche.gouv.fr/fr/la-strategie-francaise-en-intelligence-artificielle-49166" target="_blank">France 2030</a>
+***Sources :*** <a href="https://hai.stanford.edu/ai-index/2025-ai-index-report" target="_blank">Stanford</a>, <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises" target="_blank">Eurostat</a>, <a href="https://openai.com/index/planning-for-agi-and-beyond/" target="_blank">OpenAI</a>, <a href="https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-ai-market" target="_blank">GVR</a>, <a href="https://www.enseignementsup-recherche.gouv.fr/fr/la-strategie-francaise-en-intelligence-artificielle-49166" target="_blank">France 2030</a>
 </div>
 
 
@@ -196,14 +196,21 @@ La solution idéale serait que les entreprises maintiennent leurs employés pour
 
 ::left::
 
-$$\vert --^a -- A \overbrace{---}^x ------ B --^b -- \vert$$
+**La fonction de profit de l'automatisation $a_k \in [0,1]$ :**
 
-Pour $a=b$, l'équilibre de Cournot-Nash est :
+$$
+\Pi_A(a_A, a_B) = \gamma a_A (1 - a_B) + \beta a_A - k a_A^2
+$$
 
-$$\frac{\partial \Pi_A}{\partial p_A}=\frac{\partial \Pi_B}{\partial p_B}=0 \to p_A=p_B=\frac{L}{2}$$
+Paramètres : $\gamma$ : avantage, $\beta$ : le gain et $k$ : le coût.
 
+<ins>L'équilibre de Cournot-Nash est :</ins>
 
-Dans une économie libérale en compétition, cette dynamique force toutes les entreprises à utiliser l’IA. **Résultat :** Aucun optimum de Pareto n’est atteint $(\pm L/3)$, car chaque entreprise cherche à maximiser ses performances de vente.
+$$
+\frac{\partial \Pi_A}{\partial a} = 0 \Longrightarrow\ a_A^* = \frac{\gamma(1 - a_B^*) + \beta}{2k}
+$$
+
+**Résultat :** L’équilibre de Nash se détermine là où aucune entreprise n’a intérêt à changer seule son niveau d’automatisation (dilemme du prisonnier itératif)
 
 
 ::right::
