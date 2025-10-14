@@ -59,6 +59,23 @@ Here:
 
 The effective labor input reduces as unemployment rises. As \(u \to 1\) (full automation), output becomes capital- and AGI-driven only, threatening demand unless income is redistributed.
 
+==== Keynesian Multiplier and Demand Amplification
+
+A fundamental component of our macroeconomic framework is the incorporation of the Keynesian consumption multiplier, which captures how exogenous changes in income (e.g., via redistribution policies) translate into amplified variations in aggregate demand.
+
+Formally, the multiplier effect is expressed as:
+
+[stem]
+++++
+\Delta Y = \frac{1}{1 - c} \times \Delta R
+++++
+
+where \(c\) is the average marginal propensity to consume among agents, and \(\Delta R\) is the change in non-labor income distributed (such as through UBI or MBI). This multiplier reflects the successive rounds of spending prompted by initial income injections, thus stabilizing and stimulating economic activity beyond the direct value of redistribution.
+
+In our simulations, we apply this concept by calculating total consumption \(C\) as the sum of baseline consumption from wages of employed and unemployed agents, plus the amplified consumption effect induced by redistributed income. This approach better reflects realistic macroeconomic responses to policy interventions in the presence of labor income decline due to automation.
+
+
+
 === 3.2 Firm-Level Strategic Automation: Prisoner’s Dilemma Model
 Firms choose automation levels \(a_i \in [0,1]\) to maximize profit function \(\Pi_i\) incorporating competitive effects:
 
