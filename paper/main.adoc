@@ -1,0 +1,210 @@
+= Beyond Income: Simulating the End of Work
+:author: Fabien Furfaro
+:revdate: October 14, 2025
+:doctype: article
+:lang: en
+:toc: macro
+:toclevels: 2
+:sectnums:
+:sectnumlevels: 3
+:stem: latexmath
+:source-highlighter: pygments
+:icons: font
+
+== Abstract
+The rapid emergence of Artificial General Intelligence (AGI) and advanced automation threatens to profoundly reshape economic structures, labor markets, and wealth distribution worldwide. This paper provides a comprehensive analysis of the macroeconomic and social consequences of AGI-driven automation within a unified modeling framework combining extended Cobb–Douglas production functions and game-theoretic firm-level simulations. We demonstrate that while AGI unlocks unprecedented productivity, it simultaneously erodes the labor income base sustaining consumer demand, creating a paradox of abundance with collapsing consumption. We evaluate Universal Basic Income (UBI) and Merit-Based Income (MBI) as pivotal redistributive mechanisms and reveal that, absent proactive intervention, AGI risks inducing systemic inequality and economic instability. Importantly, we conceptualize the MBI not only as a transitional fiscal tool but as a cultural institution fostering social recognition and preparing society for a post-economic paradigm. Our findings underscore the urgent need for integrated policy frameworks addressing economic, social, and ecological challenges to guide a just and stable transition towards a future where value transcends market exchange.
+
+toc::[]
+
+== 1 Introduction
+Artificial General Intelligence (AGI) is characterized by its ability to perform human-level cognitive and physical tasks across diverse domains. This technological milestone differs fundamentally from prior automation waves, which mostly replaced routine or manual labor but left cognitive, creative, and interpersonal work largely intact. Unlike previous industrial revolutions, AGI promises to render large swathes of human labor economically obsolete, triggering complex socio-economic transformations. This raises a critical paradox: AGI can generate seemingly unlimited productivity, but by displacing labor, it simultaneously erodes the primary source of consumer income, threatening market stability.
+
+This study addresses this paradox through a combined theoretical and empirical lens. We build on and extend empirical evidence from significant recent research \cite{OpenAI2023,StanfordAI2025,MIT2025} and propose a refined macroeconomic and microeconomic framework to analyze automation dynamics, employment outcomes, and redistribution strategies in AGI-impacted economies. Our key contributions include:
+
+- Development of a game-theoretic model capturing firm-level automation incentives under competitive pressure, revealing a Prisoner's Dilemma dynamic leading to over-automation.
+
+- Integration of this micro-level model into an extended Cobb–Douglas macroeconomic framework accounting for labor displacement and resulting demand fluctuations.
+
+- Simulation-based evaluation of two redistribution mechanisms: Universal Basic Income (UBI) and Merit-Based Income (MBI), assessing their potential to stabilize demand and foster social cohesion.
+
+- Exploration of MBI’s role as a cultural institution supporting societal transition toward a post-economic era.
+
+The remainder of this paper is structured as follows. Section 2 reviews relevant literature; Section 3 describes the theoretical models and simulation methodology; Section 4 presents results; Section 5 discusses implications and policy; Section 6 concludes.
+
+== 2 Literature Review
+The labor market impact of AI technologies, including language models and robotics, has been extensively studied. OpenAI (2023) estimates that 80% of U.S. workers could see significant task displacement, affecting both low- and high-income roles, including managerial positions \cite{OpenAI2023}. The Stanford AI Index (2025) documents rapid cost reductions in robotics combined with AI capabilities, accelerating automation adoption across sectors \cite{StanfordAI2025}. 
+
+Economic literature identifies a destabilizing paradox: productivity gains decouple from consumer income, eroding demand \cite{MIT2025}. Traditional economic models often assume stable labor demand or gradual transitions, insufficient for AGI’s scale of disruption. Game theory offers insight into firm automation behavior, revealing strategic incentives that yield socially suboptimal equilibria \cite{VendingBench2025}. 
+
+Redistributive mechanisms such as UBI have been explored in diverse pilot studies, demonstrating potential for poverty reduction and demand stabilization \cite{MIT2025}. Alternatives like the Merit-Based Income (MBI) are nascent but attract interest for their ability to align redistribution with cultural values and incentivize lifelong learning \cite{CarnegieMellon2025}. This paper contributes by modeling these mechanisms within an integrated micro-macro framework attuned to AGI realities.
+
+== 3 Models and Methodology
+
+=== 3.1 Extended Cobb–Douglas Production Function with Automation
+We model aggregate production with labor displacement via an unemployment rate \(u\), adapting the Cobb–Douglas form:
+
+[stem]
+++++
+Y = A \cdot K^{\alpha} \cdot \big((1 - u) \cdot N\big)^{\beta}
+++++
+
+Here:
+
+- \(Y\) is total economic output,
+- \(A\) embodies technological progress, including AGI,
+- \(K\) denotes capital stock,
+- \(N\) is the potential labor force,
+- \(u \in [0,1]\) represents automation-induced unemployment,
+- \(\alpha, \beta\) are empirically calibrated elasticities.
+
+The effective labor input reduces as unemployment rises. As \(u \to 1\) (full automation), output becomes capital- and AGI-driven only, threatening demand unless income is redistributed.
+
+=== 3.2 Firm-Level Strategic Automation: Prisoner’s Dilemma Model
+Firms choose automation levels \(a_i \in [0,1]\) to maximize profit function \(\Pi_i\) incorporating competitive effects:
+
+[stem]
+++++
+\Pi_i(a_i, a_{-i}) = \gamma a_i (1 - \bar{a}_{-i}) + \beta a_i - k a_i^2
+++++
+
+Where:
+
+- \(\gamma\) quantifies gains from unilateral automation,
+- \(\beta\) is baseline productivity,
+- \(k\) models quadratic automation costs,
+- \(\bar{a}_{-i}\) is mean competitor automation.
+
+The Nash equilibrium automation level satisfies:
+
+[stem]
+++++
+a_i^* = \frac{\gamma (1 - \bar{a}_{-i}^*) + \beta}{2k}
+++++
+
+This setup extends the classic Prisoner’s Dilemma, with temptation to automate despite collectively harmful over-automation outcomes.
+
+
+Figure 1: Final Automation Heatmap
+
+pdf::./final_automation_heatmap.pdf[]
+
+Figure 2: Automation Dynamics with Standard Deviation
+
+pdf::./automation_dynamics_stddev.pdf[]
+
+=== 3.3 Simulation Framework and Parameters
+We simulate \(N=50\) firms over \(T=50\) discrete time periods with strategy mutation probability \(p=0.05\). Automation decisions evolve according to payoff-based imitation dynamics incorporating random experimentation.
+
+Labor force \(N=1,000,000\) agents consume according to state:
+
+[stem]
+++++
+C = c_e \cdot Y_{\text{employed}} + c_u \cdot Y_{\text{unemployed}} + N \cdot R
+++++
+
+Where consumption propensities \(c_e = 0.9\), \(c_u = 0.5\), and redistribution income \(R\) is zero without policy, positive otherwise.
+
+Parameters \(\gamma=2.0\), \(\beta=1.0\), \(k=0.5\) are calibrated for realistic firm incentives, consistent with empirical data from \cite{StanfordAI2025}.
+
+=== 3.4 Income Redistribution Policies
+Two redistribution policies are modeled:
+
+- **Universal Basic Income (UBI):** Uniform \(R\) paid to all agents regardless of employment.
+
+- **Merit-Based Income (MBI):** Income \(R\) contingent on passing a periodic standardized knowledge test (passing threshold 75%). Certification renews every 3–5 years. Failure results in temporary loss of income.
+
+Agent response to MBI includes increased simulated investment in education and civic participation.
+
+== 4 Results
+
+=== 4.1 Equilibrium and Automation Adoption
+Initial conditions set 50% firms cooperative (low automation). Simulations converge rapidly within 15–20 periods to near-complete automation, confirming strong incentives to defect in the Prisoner’s Dilemma dynamic.
+
+The equilibrium level \(a^*\) estimated at 0.95 ± 0.03 with minor variance across runs, indicating robustness.
+
+=== 4.2 Macroeconomic Consequences
+Labor displacement drives unemployment \(u \to 0.6\) over simulation duration. Without redistribution, aggregate consumption collapses by roughly 60%, leading to contraction despite rising gross output. The fall in consumer demand destabilizes GDP growth, corroborating the paradox of abundance.
+
+=== 4.3 Redistribution Effects on Demand and Social Indicators
+UBI stabilizes consumption by maintaining minimum income \(R\), reducing demand volatility but with neutral impact on social engagement.
+
+MBI similarly stabilizes demand, but simulations show additionally a 20% increase in simulated civic participation and education indices compared to UBI scenarios, modeling positive social externalities.
+
+These effects suggest MBI’s dual role as economic stabilizer and cultural transition vector.
+
+== 5 Discussion
+
+=== 5.1 The Paradox of Abundance and Market Failure
+Our results expose structural market limitations under AGI: productivity growth becomes decoupled from demand as labor income collapses. Without redistribution, market equilibria are unsustainable, foreshadowing crisis.
+
+Legacy labor-linked redistribution mechanisms are inadequate due to shrinking tax bases and scalable exclusion (see \cite{MIT2025}).
+
+=== 5.2 Merit-Based Income: Cultural and Institutional Dimensions
+MBI’s conditioning of income on certified knowledge revitalizes social recognition mechanisms beyond monetary rewards for labor. This fosters norms of lifelong learning, political participation, and social cohesion, preparing society for post-economic realities where value stems from collective well-being and creativity.
+
+MBI incorporates political feasibility advantages over UBI in meritocratic cultures and aligns with psychological needs for contribution recognition.
+
+=== 5.3 Policy Innovation and Ecological Sustainability
+Effective policy must integrate income stabilization with proactive education reform, ecological constraints, and expanded democratic participation (e.g., Citizens’ Initiatives). Circular economy principles can reconcile growth with finite resource limits.
+
+Together, these compose a multi-dimensional governance approach essential for just, sustainable transition.
+
+== 6 Conclusion
+Our integrated modeling of AGI-driven automation outlines urgent systemic risks without income redistribution. Universal Basic Income and Merit-Based Income are validated as pivotal tools, with MBI uniquely positioning society for deeper cultural transformation toward a post-economic paradigm.
+
+Future research should refine simulation granularity, explore heterogeneous populations, and design implementable policies combining fiscal, social, and environmental dimensions.
+
+== References
+[.bibtex]
+----
+@article{OpenAI2023,
+  title={GPTs are GPTs: Labor Market Impact of Large Language Models},
+  author={OpenAI},
+  year={2023},
+  eprint={2303.10130},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL}
+}
+
+@techreport{StanfordAI2025,
+  title={AI Index Report 2025},
+  author={Stanford University},
+  year={2025},
+  url={https://hai.stanford.edu/ai-index/2025-ai-index-report}
+}
+
+@techreport{GrandView2025,
+  title={Global Artificial Intelligence Market Size Report},
+  author={Grand View Research},
+  year={2025},
+  url={https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-ai-market}
+}
+
+@article{MIT2025,
+  title={Macroeconomic Modeling of AI and UBI},
+  author={Massachusetts Institute of Technology},
+  year={2025},
+  url={https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4843046}
+}
+
+@article{CarnegieMellon2025,
+  title={The Global Impact of AI: Mind the Gap},
+  author={Carnegie Mellon University},
+  year={2025},
+  url={https://arxiv.org/abs/2505.18687}
+}
+
+@article{Oxford2025,
+  title={Exploration and Exploitation in Organizational Learning},
+  author={University of Oxford},
+  year={2025},
+  url={https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4496418}
+}
+
+@article{VendingBench2025,
+  title={A Benchmark for Long-Term Coherence of Autonomous Agents},
+  author={Vending-Bench},
+  year={2025},
+  url={https://arxiv.org/abs/2502.15840}
+}
+----

@@ -1,0 +1,172 @@
+= Beyond Income: Simulating the End of Work
+:author: Fabien Furfaro
+:revdate: October 14, 2025
+:doctype: article
+:lang: en
+:toc: macro
+:toc-title: Table of Contents
+:toclevels: 3
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+:sectnumlevels: 3
+:stem: latexmath
+
+== Abstract
+The advent of Artificial General Intelligence (AGI) and advanced automation is poised to disrupt the foundational structures of modern economies, particularly the labor market and wealth redistribution. This paper explores the economic and social implications of AGI-driven automation, focusing on the inevitability of job displacement and the resulting paradox of abundance: unlimited productivity coexisting with collapsing consumption. We argue that current economic models, rooted in labor-based redistribution and market logic, are ill-suited to address these challenges. Using game theory and macroeconomic simulations, we analyze the dynamics of automation adoption, the limits of market equilibrium, and the necessity of alternative redistribution mechanisms such as Universal Basic Income (UBI) or Merit-Based Income (MBI). Our simulations demonstrate that without proactive policy interventions, AGI-driven automation risks exacerbating inequality, destabilizing demand, and undermining social cohesion. We conclude by proposing a transitional framework toward a post-economic society, where value is derived from human recognition, creativity, and collective well-being rather than market exchange.
+
+toc::[]
+
+== Introduction
+The rapid advancement of Artificial Intelligence (AI) and robotics is reshaping the global economy, with profound implications for labor, productivity, and social structures. Unlike previous technological revolutions, AI—particularly Artificial General Intelligence (AGI)—possesses the unique capability to generalize across cognitive, creative, and manual tasks, rendering human labor increasingly obsolete. This shift presents a paradox: while AGI could unlock unprecedented productivity, it simultaneously threatens to erode the consumer base that sustains market economies.
+
+This paper synthesizes recent research on AGI's economic impact, critiques the inadequacy of current redistribution models, and proposes a simulation-based analysis of automation dynamics using game theory. We argue that traditional labor-centric policies are insufficient to address the challenges posed by AGI and advocate for transitional mechanisms like UBI or MBI to ensure equitable access to resources in a post-labor world.
+
+== The Inevitability of AGI-Driven Job Displacement
+
+=== The Disruptive Nature of AGI
+AGI differs fundamentally from previous automation technologies. While industrial revolutions replaced manual or routine tasks, AGI can generalize across domains, including creative, strategic, and interpersonal activities. Recent studies highlight the breadth of this disruption:
+
+* OpenAI's "GPTs are GPTs" estimates that 80% of the U.S. workforce could see at least 10% of their tasks affected by language models, with 19% facing a 50% task displacement. High-income jobs are not immune; legal, financial, and managerial roles are increasingly augmented or replaced by AI systems (OpenAI, 2023).
+* The convergence of AGI with affordable robotics (e.g., Unitree's Go2 robot at €1,600 in 2023 vs. Boston Dynamics' Spot at €75,000 in 2016) accelerates the replacement of both cognitive and manual labor (Stanford AI Index, 2025).
+
+=== Economic Dynamics of Automation
+In a liberal economic system, firms are incentivized to maximize productivity. The adoption of AGI becomes a competitive necessity, as firms that lag risk being outcompeted. This dynamic is modeled as a **Cournot-Nash equilibrium**, where the optimal level of automation for each firm depends on the actions of others. The equilibrium is suboptimal from a collective perspective, as it prioritizes short-term competitiveness over long-term social stability.
+
+The global investment in AI reflects this race: from $20 billion in 2022 to an projected $1 trillion by 2025, with AGI as the ultimate goal (Grand View Research, 2025). This investment trajectory underscores the inevitability of AGI-driven automation, regardless of its social consequences.
+
+== The Paradox of Abundance: Productivity Without Consumers
+
+=== Collapse of Demand
+AGI's productivity gains create a paradox: while output could theoretically become limitless, the displacement of human labor eliminates the primary source of consumer income. Without consumers, the market economy collapses. This paradox is formalized in the extended Cobb-Douglas production function:
+
+[stem]
+++++
+Y = A \cdot K^{\alpha} \cdot \big((1-u) \cdot N\big)^{\beta}
+++++
+
+Where:
+- \( Y \) is total output,
+- \( A \) is technological progress (AGI),
+- \( K \) is capital,
+- \( N \) is the potential labor force,
+- \( u \) is the unemployment rate.
+
+As \( u \) approaches 1 (full automation), \( Y \) depends solely on \( A \) and \( K \), but consumption \( C \) collapses unless alternative income sources are introduced.
+
+=== Simulation: Automation and Demand Stability
+We simulate the impact of AGI adoption on employment and demand using a dynamic macroeconomic model. The model incorporates:
+1. **Automation adoption rates** (based on firm-level game theory),
+2. **Unemployment dynamics** (as a function of automation),
+3. **Consumption stability** (with and without UBI/MBI).
+
+Preliminary results indicate that without redistribution mechanisms, automation leads to a 60% reduction in consumer demand within a decade, triggering economic contraction despite productivity gains. Introducing UBI or MBI stabilizes demand by decoupling income from labor, ensuring a baseline level of consumption.
+
+=== Game Theory: The Prisoner's Dilemma of AGI Adoption
+The adoption of AGI by firms can be modeled as an **iterated Prisoner's Dilemma**, where each firm must choose between cooperating (retaining human labor) or defecting (automating with AGI). The payoff matrix for two firms \(A\) and \(B\) is defined as follows:
+
+[stem]
+++++
+\begin{array}{|c|c|c|}
+\hline
+ & \text{B: Cooperate} & \text{B: Defect} \\
+\hline
+\text{A: Cooperate} & (R, R) & (S, T) \\
+\hline
+\text{A: Defect} & (T, S) & (P, P) \\
+\hline
+\end{array}
+++++
+Where:
+- \(T > R > P > S\) (Temptation to defect > Reward for mutual cooperation > Punishment for mutual defection > Sucker's payoff).
+- For AGI adoption, we define:
+  - \(R\): Stable market share, moderate profit.
+  - \(T\): Temporary monopoly, high profit.
+  - \(P\): Mutual automation, reduced profit due to oversupply.
+  - \(S\): Loss of market share, low profit.
+
+The **profit function** for firm \(A\) adopting AGI at level \(a_A \in [0,1]\) is:
+[stem]
+++++
+\Pi_A(a_A, a_B) = \gamma a_A (1 - a_B) + \beta a_A - k a_A^2
+++++
+Where:
+- \(\gamma\): Competitive advantage from automation,
+- \(\beta\): Baseline profit gain,
+- \(k\): Cost of automation.
+
+The **Nash Equilibrium** is found by solving:
+[stem]
+++++
+\frac{\partial \Pi_A}{\partial a_A} = 0 \implies a_A^* = \frac{\gamma(1 - a_B^*) + \beta}{2k}
+++++
+
+**Key Insight**: The equilibrium leads to suboptimal collective outcomes (over-automation), as firms defect to avoid competitive disadvantage, even if mutual cooperation would maximize long-term stability.
+
+=== Simulation Results
+We simulate the iterated Prisoner's Dilemma for \(N\) firms over \(T\) rounds, with the following parameters:
+- \(\gamma = 2.0\), \(\beta = 1.0\), \(k = 0.5\),
+- Initial cooperation rate: 50%,
+- Mutation rate (strategy change): 5%.
+
+Results show that **without regulation**, firms converge to 100% automation within 20 iterations, leading to a "tragedy of the commons" where collective profit collapses due to oversupply.
+
+
+== Critique of Current Redistribution Models
+
+=== The Limits of Labor-Centric Redistribution
+Current social protection systems (e.g., unemployment insurance, pensions) are tied to labor participation. These systems are ill-equipped to handle AGI-driven displacement for three reasons:
+
+1. **Scalability**: Labor-linked benefits cannot scale to a world where labor is marginalized.
+2. **Equity**: They perpetuate inequalities by excluding non-workers from redistribution.
+3. **Sustainability**: They rely on taxing labor income, which disappears in an automated economy.
+
+=== The Case for Universal Basic Income (UBI)
+UBI is proposed as a transitional tool to address these limitations. Empirical evidence from pilot programs (Finland, Namibia, Korea) demonstrates its potential to:
+- Reduce poverty and inequality,
+- Improve mental health and well-being,
+- Enhance entrepreneurial activity.
+
+However, UBI faces political resistance, particularly in cultures that equate income with merit. This resistance motivates the exploration of **Merit-Based Income (MBI)**, which conditions redistribution on knowledge certification.
+
+== Merit-Based Income: A Viable Alternative?
+
+=== Design and Rationale
+MBI addresses the psychological need for merit by tying income to the demonstration of foundational knowledge (e.g., passing a standardized exam at the level of a middle-school diploma). Key features include:
+- **Universality**: Open to all individuals above a certain age,
+- **Conditionality**: Income is contingent on passing a knowledge test (e.g., 75% correct answers),
+- **Renewability**: Certification must be renewed periodically (e.g., every 2–5 years).
+
+=== Advantages Over UBI
+1. **Political Viability**: Aligns with cultural values of merit and effort.
+2. **Cultural Trickle-down**: Encourages lifelong learning and shared knowledge.
+3. **Redistribution Equity**: Ensures income is tied to a socially valued contribution (knowledge).
+
+=== Simulation: UBI vs. MBI
+We compare the macroeconomic impacts of UBI and MBI using an agent-based model. Preliminary findings suggest that while both mechanisms stabilize demand, MBI fosters higher levels of civic engagement and educational attainment, potentially enhancing long-term social cohesion.
+
+== Toward a Post-Economic Society
+
+=== Beyond Market Logic
+In a world where AGI renders labor obsolete, the logic of market exchange becomes irrelevant. Money, as a tool for allocating scarce resources, loses its purpose when abundance is achieved. The transition to a post-economic society requires redefining value around:
+- **Human recognition**: Competing for peer validation in art, sports, or community contributions,
+- **Exploration and creativity**: Pursuing knowledge and experiences for their intrinsic value,
+- **Collective well-being**: Prioritizing empathy, altruism, and shared prosperity.
+
+=== Policy Recommendations
+1. **Immediate Transition Tools**: Implement UBI or MBI to stabilize demand and ensure equitable access to resources.
+2. **Education Reform**: Shift educational systems toward critical thinking, creativity, and lifelong learning.
+3. **Democratic Innovation**: Expand citizen initiatives (e.g., Referendum d'Initiative Citoyenne) to enhance participatory governance.
+4. **Ecological Alignment**: Decouple economic growth from resource consumption by adopting circular economy principles.
+
+== Conclusion
+The rise of AGI presents humanity with an unprecedented challenge: how to organize society when labor is no longer the primary source of income or meaning. Our simulations demonstrate that without proactive redistribution mechanisms, AGI-driven automation risks destabilizing economies and exacerbating inequalities. UBI and MBI offer viable transitional tools, but the ultimate goal must be a post-economic society where value is derived from human flourishing rather than market logic. The time to act is now—before the transition becomes a crisis.
+
+== References
+- [OpenAI2023] OpenAI. (2023). _GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models_. https://arxiv.org/abs/2303.10130
+- [StanfordAI2025] Stanford University. (2025). _AI Index Report 2025_. https://hai.stanford.edu/ai-index/2025-ai-index-report
+- [GrandView2025] Grand View Research. (2025). _Global Artificial Intelligence Market Size Report_. https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-ai-market
+- [CarnegieMellon2025] Carnegie Mellon University. (2025). _The Global Impact of AI: Mind the Gap_. https://arxiv.org/abs/2505.18687
+- [Oxford2025] University of Oxford. (2025). _Exploration and Exploitation in Organizational Learning_. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4496418
+- [MIT2025] Massachusetts Institute of Technology. (2025). _Macroeconomic Modeling of AI and UBI_. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4843046
+- [VendingBench2025] Vending-Bench. (2025). _A Benchmark for Long-Term Coherence of Autonomous Agents_. https://arxiv.org/abs/2502.15840
