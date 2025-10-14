@@ -2,7 +2,7 @@
 
 ## Prérequis
 - Installer Asciidoctor : https://asciidoctor.org/
-- Installer asciidoctor-latex (ou équivalent pour LaTeX backend)
+- Installer asciidoctor-latex (via `gem install asciidoctor-latex --pre`)
 - Installer une distribution LaTeX complète (TeX Live, MikTeX, etc.)
 - Installer `latexmk` pour compilation automatique recommandée
 
@@ -12,6 +12,7 @@
 ```
 asciidoctor-latex your_article.adoc
 ```
+
 Cela produit `your_article.tex`.
 
 2. Compiler le fichier LaTeX en PDF :

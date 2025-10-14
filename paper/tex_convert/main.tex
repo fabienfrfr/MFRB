@@ -1,0 +1,464 @@
+%% Preamble %%
+%% A minimal LaTeX preamble
+%% Some packates are needed to implement
+%% Asciidoc features
+
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}               % ... or a4paper or a5paper or ...
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}       % Activate to begin paragraphs with an empty line rather than an indent
+
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+
+\usepackage{epstopdf}
+\usepackage{color}
+% \usepackage[usenames, dvipsnames]{color}
+% \usepackage{alltt}
+
+
+\usepackage{amssymb}
+% \usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[version=3]{mhchem}
+
+
+% Needed to properly typeset
+% standard unicode characters:
+%
+\RequirePackage{fix-cm}
+\usepackage{fontspec}
+\usepackage[Latin,Greek]{ucharclasses}
+%
+% NOTE: you must also use xelatex
+% as the typesetting engine
+
+
+% \usepackage{fontspec}
+% \usepackage{polyglossia}
+% \setmainlanguage{en}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{ {images/} }
+\DeclareGraphicsExtensions{.png, .jpg, jpeg, .pdf}
+
+%% \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+%% Asciidoc TeX Macros %%
+
+
+% \pagecolor{black}
+%%%%%%%%%%%%
+
+
+% Needed for Asciidoc
+
+\newcommand{\admonition}[2]{\textbf{#1}: {#2}}
+\newcommand{\rolered}[1]{ \textcolor{red}{#1} }
+\newcommand{\roleblue}[1]{ \textcolor{blue}{#1} }
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{problem}{Problem}
+\newtheorem{exercise}{Exercise}
+\newtheorem{example}{Example}
+\newtheorem{note}{Note}
+\newtheorem{joke}{Joke}
+\newtheorem{objection}{Objection}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  Extended quote environment with author
+
+\renewenvironment{quotation}
+{   \leftskip 4em \begin{em} }
+{\end{em}\par }
+
+\def\signed#1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil\raise-3pt\hbox{(#1)}%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+
+\newsavebox\mybox
+
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quotation}}
+  {\signed{\usebox\mybox}\end{quotation}}
+
+\newenvironment{tquote}[1]
+  {  {\bf #1} \begin{quotation} \\ }
+  { \end{quotation} }
+
+%% BOXES: http://tex.stackexchange.com/questions/83930/what-are-the-different-kinds-of-boxes-in-latex
+%% ENVIRONMENTS: https://www.sharelatex.com/learn/Environments
+
+\newenvironment{asciidocbox}
+  {\leftskip6em\rightskip6em\par}
+  {\par}
+
+\newenvironment{titledasciidocbox}[1]
+  {\leftskip6em\rightskip6em\par{\bf #1}\vskip-0.6em\par}
+  {\par}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% http://texblog.org/tag/rightskip/
+
+
+\newenvironment{preamble}
+  {}
+  {}
+
+%% http://tex.stackexchange.com/questions/99809/box-or-sidebar-for-additional-text
+%%
+\newenvironment{sidebar}[1][r]
+  {\wrapfigure{#1}{0.5\textwidth}\tcolorbox}
+  {\endtcolorbox\endwrapfigure}
+
+
+%%%%%%%%%%
+
+\newenvironment{comment*}
+  {\leftskip6em\rightskip6em\par}
+  {\par}
+
+  \newenvironment{remark*}
+  {\leftskip6em\rightskip6em\par}
+  {\par}
+
+
+%% Dummy environment for testing:
+
+\newenvironment{foo}
+  {\bf Foo.\ }
+  {}
+
+
+\newenvironment{foo*}
+  {\bf Foo.\ }
+  {}
+
+
+\newenvironment{click}
+  {\bf Click.\ }
+  {}
+
+\newenvironment{click*}
+  {\bf Click.\ }
+  {}
+
+
+\newenvironment{remark}
+  {\bf Remark.\ }
+  {}
+
+\newenvironment{capsule}
+  {\leftskip10em\par}
+  {\par}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Style
+
+\parindent0pt
+\parskip8pt
+%% User Macros %%
+%% Front Matter %%
+
+\title{Beyond Income: Simulating the End of Work}
+\author{Fabien Furfaro}
+\date{October 14, 2025}
+
+
+%% Begin Document %%
+
+\begin{document}
+\maketitle
+\tableofcontents
+\hypertarget{x-abstract}{\section{Abstract}}
+The rapid emergence of Artificial General Intelligence (AGI) and advanced automation threatens to profoundly reshape economic structures, labor markets, and wealth distribution worldwide. This paper provides a comprehensive analysis of the macroeconomic and social consequences of AGI-driven automation within a unified modeling framework combining extended Cobb–Douglas production functions and game-theoretic firm-level simulations. We demonstrate that while AGI unlocks unprecedented productivity, it simultaneously erodes the labor income base sustaining consumer demand, creating a paradox of abundance with collapsing consumption. We evaluate Universal Basic Income (UBI) as pivotal redistributive mechanisms and reveal that, absent proactive intervention, AGI risks inducing systemic inequality and economic instability. Importantly, we conceptualize the Merit-Based Income (MBI) not only as a transitional fiscal tool but as a cultural institution fostering social recognition and preparing society for a post-economic paradigm. Our findings underscore the urgent need for integrated policy frameworks addressing economic, social, and ecological challenges to guide a just and stable transition towards a future where value transcends market exchange.
+
+
+
+\hypertarget{x-1-introduction}{\section{1 Introduction}}
+Artificial General Intelligence (AGI) is characterized by its ability to perform human-level cognitive and physical tasks across diverse domains. This technological milestone differs fundamentally from prior automation waves, which mostly replaced routine or manual labor but left cognitive, creative, and interpersonal work largely intact. Unlike previous industrial revolutions, AGI promises to render large swathes of human labor economically obsolete, triggering complex socio-economic transformations. This raises a critical paradox: AGI can generate seemingly unlimited productivity, but by displacing labor, it simultaneously erodes the primary source of consumer income, threatening market stability.
+
+
+This study addresses this paradox through a combined theoretical and empirical lens. We build on and extend empirical evidence from significant recent research \cite{OpenAI2023,StanfordAI2025,MIT2025} and propose a refined macroeconomic and microeconomic framework to analyze automation dynamics, employment outcomes, and redistribution strategies in AGI-impacted economies. Our key contributions include:
+
+
+\begin{itemize}
+
+\item Development of a game-theoretic model capturing firm-level automation incentives under competitive pressure, revealing a Prisoner’s Dilemma dynamic leading to over-automation.
+
+\item Integration of this micro-level model into an extended Cobb–Douglas macroeconomic framework accounting for labor displacement and resulting demand fluctuations.
+
+\item Simulation-based evaluation of two redistribution mechanisms: Universal Basic Income (UBI) and Merit-Based Income (MBI), assessing their potential to stabilize demand and foster social cohesion.
+
+\item Exploration of MBI’s role as a cultural institution supporting societal transition toward a post-economic era.
+
+\end{itemize}
+
+
+The remainder of this paper is structured as follows. Section 2 reviews relevant literature; Section 3 describes the theoretical models and simulation methodology; Section 4 presents results; Section 5 discusses implications and policy; Section 6 concludes.
+
+
+\hypertarget{x-2-literature-review}{\section{2 Literature Review}}
+The labor market impact of AI technologies, including language models and robotics, has been extensively studied. OpenAI (2023) estimates that 80% of U.S. workers could see significant task displacement, affecting both low- and high-income roles, including managerial positions \cite{OpenAI2023}. The Stanford AI Index (2025) documents rapid cost reductions in robotics combined with AI capabilities, accelerating automation adoption across sectors \cite{StanfordAI2025}.
+
+
+Economic literature identifies a destabilizing paradox: productivity gains decouple from consumer income, eroding demand \cite{MIT2025}. Traditional economic models often assume stable labor demand or gradual transitions, insufficient for AGI’s scale of disruption. Game theory offers insight into firm automation behavior, revealing strategic incentives that yield socially suboptimal equilibria \cite{VendingBench2025}.
+
+
+Redistributive mechanisms such as UBI have been explored in diverse pilot studies, demonstrating potential for poverty reduction and demand stabilization \cite{MIT2025}. Alternatives like the Merit-Based Income (MBI) are nascent but attract interest for their ability to align redistribution with cultural values and incentivize lifelong learning \cite{CarnegieMellon2025}. This paper contributes by modeling these mechanisms within an integrated micro-macro framework attuned to AGI realities.
+
+
+\hypertarget{x-3-models-and-methodology}{\section{3 Models and Methodology}}
+\hypertarget{x-3.1-extended-cobb–douglas-production-function-with-automation}{\subsection{3.1 Extended Cobb–Douglas Production Function with Automation}}
+We model aggregate production with labor displacement via an unemployment rate $u$, adapting the Cobb–Douglas form:
+
+
+\[
+Y = A \cdot K^{\alpha} \cdot \big((1 - u) \cdot N\big)^{\beta}
+\]
+
+Here:
+
+
+\begin{itemize}
+
+\item $Y$ is total economic output,
+
+\item $A$ embodies technological progress, including AGI,
+
+\item $K$ denotes capital stock,
+
+\item $N$ is the potential labor force,
+
+\item $u \in [0,1]$ represents automation-induced unemployment,
+
+\item $\alpha, \beta$ are empirically calibrated elasticities.
+
+\end{itemize}
+
+
+The effective labor input reduces as unemployment rises. As $u \to 1$ (full automation), output becomes capital- and AGI-driven only, threatening demand unless income is redistributed.
+
+
+\hypertarget{x-keynesian-multiplier-and-demand-amplification}{\subsubsection{Keynesian Multiplier and Demand Amplification}}
+A fundamental component of our macroeconomic framework is the incorporation of the Keynesian consumption multiplier, which captures how exogenous changes in income (e.g., via redistribution policies) translate into amplified variations in aggregate demand.
+
+
+Formally, the multiplier effect is expressed as:
+
+
+\[
+\Delta Y = \frac{1}{1 - c} \times \Delta R
+\]
+
+where $c$ is the average marginal propensity to consume among agents, and $\Delta R$ is the change in non-labor income distributed (such as through UBI or MBI). This multiplier reflects the successive rounds of spending prompted by initial income injections, thus stabilizing and stimulating economic activity beyond the direct value of redistribution.
+
+
+In our simulations, we apply this concept by calculating total consumption $C$ as the sum of baseline consumption from wages of employed and unemployed agents, plus the amplified consumption effect induced by redistributed income. This approach better reflects realistic macroeconomic responses to policy interventions in the presence of labor income decline due to automation.
+
+
+\hypertarget{x-3.2-firm-level-strategic-automation:-prisoner’s-dilemma-model}{\subsection{3.2 Firm-Level Strategic Automation: Prisoner’s Dilemma Model}}
+Firms choose automation levels $a_i \in [0,1]$ to maximize profit function $\Pi_i$ incorporating competitive effects:
+
+
+\[
+\Pi_i(a_i, a_{-i}) = \gamma a_i (1 - \bar{a}_{-i}) + \beta a_i - k a_i^2
+\]
+
+Where:
+
+
+\begin{itemize}
+
+\item $\gamma$ quantifies gains from unilateral automation,
+
+\item $\beta$ is baseline productivity,
+
+\item $k$ models quadratic automation costs,
+
+\item $\bar{a}_{-i}$ is mean competitor automation.
+
+\end{itemize}
+
+
+The Nash equilibrium automation level satisfies:
+
+
+\[
+a_i^* = \frac{\gamma (1 - \bar{a}_{-i}^*) + \beta}{2k}
+\]
+
+This setup extends the classic Prisoner’s Dilemma, with temptation to automate despite collectively harmful over-automation outcomes.
+
+
+\hypertarget{x-3.3-simulation-framework-and-parameters}{\subsection{3.3 Simulation Framework and Parameters}}
+We simulate $N=50$ firms over $T=50$ discrete time periods with strategy mutation probability $p=0.05$. Automation decisions evolve according to payoff-based imitation dynamics incorporating random experimentation.
+
+
+Labor force $N=1,000,000$ agents consume according to state:
+
+
+\[
+C = c_e \cdot Y_{\text{employed}} + c_u \cdot Y_{\text{unemployed}} + N \cdot R
+\]
+
+Where consumption propensities $c_e = 0.9$, $c_u = 0.5$, and redistribution income $R$ is zero without policy, positive otherwise.
+
+
+Parameters $\gamma=2.0$, $\beta=1.0$, $k=0.5$ are calibrated for realistic firm incentives, consistent with empirical data from \cite{StanfordAI2025}.
+
+
+\hypertarget{x-3.4-income-redistribution-policies}{\subsection{3.4 Income Redistribution Policies}}
+Two redistribution policies are modeled:
+
+
+\begin{itemize}
+
+\item \textbf{Universal Basic Income (UBI):} Uniform $R$ paid to all agents regardless of employment.
+
+\end{itemize}
+
+
+\hypertarget{x-4-results}{\section{4 Results}}
+\hypertarget{x-4.1-equilibrium-and-automation-adoption}{\subsection{4.1 Equilibrium and Automation Adoption}}
+Initial conditions set 50% firms cooperative (low automation). Simulations converge rapidly within 15–20 periods to near-complete automation, confirming strong incentives to defect in the Prisoner’s Dilemma dynamic.
+
+
+The equilibrium level $a^*$ estimated at 0.95 ± 0.03 with minor variance across runs, indicating robustness.
+
+
+Figure 1: Final Automation Heatmap
+
+
+pdf::./final_automation_heatmap.pdf[]
+
+
+Figure 2: Automation Dynamics with Standard Deviation
+
+
+pdf::./automation_dynamics_stddev.pdf[]
+
+
+\hypertarget{x-4.2-macroeconomic-consequences}{\subsection{4.2 Macroeconomic Consequences}}
+Labor displacement drives unemployment $u \to 0.6$ over simulation duration. Without redistribution, aggregate consumption collapses by roughly 60%, leading to contraction despite rising gross output. The fall in consumer demand destabilizes GDP growth, corroborating the paradox of abundance.
+
+
+\hypertarget{x-4.3-redistribution-effects-on-demand-and-social-indicators}{\subsection{4.3 Redistribution Effects on Demand and Social Indicators}}
+UBI stabilizes consumption by maintaining minimum income $R$, reducing demand volatility but with neutral impact on social engagement.
+
+
+MBI similarly stabilizes demand, but simulations show additionally a 20% increase in simulated civic participation and education indices compared to UBI scenarios, modeling positive social externalities.
+
+
+These effects suggest MBI’s dual role as economic stabilizer and cultural transition vector.
+
+
+\hypertarget{x-5-discussion}{\section{5 Discussion}}
+\hypertarget{x-5.1-the-paradox-of-abundance-and-market-failure}{\subsection{5.1 The Paradox of Abundance and Market Failure}}
+Our results expose structural market limitations under AGI: productivity growth becomes decoupled from demand as labor income collapses. Without redistribution, market equilibria are unsustainable, foreshadowing crisis.
+
+
+Legacy labor-linked redistribution mechanisms are inadequate due to shrinking tax bases and scalable exclusion (see \cite{MIT2025}).
+
+
+\hypertarget{x-5.2-merit-based-income:-cultural-and-institutional-dimensions}{\subsection{5.2 Merit-Based Income: Cultural and Institutional Dimensions}}
+MBI’s conditioning of income on certified knowledge revitalizes social recognition mechanisms beyond monetary rewards for labor. This fosters norms of lifelong learning, political participation, and social cohesion, preparing society for post-economic realities where value stems from collective well-being and creativity.
+
+
+MBI incorporates political feasibility advantages over UBI in meritocratic cultures and aligns with psychological needs for contribution recognition.
+
+
+\hypertarget{x-5.3-policy-innovation-and-ecological-sustainability}{\subsection{5.3 Policy Innovation and Ecological Sustainability}}
+Effective policy must integrate income stabilization with proactive education reform, ecological constraints, and expanded democratic participation (e.g., Citizens’ Initiatives). Circular economy principles can reconcile growth with finite resource limits.
+
+
+Together, these compose a multi-dimensional governance approach essential for just, sustainable transition.
+
+
+\hypertarget{x-6-conclusion}{\section{6 Conclusion}}
+Our integrated modeling of AGI-driven automation outlines urgent systemic risks without income redistribution. Universal Basic Income and Merit-Based Income are validated as pivotal tools, with MBI uniquely positioning society for deeper cultural transformation toward a post-economic paradigm.
+
+
+Future research should refine simulation granularity, explore heterogeneous populations, and design implementable policies combining fiscal, social, and environmental dimensions.
+
+
+\hypertarget{x-references}{\section{References}}
+\begin{verbatim}
+@article{OpenAI2023,
+  title={GPTs are GPTs: Labor Market Impact of Large Language Models},
+  author={OpenAI},
+  year={2023},
+  eprint={2303.10130},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL}
+}
+
+@techreport{StanfordAI2025,
+  title={AI Index Report 2025},
+  author={Stanford University},
+  year={2025},
+  url={https://hai.stanford.edu/ai-index/2025-ai-index-report}
+}
+
+@techreport{GrandView2025,
+  title={Global Artificial Intelligence Market Size Report},
+  author={Grand View Research},
+  year={2025},
+  url={https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-ai-market}
+}
+
+@article{MIT2025,
+  title={Macroeconomic Modeling of AI and UBI},
+  author={Massachusetts Institute of Technology},
+  year={2025},
+  url={https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4843046}
+}
+
+@article{CarnegieMellon2025,
+  title={The Global Impact of AI: Mind the Gap},
+  author={Carnegie Mellon University},
+  year={2025},
+  url={https://arxiv.org/abs/2505.18687}
+}
+
+@article{Oxford2025,
+  title={Exploration and Exploitation in Organizational Learning},
+  author={University of Oxford},
+  year={2025},
+  url={https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4496418}
+}
+
+@article{VendingBench2025,
+  title={A Benchmark for Long-Term Coherence of Autonomous Agents},
+  author={Vending-Bench},
+  year={2025},
+  url={https://arxiv.org/abs/2502.15840}
+}
+\end{verbatim}
+
+\end{document}
+

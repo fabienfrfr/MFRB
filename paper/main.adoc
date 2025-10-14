@@ -12,7 +12,7 @@
 :icons: font
 
 == Abstract
-The rapid emergence of Artificial General Intelligence (AGI) and advanced automation threatens to profoundly reshape economic structures, labor markets, and wealth distribution worldwide. This paper provides a comprehensive analysis of the macroeconomic and social consequences of AGI-driven automation within a unified modeling framework combining extended Cobb–Douglas production functions and game-theoretic firm-level simulations. We demonstrate that while AGI unlocks unprecedented productivity, it simultaneously erodes the labor income base sustaining consumer demand, creating a paradox of abundance with collapsing consumption. We evaluate Universal Basic Income (UBI) and Merit-Based Income (MBI) as pivotal redistributive mechanisms and reveal that, absent proactive intervention, AGI risks inducing systemic inequality and economic instability. Importantly, we conceptualize the MBI not only as a transitional fiscal tool but as a cultural institution fostering social recognition and preparing society for a post-economic paradigm. Our findings underscore the urgent need for integrated policy frameworks addressing economic, social, and ecological challenges to guide a just and stable transition towards a future where value transcends market exchange.
+The rapid emergence of Artificial General Intelligence (AGI) and advanced automation threatens to profoundly reshape economic structures, labor markets, and wealth distribution worldwide. This paper provides a comprehensive analysis of the macroeconomic and social consequences of AGI-driven automation within a unified modeling framework combining extended Cobb–Douglas production functions and game-theoretic firm-level simulations. We show that while AGI unlocks unprecedented productivity, it simultaneously erodes the labor income base sustaining consumer demand, creating a paradox of abundance with collapsing consumption. We evaluate Universal Basic Income (UBI) as pivotal redistributive mechanisms and reveal that, absent proactive intervention, AGI risks inducing systemic inequality and economic instability. Importantly, we conceptualize the Merit-Based Income (MBI) not only as a transitional fiscal tool but as a cultural institution fostering social recognition and preparing society for a post-economic paradigm. Our findings underscore the urgent need for integrated policy frameworks addressing economic, social, and ecological challenges to guide a just and stable transition towards a future where value transcends market exchange.
 
 toc::[]
 
@@ -36,7 +36,7 @@ The labor market impact of AI technologies, including language models and roboti
 
 Economic literature identifies a destabilizing paradox: productivity gains decouple from consumer income, eroding demand \cite{MIT2025}. Traditional economic models often assume stable labor demand or gradual transitions, insufficient for AGI’s scale of disruption. Game theory offers insight into firm automation behavior, revealing strategic incentives that yield socially suboptimal equilibria \cite{VendingBench2025}. 
 
-Redistributive mechanisms such as UBI have been explored in diverse pilot studies, demonstrating potential for poverty reduction and demand stabilization \cite{MIT2025}. Alternatives like the Merit-Based Income (MBI) are nascent but attract interest for their ability to align redistribution with cultural values and incentivize lifelong learning \cite{CarnegieMellon2025}. This paper contributes by modeling these mechanisms within an integrated micro-macro framework attuned to AGI realities.
+Redistributive mechanisms such as UBI have been explored in diverse pilot studies, showing potential for poverty reduction and demand stabilization \cite{MIT2025}. Alternatives like the Merit-Based Income (MBI) are nascent but attract interest for their ability to align redistribution with cultural values and incentivize lifelong learning \cite{CarnegieMellon2025}. This paper contributes by modeling these mechanisms within an integrated micro-macro framework attuned to AGI realities.
 
 == 3 Models and Methodology
 
@@ -101,14 +101,6 @@ a_i^* = \frac{\gamma (1 - \bar{a}_{-i}^*) + \beta}{2k}
 This setup extends the classic Prisoner’s Dilemma, with temptation to automate despite collectively harmful over-automation outcomes.
 
 
-Figure 1: Final Automation Heatmap
-
-pdf::./final_automation_heatmap.pdf[]
-
-Figure 2: Automation Dynamics with Standard Deviation
-
-pdf::./automation_dynamics_stddev.pdf[]
-
 === 3.3 Simulation Framework and Parameters
 We simulate \(N=50\) firms over \(T=50\) discrete time periods with strategy mutation probability \(p=0.05\). Automation decisions evolve according to payoff-based imitation dynamics incorporating random experimentation.
 
@@ -128,16 +120,20 @@ Two redistribution policies are modeled:
 
 - **Universal Basic Income (UBI):** Uniform \(R\) paid to all agents regardless of employment.
 
-- **Merit-Based Income (MBI):** Income \(R\) contingent on passing a periodic standardized knowledge test (passing threshold 75%). Certification renews every 3–5 years. Failure results in temporary loss of income.
-
-Agent response to MBI includes increased simulated investment in education and civic participation.
-
 == 4 Results
 
 === 4.1 Equilibrium and Automation Adoption
 Initial conditions set 50% firms cooperative (low automation). Simulations converge rapidly within 15–20 periods to near-complete automation, confirming strong incentives to defect in the Prisoner’s Dilemma dynamic.
 
 The equilibrium level \(a^*\) estimated at 0.95 ± 0.03 with minor variance across runs, indicating robustness.
+
+Figure 1: Final Automation Heatmap
+
+pdf::./final_automation_heatmap.pdf[]
+
+Figure 2: Automation Dynamics with Standard Deviation
+
+pdf::./automation_dynamics_stddev.pdf[]
 
 === 4.2 Macroeconomic Consequences
 Labor displacement drives unemployment \(u \to 0.6\) over simulation duration. Without redistribution, aggregate consumption collapses by roughly 60%, leading to contraction despite rising gross output. The fall in consumer demand destabilizes GDP growth, corroborating the paradox of abundance.
