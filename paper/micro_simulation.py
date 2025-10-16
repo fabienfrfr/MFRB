@@ -5,7 +5,7 @@ import seaborn as sns
 
 # --- Paramètres ---
 N_firms = 10
-T = 100
+T = 1000
 beta = 1.0
 mutation_rate = 0.05
 runs_per_setting = 10
