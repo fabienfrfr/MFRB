@@ -15,6 +15,7 @@ extract/projet_complet.md
 
 *.log
 *.out
+*.toc
 *.fls
 *.aux
 *.synctex.gz
