@@ -13,9 +13,18 @@ gammas = np.array([0.5, 1, 2, 3])  # Competitive advantage
 ks = np.linspace(0.2, 2.0, 4)  # Cost of automation
 
 
-# --- Corrected Profit Function (without problematic demand term) ---
+# --- Corrected Profit Function ---
 def profit(a_i, a_j, gamma, beta, k):
     return gamma * a_i * (1 - a_j) + beta * a_i - k * a_i**2
+
+
+# --- Analytical Solution Function ---
+def analytical_convergence(gamma, k, beta=1.0, epsilon=0.1, T=1000, a0=0.1):
+    """Calculate analytical convergence path in continuous time."""
+    a_star = (gamma + beta) / (2 * k + gamma)
+    t = np.arange(T)
+    a_t = a0 + (a_star - a0) * np.exp(-epsilon * t)
+    return t, a_t, a_star
 
 
 # --- Simulation ---
@@ -28,7 +37,6 @@ def simulate(gamma, k):
         for i in range(N_firms):
             a_j = np.mean(np.delete(automation_levels, i))
             profits[i] = profit(automation_levels[i], a_j, gamma, beta, k)
-
         # Update automation levels via imitation and mutation
         for i in range(N_firms):
             j = np.random.choice(np.delete(np.arange(N_firms), i))
@@ -99,24 +107,58 @@ ax1.set_title(f"Final Automation Level (mean over {runs_per_setting} runs)")
 ax1.set_xlabel(r"$\gamma$ (Competitive Advantage)")
 ax1.set_ylabel(r"$k$ (Cost of Automation)")
 
-# Dynamics
+# Dynamics with analytical curves
+colors = plt.cm.viridis(np.linspace(0, 1, len(gammas) * len(ks)))
+color_index = 0
 for (gamma, k), group in stats.groupby(["gamma", "k"]):
-    ax2.plot(group["round"], group["mean"], label=f"γ={gamma:.2f}, k={k:.2f}")
+    # Simulation results
+    ax2.plot(
+        group["round"],
+        group["mean"],
+        color=colors[color_index],
+        label=f"γ={gamma:.1f}, k={k:.1f} (Sim.)",
+    )
+
     ax2.fill_between(
         group["round"],
         group["mean"] - group["std"] / 2,
         group["mean"] + group["std"] / 2,
-        alpha=0.2,
+        color=colors[color_index],
+        alpha=0.1,
     )
-ax2.set_xlabel("Round")
+
+    # Analytical solution
+    t_analytical, a_analytical, a_star = analytical_convergence(
+        gamma, k, epsilon=0.1, T=T, a0=0.1
+    )
+    ax2.plot(
+        t_analytical,
+        a_analytical,
+        "--",
+        color=colors[color_index],
+        label=f"γ={gamma:.1f}, k={k:.1f} (Analyt.)" if color_index == 0 else "",
+    )
+
+    color_index += 1
+
+ax2.set_xlabel("Iteration (Quarterly Periods)")
 ax2.set_ylabel("Average Automation Level")
-ax2.set_title(f"Automation Dynamics (mean ± standard deviation)")
+ax2.set_title(f"Automation Dynamics: Simulation vs. Analytical")
 ax2.legend(loc="center left", bbox_to_anchor=(1, 0.5), fontsize="small")
 
+
+# Add time axis in years
+def iteration_to_year(iteration):
+    return iteration / 4  # 4 iterations = 1 year
+
+
+secax = ax2.secondary_xaxis("top", functions=(iteration_to_year, lambda x: x * 4))
+secax.set_xlabel("Time (Years)", labelpad=10)
+
 plt.tight_layout()
-plt.savefig("combined_automation_results.pdf")
+plt.savefig("combined_automation_results.pdf", dpi=300, bbox_inches="tight")
 plt.close()
 
 print(
-    "\nSimulations completed. Combined plot saved as 'combined_automation_results.pdf'."
+    "\nSimulations completed. Combined plot with analytical curves saved as 'combined_automation_results_with_analytical.pdf'."
 )

@@ -58,8 +58,8 @@ The model explores how varying competitive pressures, baseline automation gains,
 
 These dynamics highlight potential risks of wage-based demand collapse and challenge the sustainability of traditional labor markets in an AGI-driven economy. The findings also point to possible policy responses, such as automation taxation or universal basic income mechanisms funded by AI-generated rents, to mitigate adverse economic and social consequences.
 \end{abstract}
-    
-    
+
+
 \section{Introduction}
 The rapid advancement of Artificial General Intelligence (AGI) is poised to reshape labor markets by automating cognitive and physical tasks at declining marginal costs \cite{acemoglu2025simple,goertzel2014artificial}. This transformation carries significant economic implications, including potential productivity gains and labor displacement risks. Global disparities in AI adoption may exacerbate inequality through uneven labor market impacts, particularly in regions where worker adaptation lags behind technological change \cite{cerutti2025global,filippucci2025macroeconomic}. Recent scenario-based methodologies highlight the heterogeneity of AGI's societal impacts across regions and sectors \cite{costa2025exploring}.
 
@@ -77,9 +77,9 @@ Preliminary results suggest that automation adoption is highly context-dependent
 \textbf{Definition of AGI:}
 Artificial General Intelligence (AGI) refers to \textit{hypothetical} AI systems that match or exceed human capabilities in \textit{most} economically relevant tasks, combining cognitive and physical adaptability \cite{goertzel2014artificial,bostrom2014paths}. Unlike narrow AI systems (e.g., large language models or robotic arms), AGI is characterized by:
 \begin{itemize}
-    \item \textbf{Cross-domain competence}: Ability to perform diverse tasks (e.g., scientific research, creative design, or complex manual operations) without task-specific retraining, reflecting human-like generalization \cite{goertzel2014artificial}.
-    \item \textbf{Autonomous improvement}: Potential for recursive self-enhancement, where the system iteratively refines its own architecture to solve increasingly complex problems \cite{bostrom2014paths}.
-    \item \textbf{Task automation breadth}: Capacity to substitute for both \textit{cognitive labor} (e.g., decision-making, pattern recognition) and \textit{physical labor} (e.g., dexterous manipulation), unlike prior automation waves that targeted either routine cognitive \cite{autor2015there} or manual tasks \cite{acemoglu2025simple}.
+\item \textbf{Cross-domain competence}: Ability to perform diverse tasks (e.g., scientific research, creative design, or complex manual operations) without task-specific retraining, reflecting human-like generalization \cite{goertzel2014artificial}.
+\item \textbf{Autonomous improvement}: Potential for recursive self-enhancement, where the system iteratively refines its own architecture to solve increasingly complex problems \cite{bostrom2014paths}.
+\item \textbf{Task automation breadth}: Capacity to substitute for both \textit{cognitive labor} (e.g., decision-making, pattern recognition) and \textit{physical labor} (e.g., dexterous manipulation), unlike prior automation waves that targeted either routine cognitive \cite{autor2015there} or manual tasks \cite{acemoglu2025simple}.
 \end{itemize}
 
 
@@ -105,20 +105,20 @@ We model each firm $i$ as selecting an automation level $a_i \in [0,1]$ to maxim
 \]
 where:
 \begin{itemize}
-    \item $\gamma$ represents the \textbf{competitive advantage} from relative automation. This parameter captures the first-mover or market share gains a firm obtains by automating more than its rivals. Empirical studies suggest that early adopters of automation technologies can achieve significant market share increases, particularly in sectors with high task routineness \cite{acemoglu2025simple,autor2015there}. We calibrate $\gamma$ to reflect observed industry-specific competitive intensities, ranging from low (e.g., regulated utilities) to high (e.g., tech-driven manufacturing).
+\item $\gamma$ represents the \textbf{competitive advantage} from relative automation. This parameter captures the first-mover or market share gains a firm obtains by automating more than its rivals. Empirical studies suggest that early adopters of automation technologies can achieve significant market share increases, particularly in sectors with high task routineness \cite{acemoglu2025simple,autor2015there}. We calibrate $\gamma$ to reflect observed industry-specific competitive intensities, ranging from low (e.g., regulated utilities) to high (e.g., tech-driven manufacturing).
 
-    \item $\beta$ denotes the \textbf{baseline profitability} of automation, independent of competitive interactions. This term accounts for cost savings, efficiency gains, or quality improvements from automation, as documented in firm-level productivity studies \cite{glielmo2025beforeit,stiefenhofer2025artificial}. $\beta$ is set to reflect sectoral averages, acknowledging that some industries (e.g., logistics) may benefit more from automation than others (e.g., creative services).
+\item $\beta$ denotes the \textbf{baseline profitability} of automation, independent of competitive interactions. This term accounts for cost savings, efficiency gains, or quality improvements from automation, as documented in firm-level productivity studies \cite{glielmo2025beforeit,stiefenhofer2025artificial}. $\beta$ is set to reflect sectoral averages, acknowledging that some industries (e.g., logistics) may benefit more from automation than others (e.g., creative services).
 
-    \item $k$ captures the \textbf{quadratic cost} of automation, including both direct expenses (e.g., AGI system deployment, maintenance) and indirect costs (e.g., workforce retraining, organizational disruption). The quadratic form penalizes extreme automation levels, reflecting diminishing returns or escalating integration challenges \cite{smirnov2025deriving}. $k$ is parameterized based on cost-benefit analyses of AGI adoption, with higher values for capital-intensive or highly regulated sectors.
+\item $k$ captures the \textbf{quadratic cost} of automation, including both direct expenses (e.g., AGI system deployment, maintenance) and indirect costs (e.g., workforce retraining, organizational disruption). The quadratic form penalizes extreme automation levels, reflecting diminishing returns or escalating integration challenges \cite{smirnov2025deriving}. $k$ is parameterized based on cost-benefit analyses of AGI adoption, with higher values for capital-intensive or highly regulated sectors.
 
-    \item $\bar{a}_{-i}$ is the average automation level of rival firms, introducing strategic interdependence. This term ensures that a firm's optimal automation level depends on the actions of others, a hallmark of oligopolistic competition \cite{varian1992microeconomic}.
+\item $\bar{a}_{-i}$ is the average automation level of rival firms, introducing strategic interdependence. This term ensures that a firm's optimal automation level depends on the actions of others, a hallmark of oligopolistic competition \cite{varian1992microeconomic}.
 \end{itemize}
 
 The profit function's structure ensures that:
 \begin{itemize}
-    \item The linear term $\gamma a_i (1 - \bar{a}_{-i})$ incentivizes firms to automate more than their rivals, creating a "race to automate."
-    \item The term $\beta a_i$ guarantees a minimum return on automation, even in the absence of competitive pressure.
-    \item The quadratic cost $-k a_i^2$ introduces a concave penalty, reflecting real-world constraints on unlimited automation.
+\item The linear term $\gamma a_i (1 - \bar{a}_{-i})$ incentivizes firms to automate more than their rivals, creating a "race to automate."
+\item The term $\beta a_i$ guarantees a minimum return on automation, even in the absence of competitive pressure.
+\item The quadratic cost $-k a_i^2$ introduces a concave penalty, reflecting real-world constraints on unlimited automation.
 \end{itemize}
 
 The first-order condition for profit maximization is derived by setting the partial derivative of \(\Pi_i\) with respect to \(a_i\) to zero. Solving for \(a_i\) yields the \textbf{reaction function}:
@@ -145,128 +145,169 @@ a_i^{t+1} = (1-\epsilon)a_i^t + \epsilon \left( \frac{\gamma (1 - \bar{a}_{-i}^t
 converges to the symmetric equilibrium \(\bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}\) under standard conditions \cite{smirnov2025deriving}. This equilibrium exhibits a coordination failure with two key properties:
 
 \begin{itemize}
-    \item \textbf{Automation race}: When the competitive pressure-to-cost ratio (\(\gamma/k\)) is high, \(\bar{a}^*\) approaches 1, indicating near-complete automation regardless of social costs. This reflects empirical "automation races" in sectors like e-commerce and manufacturing \cite{acemoglu2025simple,glielmo2025beforeit}.
+\item \textbf{Automation race}: When the competitive pressure-to-cost ratio (\(\gamma/k\)) is high, \(\bar{a}^*\) approaches 1, indicating near-complete automation regardless of social costs. This reflects empirical "automation races" in sectors like e-commerce and manufacturing \cite{acemoglu2025simple,glielmo2025beforeit}.
 
-    \item \textbf{Prisoner's Dilemma structure}: While firms collectively prefer lower automation to maintain labor demand, each has an individual incentive to deviate and automate more, leading to a socially suboptimal outcome \cite{stiefenhofer2025artificial}.
+\item \textbf{Prisoner's Dilemma structure}: While firms collectively prefer lower automation to maintain labor demand, each has an individual incentive to deviate and automate more, leading to a socially suboptimal outcome \cite{stiefenhofer2025artificial}.
 \end{itemize}
 
 The model thus formalizes the "automation trap": competitive pressures (\(\gamma\)) and low automation costs (\(k\)) drive firms toward excessive automation, risking labor displacement and demand collapse—conditions increasingly prevalent in AGI-driven industries \cite{cerutti2025global,filippucci2025macroeconomic}.
 
 
 
-
-
 \begin{table}[ht]
-    \centering
-    \caption{Symmetric equilibrium values $\bar{a}^*$ for parameters $\gamma$, $k$, and various $\beta$}
-    \label{tab:symmetric_equilibria_params}
-    \begin{tabular}{@{}cccccc@{}}
-    \toprule
-    $\gamma$ & $k$ & $\beta=0.5$ & $\beta=1.0$ & $\beta=2.0$ & Interpretation \\
-    \midrule
-    0.5 & 0.25 & 0.53 & 0.60 & 0.73 & Moderate \\
-    1.0 & 0.25 & 0.68 & 0.76 & 0.87 & High \\
-    2.0 & 0.25 & 0.84 & 0.90 & 0.96 & Near-complete \\
-    3.0 & 0.25 & 0.89 & 0.93 & 0.97 & Complete \\
-    \midrule
-    0.5 & 0.5 & 0.44 & 0.52 & 0.67 & Moderate Low \\
-    1.0 & 0.5 & 0.59 & 0.67 & 0.80 & Moderate \\
-    2.0 & 0.5 & 0.76 & 0.83 & 0.92 & High \\
-    3.0 & 0.5 & 0.82 & 0.87 & 0.94 & Very High \\
-    \midrule
-    0.5 & 1.0 & 0.33 & 0.41 & 0.55 & Low \\
-    1.0 & 1.0 & 0.48 & 0.56 & 0.70 & Moderate \\
-    2.0 & 1.0 & 0.65 & 0.73 & 0.84 & High \\
-    3.0 & 1.0 & 0.71 & 0.78 & 0.87 & High \\
-    \midrule
-    0.5 & 2.0 & 0.21 & 0.29 & 0.43 & Low \\
-    1.0 & 2.0 & 0.37 & 0.45 & 0.60 & Moderate low \\
-    2.0 & 2.0 & 0.54 & 0.62 & 0.75 & Moderate high \\
-    3.0 & 2.0 & 0.60 & 0.68 & 0.80 & High \\
-    \bottomrule
-    \end{tabular}
-    \end{table}
-    
+\centering
+\caption{Symmetric equilibrium values $\bar{a}^*$ for parameters $\gamma$, $k$, and various $\beta$}
+\label{tab:symmetric_equilibria_params}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$\gamma$ & $k$ & $\beta=0.5$ & $\beta=1.0$ & $\beta=2.0$ & Interpretation \\
+\midrule
+0.5 & 0.25 & 0.53 & 0.60 & 0.73 & Moderate \\
+1.0 & 0.25 & 0.68 & 0.76 & 0.87 & High \\
+2.0 & 0.25 & 0.84 & 0.90 & 0.96 & Near-complete \\
+3.0 & 0.25 & 0.89 & 0.93 & 0.97 & Complete \\
+\midrule
+0.5 & 0.5 & 0.44 & 0.52 & 0.67 & Moderate Low \\
+1.0 & 0.5 & 0.59 & 0.67 & 0.80 & Moderate \\
+2.0 & 0.5 & 0.76 & 0.83 & 0.92 & High \\
+3.0 & 0.5 & 0.82 & 0.87 & 0.94 & Very High \\
+\midrule
+0.5 & 1.0 & 0.33 & 0.41 & 0.55 & Low \\
+1.0 & 1.0 & 0.48 & 0.56 & 0.70 & Moderate \\
+2.0 & 1.0 & 0.65 & 0.73 & 0.84 & High \\
+3.0 & 1.0 & 0.71 & 0.78 & 0.87 & High \\
+\midrule
+0.5 & 2.0 & 0.21 & 0.29 & 0.43 & Low \\
+1.0 & 2.0 & 0.37 & 0.45 & 0.60 & Moderate low \\
+2.0 & 2.0 & 0.54 & 0.62 & 0.75 & Moderate high \\
+3.0 & 2.0 & 0.60 & 0.68 & 0.80 & High \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Analytical Benchmark for Convergence Dynamics}
+\label{subsec:analytical_benchmark}
+
+To establish a theoretical reference for the simulation results, we derive the closed-form exponential convergence of the average automation level under deterministic adjustment. Starting from the iterative update rule:
+\[
+\bar{a}^{t+1} = (1 - \epsilon) \bar{a}^t + \epsilon \cdot \frac{\gamma + \beta}{2k + \gamma},
+\]
+we can express the dynamics as a first-order linear recurrence relation. The solution to this recurrence yields the explicit exponential form:
+\[
+\bar{a}^t = \bar{a}^* + (\bar{a}^0 - \bar{a}^*) (1 - \epsilon)^t,
+\]
+where \(\bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}\) is the symmetric Cournot-Nash equilibrium and \(\bar{a}^0\) represents the initial average automation level.
+
+This expression shows that the convergence toward \(\bar{a}^*\) follows a geometric progression with common ratio \((1 - \epsilon)\). The half-life of the convergence process, defined as the number of iterations required to reduce the initial gap by half, is given by:
+\[
+t_{1/2} = \frac{\ln(2)}{-\ln(1 - \epsilon)}.
+\]
+
+\subsubsection{Continuous-Time Convergence Dynamics}
+\label{subsec:continuous_convergence}
+
+The continuous-time approximation of the automation adjustment process is governed by the differential equation:
+\[
+\frac{d\bar{a}(t)}{dt} = \epsilon \left( \frac{\gamma + \beta}{2k + \gamma} - \bar{a}(t) \right),
+\]
+with analytical solution:
+\[
+\bar{a}(t) = \bar{a}^* + (\bar{a}^0 - \bar{a}^*) e^{-\epsilon t},
+\]
+where \(\bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}\) is the equilibrium automation level. This formulation aligns with empirical observations of firm-level automation decisions, where adjustment periods typically range from quarterly to annual cycles depending on the technology's disruptiveness~\cite{acemoglu2025simple,autor2015there}. For instance, with \(\epsilon = 0.1\) per quarter, the model implies a half-life of \(\ln(2)/\epsilon \approx 6.93\) quarters (~1.73 years) for convergence to equilibrium, consistent with observed 1--5 year investment cycles in industrial automation.
 
 
-    \section{Simulation Design and Results}
-    \subsection{Methodology}
-    To explore the dynamics of firm-level automation decisions, we simulate an oligopolistic market with \(N=10\) firms over \(T=1000\) rounds. Firms iteratively adjust their automation levels \(a_i \in [0,1]\) according to the profit-maximizing reaction function:
-    \[
-    a_i^{t+1} = (1-\epsilon)a_i^t + \epsilon \left( \frac{\gamma (1 - \bar{a}_{-i}^t) + \beta}{2k} \right),
-    \]
-    where \(\epsilon = 0.1\) is the adjustment speed, balancing inertia and responsiveness. This formulation captures both gradual adaptation and strategic interdependence, consistent with empirical studies of firm behavior in dynamic markets \cite{glielmo2025beforeit}.
-    
-    We evaluate the model across a grid of parameters:
-    \begin{itemize}
-        \item \(\gamma \in \{0.5, 1.0, 2.0, 3.0\}\): competitive advantage from relative automation, spanning low to high competitive pressure.
-        \item \(k \in \{0.2, 0.8, 1.4, 2.0\}\): cost of automation, reflecting low to high implementation barriers.
-        \item \(\beta = 1.0\): fixed baseline automation gain, normalized for comparability.
-    \end{itemize}
-    Each parameter combination is simulated 10 times to account for stochasticity, with a 5\% mutation rate introduced to reflect innovation or firm-specific shocks. This design ensures robustness and generalizability of the results \cite{smirnov2025deriving}.
-    
-    \subsection{Simulation Outputs}
-    The simulation results are summarized in Figure~\ref{fig:combined_results}, which combines:
-    \begin{itemize}
-        \item A heatmap of final automation levels \(\bar{a}^*\) for each \((\gamma, k)\) pair, averaged over 10 runs.
-        \item Time-series dynamics of average automation (mean \(\pm\) standard deviation) over 1000 rounds.
-    \end{itemize}
-    
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.95\textwidth]{combined_automation_results.pdf}
-    \caption{Simulation results: (left) Heatmap of final automation levels \(\bar{a}^*\) for varying \(\gamma\) (competitive advantage) and \(k\) (cost of automation); (right) Dynamics of average automation (mean \(\pm\) standard deviation) over 1000 rounds.}
-    \label{fig:combined_results}
-    \end{figure}
-    
-    \subsection{Key Observations}
-    \subsubsection{High Competitive Advantage (\(\gamma \geq 2.0\))}
-    For \(\gamma = 2.0\) and \(\gamma = 3.0\), automation levels converge toward \(\bar{a}^* \approx 0.9\) even for moderate costs (\(k = 0.8\)). This result aligns with theoretical predictions of an "automation trap," where competitive pressure overwhelms cost considerations, driving firms to automate aggressively to avoid losing market share \cite{stiefenhofer2025artificial,acemoglu2025simple}.
-    
-    \textbf{Mechanism}: The term \(\gamma a_i (1 - \bar{a}_{-i})\) in the profit function creates a strong incentive to out-automate rivals. As \(\gamma\) increases, the marginal benefit of automation rises, making it rational for firms to push \(a_i\) toward 1 regardless of the social cost of labor displacement. This dynamic is particularly pronounced in industries with high task routineness, where AGI can substitute labor at low marginal cost \cite{cerutti2025global}.
-    
-    \subsubsection{Moderate Competitive Advantage (\(\gamma = 1.0\))}
-    For \(\gamma = 1.0\), automation levels are highly sensitive to cost (\(k\)):
-    \begin{itemize}
-        \item Low costs (\(k = 0.2\)): \(\bar{a}^* \approx 0.76\), indicating substantial but incomplete automation.
-        \item High costs (\(k = 2.0\)): \(\bar{a}^* \approx 0.45\), suggesting firms limit automation when costs outweigh competitive gains.
-    \end{itemize}
-    This sensitivity highlights the role of cost as a natural brake on automation, consistent with empirical evidence that high implementation costs can delay or prevent adoption \cite{filippucci2025macroeconomic,smirnov2025deriving}.
-    
-    \subsubsection{Low Competitive Advantage (\(\gamma = 0.5\))}
-    For \(\gamma = 0.5\), automation remains low across all cost levels (\(\bar{a}^* \leq 0.53\)), implying that firms see little incentive to automate aggressively without strong competitive pressure. This result is consistent with sectors where automation provides limited competitive differentiation, such as highly regulated or labor-intensive industries \cite{glielmo2025beforeit}.
-    
-    \subsubsection{Cost Sensitivity}
-    For all \(\gamma\), automation decreases as \(k\) increases. For example, for \(\gamma = 0.5\), \(\bar{a}^*\) drops from 0.53 to 0.21 as \(k\) increases from 0.2 to 2.0. This pattern underscores the importance of cost structures in shaping automation outcomes, suggesting that policy tools targeting automation costs (e.g., taxation, subsidies) could effectively modulate adoption rates \cite{filippucci2025macroeconomic}.
-    
-    \subsection{Equilibrium Analysis}
-    The simulation results confirm the theoretical equilibrium:
-    \[
-    \bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}.
-    \]
-    However, the dynamics reveal additional insights:
-    \begin{itemize}
-        \item \textbf{Convergence Speed}: High \(\gamma\) leads to faster convergence, as firms have stronger incentives to adjust \(a_i\) quickly. For \(\gamma = 3.0\), equilibrium is typically reached within 200 rounds, while for \(\gamma = 0.5\), convergence takes 500+ rounds.
-        \item \textbf{Stability}: Low \(k\) and high \(\gamma\) combinations yield stable high-automation equilibria, while high \(k\) and low \(\gamma\) combinations result in stable low-automation equilibria. Intermediate parameter sets (e.g., \(\gamma = 1.0, k = 0.8\)) exhibit greater variability, reflecting the tension between competitive pressure and cost constraints.
-    \end{itemize}
-    
-    \subsection{Implications: The End of Work and Money}
-    The results suggest two key implications for the future of labor and monetary systems:
-    \begin{itemize}
-        \item \textbf{The End of Work}: Under high competitive advantage (\(\gamma \geq 2.0\)), firms automate aggressively (\(\bar{a}^* \geq 0.87\)), potentially rendering human labor redundant in sectors where AGI can perform tasks more efficiently. This supports predictions that AGI could replace a significant share of human tasks by 2040, though the extent depends on automation costs and competitive dynamics \cite{smirnov2025deriving,cerutti2025global}.
-    
-        \item \textbf{Conditional Obsolescence of Money}: If automation reaches \(\bar{a}^* \approx 1\) (as observed for \(\gamma = 3.0, k = 0.2\)), wage-based demand may collapse, challenging the role of money as a medium of exchange. However, for \(\gamma \leq 1.0\) or high \(k\), partial automation (\(\bar{a}^* < 0.7\)) suggests that human labor—and thus wage-based economies—may persist in certain contexts \cite{smirnov2025deriving}.
-    \end{itemize}
-    
-    \subsection{Robustness and Sensitivity Analysis}
-    To ensure the robustness of our findings, we conducted sensitivity analyses by varying:
-    \begin{itemize}
-        \item The number of firms (\(N = 5, 10, 20\)): Results are qualitatively similar, though convergence is slower for larger \(N\) due to increased strategic complexity.
-        \item The adjustment speed (\(\epsilon = 0.05, 0.1, 0.2\)): Faster adjustment (\(\epsilon = 0.2\)) accelerates convergence but does not alter equilibrium levels.
-        \item The mutation rate (0\%, 5\%, 10\%): Higher mutation rates introduce noise but do not change the long-term equilibrium, confirming the stability of the automation trap.
-    \end{itemize}
-    These tests suggest that the core dynamics are robust to variations in model parameters, supporting the generalizability of our conclusions \cite{glielmo2025beforeit,smirnov2025deriving}.
-    
+%% mettre des resultats analytiques ici ? ou dans la section suivante ?
+
+\section{Simulation Design and Results}
+\subsection{Methodology}
+\label{subsec:methodology}
+
+To explore the dynamics of firm-level automation decisions, we simulate an oligopolistic market with \(N=10\) firms over \(T=1000\) rounds. Firms iteratively adjust their automation levels \(a_i \in [0,1]\) through an \textbf{imitation-mutation process}, which captures both competitive benchmarking and stochastic innovation.
+
+At each round, firms evaluate their profit \(\Pi_i\) based on the profit function:
+\[
+\Pi_i(a_i, \bar{a}_{-i}) = \gamma a_i (1 - \bar{a}_{-i}) + \beta a_i - k a_i^2,
+\]
+where \(\bar{a}_{-i}\) is the average automation level of rival firms. Firms then update their automation levels by:
+\begin{enumerate}
+    \item \textbf{Imitation}: With probability \(p_{\text{adopt}} = \frac{1}{1 + e^{-(\Pi_j - \Pi_i)}}\), firm \(i\) adopts the automation level of a randomly selected firm \(j\) if \(j\) is more profitable.
+    \item \textbf{Mutation}: With a 5\% probability, firm \(i\) perturbs its automation level by a random shock \(\mathcal{N}(0, 0.1)\), clipped to \([0,1]\), to reflect innovation or idiosyncratic shocks.
+\end{enumerate}
+
+This imitation-mutation framework aligns with evolutionary game theory, where successful strategies spread through replication, while mutations introduce variability to test equilibrium robustness~\cite{glielmo2025beforeit,smirnov2025deriving}. Unlike deterministic adjustment rules, this approach captures bounded rationality and heterogeneity in firm behavior, particularly relevant in uncertain or rapidly evolving markets such as those driven by AGI adoption.
+
+We evaluate the model across a grid of parameters:
+\begin{itemize}
+    \item \(\gamma \in \{0.5, 1.0, 2.0, 3.0\}\): competitive advantage from relative automation, spanning low to high competitive pressure.
+    \item \(k \in \{0.2, 0.8, 1.4, 2.0\}\): cost of automation, reflecting low to high implementation barriers.
+    \item \(\beta = 1.0\): fixed baseline automation gain, normalized for comparability.
+\end{itemize}
+Each parameter combination is simulated 10 times to account for stochasticity. This design ensures robustness and generalizability of the results, consistent with agent-based modeling practices in complex systems~\cite{glielmo2025beforeit}.
+
+
+\subsection{Simulation Outputs}
+The simulation results are summarized in Figure~\ref{fig:combined_results}, which combines:
+\begin{itemize}
+    \item A heatmap of final automation levels \(\bar{a}^*\) for each \((\gamma, k)\) pair, averaged over 10 runs.
+    \item Time-series dynamics of average automation (mean \(\pm\) standard deviation) over 1000 rounds.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{combined_automation_results.pdf}
+\caption{Simulation results: (left) Heatmap of final automation levels \(\bar{a}^*\) for varying \(\gamma\) (competitive advantage) and \(k\) (cost of automation); (right) Dynamics of average automation (mean \(\pm\) standard deviation) over 1000 rounds.}
+\label{fig:combined_results}
+\end{figure}
+
+\subsection{Key Observations}
+\subsubsection{High Competitive Advantage (\(\gamma \geq 2.0\))}
+For \(\gamma = 2.0\) and \(\gamma = 3.0\), automation levels converge toward \(\bar{a}^* \approx 0.9\) even for moderate costs (\(k = 0.8\)). This result aligns with theoretical predictions of an "automation trap," where competitive pressure overwhelms cost considerations, driving firms to automate aggressively to avoid losing market share \cite{stiefenhofer2025artificial,acemoglu2025simple}.
+
+\textbf{Mechanism}: The term \(\gamma a_i (1 - \bar{a}_{-i})\) in the profit function creates a strong incentive to out-automate rivals. As \(\gamma\) increases, the marginal benefit of automation rises, making it rational for firms to push \(a_i\) toward 1 regardless of the social cost of labor displacement. This dynamic is particularly pronounced in industries with high task routineness, where AGI can substitute labor at low marginal cost \cite{cerutti2025global}.
+
+\subsubsection{Moderate Competitive Advantage (\(\gamma = 1.0\))}
+For \(\gamma = 1.0\), automation levels are highly sensitive to cost (\(k\)):
+\begin{itemize}
+    \item Low costs (\(k = 0.2\)): \(\bar{a}^* \approx 0.76\), indicating substantial but incomplete automation.
+    \item High costs (\(k = 2.0\)): \(\bar{a}^* \approx 0.45\), suggesting firms limit automation when costs outweigh competitive gains.
+\end{itemize}
+This sensitivity highlights the role of cost as a natural brake on automation, consistent with empirical evidence that high implementation costs can delay or prevent adoption \cite{filippucci2025macroeconomic,smirnov2025deriving}.
+
+\subsubsection{Low Competitive Advantage (\(\gamma = 0.5\))}
+For \(\gamma = 0.5\), automation remains low across all cost levels (\(\bar{a}^* \leq 0.53\)), implying that firms see little incentive to automate aggressively without strong competitive pressure. This result is consistent with sectors where automation provides limited competitive differentiation, such as highly regulated or labor-intensive industries \cite{glielmo2025beforeit}.
+
+\subsubsection{Cost Sensitivity}
+For all \(\gamma\), automation decreases as \(k\) increases. For example, for \(\gamma = 0.5\), \(\bar{a}^*\) drops from 0.53 to 0.21 as \(k\) increases from 0.2 to 2.0. This pattern underscores the importance of cost structures in shaping automation outcomes, suggesting that policy tools targeting automation costs (e.g., taxation, subsidies) could effectively modulate adoption rates \cite{filippucci2025macroeconomic}.
+
+\subsection{Equilibrium Analysis}
+The simulation results confirm the theoretical equilibrium:
+\[
+\bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}.
+\]
+However, the dynamics reveal additional insights:
+\begin{itemize}
+    \item \textbf{Convergence Speed}: High \(\gamma\) leads to faster convergence, as firms have stronger incentives to adjust \(a_i\) quickly. For \(\gamma = 3.0\), equilibrium is typically reached within 200 rounds, while for \(\gamma = 0.5\), convergence takes 500+ rounds.
+    \item \textbf{Stability}: Low \(k\) and high \(\gamma\) combinations yield stable high-automation equilibria, while high \(k\) and low \(\gamma\) combinations result in stable low-automation equilibria. Intermediate parameter sets (e.g., \(\gamma = 1.0, k = 0.8\)) exhibit greater variability, reflecting the tension between competitive pressure and cost constraints.
+\end{itemize}
+
+\subsection{Implications: The End of Work and Money}
+The results suggest two key implications for the future of labor and monetary systems:
+\begin{itemize}
+    \item \textbf{The End of Work}: Under high competitive advantage (\(\gamma \geq 2.0\)), firms automate aggressively (\(\bar{a}^* \geq 0.87\)), potentially rendering human labor redundant in sectors where AGI can perform tasks more efficiently. This supports predictions that AGI could replace a significant share of human tasks by 2040, though the extent depends on automation costs and competitive dynamics \cite{smirnov2025deriving,cerutti2025global}.
+
+    \item \textbf{Conditional Obsolescence of Money}: If automation reaches \(\bar{a}^* \approx 1\) (as observed for \(\gamma = 3.0, k = 0.2\)), wage-based demand may collapse, challenging the role of money as a medium of exchange. However, for \(\gamma \leq 1.0\) or high \(k\), partial automation (\(\bar{a}^* < 0.7\)) suggests that human labor—and thus wage-based economies—may persist in certain contexts \cite{smirnov2025deriving}.
+\end{itemize}
+
+\subsection{Robustness and Sensitivity Analysis}
+To ensure the robustness of our findings, we conducted sensitivity analyses by varying:
+\begin{itemize}
+    \item The number of firms (\(N = 5, 10, 20\)): Results are qualitatively similar, though convergence is slower for larger \(N\) due to increased strategic complexity.
+    \item The adjustment speed (\(\epsilon = 0.05, 0.1, 0.2\)): Faster adjustment (\(\epsilon = 0.2\)) accelerates convergence but does not alter equilibrium levels.
+    \item The mutation rate (0\%, 5\%, 10\%): Higher mutation rates introduce noise but do not change the long-term equilibrium, confirming the stability of the automation trap.
+\end{itemize}
+These tests suggest that the core dynamics are robust to variations in model parameters, supporting the generalizability of our conclusions \cite{glielmo2025beforeit,smirnov2025deriving}.
+
 
 \section{Discussion}
 \subsection{Interpretation of Results}
@@ -308,15 +349,15 @@ This study has several limitations:
 Beyond the static game-theoretic framework adopted here, other modeling approaches could enrich the analysis of AGI-driven automation:
 
 \begin{itemize}
-    \item \textbf{Network effects:} Firms' automation decisions may be interdependent, as in the adoption of shared standards (e.g., robotic operating systems) or when collective over-automation risks demand collapse \cite{katz1985network,eisenmann2011platform,glielmo2025beforeit}. Incorporating a term like $\theta \bar{a}_{-i} a_i$ in the profit function could capture such synergies or externalities, where $\theta > 0$ reflects positive network effects (e.g., compatibility benefits) and $\theta < 0$ reflects negative spillovers (e.g., collective labor displacement).
+\item \textbf{Network effects:} Firms' automation decisions may be interdependent, as in the adoption of shared standards (e.g., robotic operating systems) or when collective over-automation risks demand collapse \cite{katz1985network,eisenmann2011platform,glielmo2025beforeit}. Incorporating a term like $\theta \bar{a}_{-i} a_i$ in the profit function could capture such synergies or externalities, where $\theta > 0$ reflects positive network effects (e.g., compatibility benefits) and $\theta < 0$ reflects negative spillovers (e.g., collective labor displacement).
 
-    \item \textbf{Real options:} Under uncertainty about future AGI costs or regulatory environments, firms may treat automation as an irreversible investment option, delaying adoption until conditions improve \cite{dixit1994investment,goertzel2014artificial}. This would replace the static cost function with a dynamic value function:
-    \[
-    V(a_i) = \max \left( \Pi(a_i) - I, \frac{1}{1+r} \mathbb{E}[V(a_i')] \right),
-    \]
-    where $I$ represents the sunk cost of automation and $r$ the discount rate.
+\item \textbf{Real options:} Under uncertainty about future AGI costs or regulatory environments, firms may treat automation as an irreversible investment option, delaying adoption until conditions improve \cite{dixit1994investment,goertzel2014artificial}. This would replace the static cost function with a dynamic value function:
+\[
+V(a_i) = \max \left( \Pi(a_i) - I, \frac{1}{1+r} \mathbb{E}[V(a_i')] \right),
+\]
+where $I$ represents the sunk cost of automation and $r$ the discount rate.
 
-    \item \textbf{Agent-based models:} Frameworks like BeforeIt.jl \cite{glielmo2025beforeit} could simulate heterogeneous firms and emergent macroeconomic phenomena, addressing the homogeneity limitation noted above. Such models would allow for dynamic parameterization (e.g., declining $k$ over time as AGI matures) and heterogeneous firm strategies.
+\item \textbf{Agent-based models:} Frameworks like BeforeIt.jl \cite{glielmo2025beforeit} could simulate heterogeneous firms and emergent macroeconomic phenomena, addressing the homogeneity limitation noted above. Such models would allow for dynamic parameterization (e.g., declining $k$ over time as AGI matures) and heterogeneous firm strategies.
 \end{itemize}
 
 These extensions would allow future work to explore dynamic feedbacks, heterogeneous strategies, and policy responses in greater depth.
@@ -324,24 +365,24 @@ These extensions would allow future work to explore dynamic feedbacks, heterogen
 \subsection{Broader Implications}
 The results challenge deterministic narratives about AGI's economic impact. Instead, they suggest that outcomes depend on institutional and policy choices:
 \begin{itemize}
-    \item \textbf{The End of Work is Not Inevitable}: High automation is not a foregone conclusion but a function of \(\gamma\) and \(k\). Policies that shape these parameters—through competition regulation, cost manipulation, or rent redistribution—can steer outcomes toward more inclusive scenarios.
-    \item \textbf{Money's Role May Evolve}: While wage-based demand could collapse under extreme automation, alternative demand sources (e.g., UBI, public investment) may preserve monetary systems in modified forms. The critical question is not whether money will disappear, but how its creation and distribution will adapt \cite{nayebi2025ai}.
-    \item \textbf{AGI as a Political Project}: The simulation highlights that AGI's economic consequences are not purely technological but deeply political. The distribution of gains from automation will depend on power struggles between capital, labor, and the state \cite{korinek2024economic}.
+\item \textbf{The End of Work is Not Inevitable}: High automation is not a foregone conclusion but a function of \(\gamma\) and \(k\). Policies that shape these parameters—through competition regulation, cost manipulation, or rent redistribution—can steer outcomes toward more inclusive scenarios.
+\item \textbf{Money's Role May Evolve}: While wage-based demand could collapse under extreme automation, alternative demand sources (e.g., UBI, public investment) may preserve monetary systems in modified forms. The critical question is not whether money will disappear, but how its creation and distribution will adapt \cite{nayebi2025ai}.
+\item \textbf{AGI as a Political Project}: The simulation highlights that AGI's economic consequences are not purely technological but deeply political. The distribution of gains from automation will depend on power struggles between capital, labor, and the state \cite{korinek2024economic}.
 \end{itemize}
 
 \section{Conclusion}
 This study models AGI-driven automation as a competitive process, revealing how firm-level incentives can lead to high automation and potential labor obsolescence under specific conditions. The key findings are:
 \begin{itemize}
-    \item Competitive pressure (\(\gamma\)) and automation costs (\(k\)) jointly determine equilibrium outcomes, with high \(\gamma/k\) ratios driving near-complete automation.
-    \item The "automation trap" arises because firms cannot unilaterally reduce automation without losing market share, even if collective restraint would benefit all.
-    \item Policy tools—such as UBI funded by AI rents, automation taxes, or public AGI ownership—could mitigate adverse outcomes but require careful design to avoid unintended consequences.
+\item Competitive pressure (\(\gamma\)) and automation costs (\(k\)) jointly determine equilibrium outcomes, with high \(\gamma/k\) ratios driving near-complete automation.
+\item The "automation trap" arises because firms cannot unilaterally reduce automation without losing market share, even if collective restraint would benefit all.
+\item Policy tools—such as UBI funded by AI rents, automation taxes, or public AGI ownership—could mitigate adverse outcomes but require careful design to avoid unintended consequences.
 \end{itemize}
 
 The simulation supports a \textbf{conditional} rather than deterministic view of AGI's impact: the future of work and money will depend on how societies choose to govern automation. Three avenues for further research stand out:
 \begin{itemize}
-    \item \textbf{Integrated Macro-Micro Models}: Combining firm-level strategic interactions with macroeconomic feedback loops (e.g., demand collapse, policy responses) to assess systemic stability \cite{filippucci2025macroeconomic,stiefenhofer2025artificial}.
-    \item \textbf{Empirical Calibration}: Estimating \(\gamma\), \(\beta\), and \(k\) for specific industries using firm-level data to validate and refine the model's predictions \cite{acemoglu2025simple,glielmo2025beforeit}.
-    \item \textbf{Policy Experiments}: Simulating the effects of UBI, automation taxes, and other interventions to identify robust strategies for managing AGI transitions \cite{nayebi2025ai}.
+\item \textbf{Integrated Macro-Micro Models}: Combining firm-level strategic interactions with macroeconomic feedback loops (e.g., demand collapse, policy responses) to assess systemic stability \cite{filippucci2025macroeconomic,stiefenhofer2025artificial}.
+\item \textbf{Empirical Calibration}: Estimating \(\gamma\), \(\beta\), and \(k\) for specific industries using firm-level data to validate and refine the model's predictions \cite{acemoglu2025simple,glielmo2025beforeit}.
+\item \textbf{Policy Experiments}: Simulating the effects of UBI, automation taxes, and other interventions to identify robust strategies for managing AGI transitions \cite{nayebi2025ai}.
 \end{itemize}
 
 While our static analysis highlights core strategic dynamics, network-based or real options models could further explore the role of interdependencies and uncertainty in shaping AGI's economic impact. For example, network models \cite{katz1985network,eisenmann2011platform} would clarify how collective automation behaviors emerge from firm interdependencies, while real options approaches \cite{dixit1994investment,goertzel2014artificial} would illuminate the timing and irreversibility of AGI investments under uncertainty. Agent-based simulations \cite{glielmo2025beforeit} could further explore heterogeneous firm strategies and macroeconomic feedbacks, such as demand collapse or policy responses. These extensions would deepen our understanding of policy levers—such as standardization incentives, uncertainty reduction, or targeted taxation—to steer automation toward socially optimal outcomes.
