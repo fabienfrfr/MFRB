@@ -21,9 +21,9 @@ def profit(a_i, a_j, gamma, beta, k):
 # --- Analytical Solution Function ---
 def analytical_convergence(gamma, k, beta=1.0, epsilon=0.1, T=1000, a0=0.1):
     """Calculate analytical convergence path in continuous time."""
-    a_star = (gamma + beta) / (2 * k + gamma)
+    a_star = min(1.0, (gamma + beta) / (2 * k + gamma))  # Équilibre plafonné
     t = np.arange(T)
-    a_t = a0 + (a_star - a0) * np.exp(-epsilon * t)
+    a_t = a_star + (a0 - a_star) * np.exp(-epsilon * t)  # Croissance si a0 < a_star
     return t, a_t, a_star
 
 
