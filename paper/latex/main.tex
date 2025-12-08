@@ -134,6 +134,13 @@ This expression shows that a firm's optimal automation level increases with its 
 \bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}.
 \]
 
+
+To account for the technological constraint that the automation level \(a_i\) must lie within the interval \([0, 1]\), we solve the optimization problem using the \textbf{Karush-Kuhn-Tucker (KKT) conditions}. These conditions generalize the method of Lagrange multipliers to inequality constraints and ensure that the optimal automation level \(a_i^*\) remains economically meaningful. Specifically, the optimal solution is given by:
+\[
+a_i^* = \min\left(1, \max\left(0, \frac{\gamma (1 - \bar{a}_{-i}) + \beta}{2k}\right)\right).
+\]
+In the symmetric equilibrium, this reduces to \(\bar{a}^* = \min\left(1, \frac{\gamma + \beta}{2k + \gamma}\right)\), where values exceeding 1 are truncated to reflect the technological limit of full automation. This approach guarantees that the equilibrium automation level \(\bar{a}^*\) is always feasible and interpretable, with \(\bar{a}^* = 1\) corresponding to complete labor substitution.
+
 \subsection{The Automation Trap}
 The iterative best-response dynamics,
 \[
@@ -153,37 +160,35 @@ converges to the symmetric equilibrium \(\bar{a}^* = \frac{\gamma + \beta}{2k + 
 The model thus formalizes the "automation trap": competitive pressures (\(\gamma\)) and low automation costs (\(k\)) drive firms toward excessive automation, risking labor displacement and demand collapse—conditions increasingly prevalent in AGI-driven industries \cite{cerutti2025global,filippucci2025macroeconomic}.
 
 
-
 \begin{table}[ht]
 \centering
-\caption{Symmetric equilibrium values $\bar{a}^*$ for parameters $\gamma$, $k$, and various $\beta$}
+\caption{Symmetric equilibrium values \(\bar{a}^*\) for parameters \(\gamma\), \(k\), and \(\beta\).}
 \label{tab:symmetric_equilibria_params}
 \begin{tabular}{@{}cccccc@{}}
 \toprule
-$\gamma$ & $k$ & $\beta=0.5$ & $\beta=1.0$ & $\beta=2.0$ & Interpretation \\
+\(\gamma\) & \(k\) & \(\beta = 0.5\) & \(\beta = 1.0\) & \(\beta = 2.0\) & Interpretation \\
 \midrule
-0.5 & 0.25 & 0.53 & 0.60 & 0.73 & Moderate \\
-1.0 & 0.25 & 0.68 & 0.76 & 0.87 & High \\
-2.0 & 0.25 & 0.84 & 0.90 & 0.96 & Near-complete \\
-3.0 & 0.25 & 0.89 & 0.93 & 0.97 & Complete \\
-\midrule
-0.5 & 0.5 & 0.44 & 0.52 & 0.67 & Moderate Low \\
-1.0 & 0.5 & 0.59 & 0.67 & 0.80 & Moderate \\
-2.0 & 0.5 & 0.76 & 0.83 & 0.92 & High \\
-3.0 & 0.5 & 0.82 & 0.87 & 0.94 & Very High \\
-\midrule
-0.5 & 1.0 & 0.33 & 0.41 & 0.55 & Low \\
-1.0 & 1.0 & 0.48 & 0.56 & 0.70 & Moderate \\
-2.0 & 1.0 & 0.65 & 0.73 & 0.84 & High \\
-3.0 & 1.0 & 0.71 & 0.78 & 0.87 & High \\
-\midrule
-0.5 & 2.0 & 0.21 & 0.29 & 0.43 & Low \\
-1.0 & 2.0 & 0.37 & 0.45 & 0.60 & Moderate low \\
-2.0 & 2.0 & 0.54 & 0.62 & 0.75 & Moderate high \\
-3.0 & 2.0 & 0.60 & 0.68 & 0.80 & High \\
+0.5 & 0.25 & 1.00 & 1.00 & 1.00 & Complete \\
+1.0 & 0.25 & 1.00 & 1.00 & 1.00 & Complete \\
+2.0 & 0.25 & 1.00 & 1.00 & 1.00 & Complete \\
+3.0 & 0.25 & 1.00 & 1.00 & 1.00 & Complete \\ \midrule
+0.5 & 0.5 & 0.67 & 1.00 & 1.00 & Moderate to Complete \\
+1.0 & 0.5 & 0.75 & 1.00 & 1.00 & High to Complete \\
+2.0 & 0.5 & 0.83 & 1.00 & 1.00 & Near-complete \\
+3.0 & 0.5 & 0.88 & 1.00 & 1.00 & Complete \\ \midrule
+0.5 & 1.0 & 0.40 & 0.60 & 1.00 & Low to Complete \\
+1.0 & 1.0 & 0.50 & 0.67 & 1.00 & Moderate to Complete \\
+2.0 & 1.0 & 0.63 & 0.75 & 1.00 & High to Complete \\
+3.0 & 1.0 & 0.70 & 0.80 & 1.00 & High to Complete \\ \midrule
+0.5 & 2.0 & 0.22 & 0.33 & 0.56 & Low \\
+1.0 & 2.0 & 0.30 & 0.40 & 0.60 & Moderate Low \\
+2.0 & 2.0 & 0.42 & 0.50 & 0.67 & Moderate \\
+3.0 & 2.0 & 0.50 & 0.57 & 0.71 & Moderate High \\
 \bottomrule
 \end{tabular}
 \end{table}
+    
+
 
 \subsubsection{Analytical Benchmark for Convergence Dynamics}
 \label{subsec:analytical_benchmark}
@@ -216,8 +221,6 @@ with analytical solution:
 \]
 where \(\bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}\) is the equilibrium automation level. This formulation aligns with empirical observations of firm-level automation decisions, where adjustment periods typically range from quarterly to annual cycles depending on the technology's disruptiveness~\cite{acemoglu2025simple,autor2015there}. For instance, with \(\epsilon = 0.1\) per quarter, the model implies a half-life of \(\ln(2)/\epsilon \approx 6.93\) quarters (~1.73 years) for convergence to equilibrium, consistent with observed 1--5 year investment cycles in industrial automation.
 
-
-%% mettre des resultats analytiques ici ? ou dans la section suivante ?
 
 \section{Simulation Design and Results}
 \subsection{Methodology}
