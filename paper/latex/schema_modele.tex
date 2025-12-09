@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+\usepackage{amsmath} % Utile pour les maths
+
+\begin{document}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    firm/.style={rectangle, draw=blue!60, fill=blue!5, very thick, minimum size=1cm},
+    param/.style={diamond, draw=red!60, fill=red!5, very thick, minimum size=1cm, aspect=1.5}, % Augmenter l'aspect pour les labels plus longs
+    arrow/.style={->,>=Stealth,thick},
+    label/.style={text width=3cm, align=center},
+    decision/.style={circle, draw=black!60, fill=gray!10, minimum size=0.5cm} % Nouveau style pour a_i
+]
+
+% Firmes
+\node[firm] (f1) at (0,0) {Firm 1};
+\node[firm] (f2) at (3,0) {Firm 2};
+\node[firm] (fN) at (7.5,0) {Firm $N$}; % Écart plus grand pour les points de suspension
+
+% Points de suspension pour la série
+\node at (5.25, 0) {$\dots$};
+
+% Paramètres
+\node[param] (gamma) at (3,2.2) {$\gamma$ (Competitive Pressure)};
+\node[param] (k) at (3,-2.2) {$k$ (Automation Cost)};
+\node[param] (beta) at (0,-2.2) {$\beta$ (Baseline Gain)};
+
+% Flèches de compétition (gamma) - Les firmes sont liées par gamma
+\draw[arrow, blue!60] (gamma) -- (f1);
+\draw[arrow, blue!60] (gamma) -- (f2);
+\draw[arrow, blue!60] (gamma) -- (fN);
+% Suggestion d'interdépendance via gamma (plus conceptuel)
+\draw[<->, dashed, blue!60] (f1) -- (f2); 
+\draw[<->, dashed, blue!60] (f2) -- (fN);
+
+% Flèches de coût (k)
+\draw[arrow, red!60] (k) -- (f1);
+\draw[arrow, red!60] (k) -- (f2);
+\draw[arrow, red!60] (k) -- (fN);
+
+% Flèches de gain (beta)
+\draw[arrow, green!60] (beta) -- (f1);
+\draw[arrow, green!60] (beta) -- (f2);
+\draw[arrow, green!60] (beta) -- (fN);
+
+% Décision d'automatisation (a_i)
+\node[decision, below=0.5cm of f1] (a1) {$a_1$};
+\node[decision, below=0.5cm of f2] (a2) {$a_2$};
+\node[decision, below=0.5cm of fN] (aN) {$a_N$};
+\draw[arrow] (f1) -- (a1);
+\draw[arrow] (f2) -- (a2);
+\draw[arrow] (fN) -- (aN);
+
+% Équilibre
+% Utiliser align=center dans la node pour la formule
+\node[ellipse, draw=black!60, fill=black!5, very thick, minimum width=4cm, text width=5cm, align=center] (eq) at (3.75,-5) {
+    Cournot-Nash Equilibrium: \\
+    $$ \bar{a}^* = \frac{\gamma + \beta}{2k + \gamma} $$
+};
+
+% Flèches vers l'équilibre (représentant la détermination de l'équilibre)
+\draw[arrow] (a1) -- (eq);
+\draw[arrow] (a2) -- (eq);
+\draw[arrow] (aN) -- (eq);
+
+% Résultat : risque de displacement
+\node[label, below=0.5cm of eq] (risk) {Labor Displacement Risk if $\bar{a}^* \approx 1$};
+
+% Légende
+\matrix[draw, below right, xshift=1cm, yshift=1cm] at (current bounding box.south west) {
+    \node[firm,label=right:Firm]; \\
+    \node[param,label=right:Parameter]; \\
+    \node[draw=blue!60,circle,minimum size=0.5cm,label=right:Competitive Pressure ($\gamma$) Input]; \\
+    \node[draw=red!60,circle,minimum size=0.5cm,label=right:Automation Cost ($k$) Input]; \\
+    \node[draw=green!60,circle,minimum size=0.5cm,label=right:Baseline Gain ($\beta$) Input]; \\
+};
+
+\end{tikzpicture}
+\caption{Conceptual diagram of the firm-level automation model. Firms compete by adjusting their automation levels $a_i$ based on competitive pressure ($\gamma$), costs ($k$), and baseline gains ($\beta$). The equilibrium $\bar{a}^*$ determines the risk of labor displacement.}
+\label{fig:schema}
+\end{figure}
+
+\end{document}
