@@ -1,0 +1,53 @@
+% --- Figures ---
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    % STYLES
+    firm/.style={rectangle, draw=blue!80, fill=blue!5, ultra thick, minimum width=2.8cm, minimum height=1.5cm, align=center}, 
+    strategy/.style={circle, draw=black!80, fill=gray!10, minimum size=1cm, align=center, thick},
+    % ARROWS
+    decision_flow/.style={->,>=Stealth, ultra thick, black!70}, % Droit pour les décisions
+    % Courbe pour l'interaction stratégique
+    interaction_link/.style={->,>=Stealth, ultra thick, blue!70, looseness=1.3, dashed} 
+]
+
+% ===================================
+% 1. Firms (Agents) and Decisions
+% ===================================
+\node[firm] (f1) at (0, 1.5) {Firm 1};
+\node[firm] (f2) at (4, 1.5) {Firm $i$};
+\node[firm] (fN) at (8, 1.5) {Firm $N$};
+\node at (2, 1.5) {$\dots$};
+\node at (6, 1.5) {$\dots$};
+
+% --- Automation Strategy Output ---
+\node[strategy] (a1) at (0, -0.5) {$a_1$};
+\node[strategy] (ai) at (4, -0.5) {$a_i$};
+\node[strategy] (aN) at (8, -0.5) {$a_N$};
+
+% Flèches de décision (Output) - LIGNES DROITES
+\draw[decision_flow] (f1) -- (a1) node[midway, right, xshift=2pt, font=\footnotesize] {Choose};
+\draw[decision_flow] (f2) -- (ai) node[midway, right, xshift=2pt, font=\footnotesize] {Choose};
+\draw[decision_flow] (fN) -- (aN) node[midway, right, xshift=2pt, font=\footnotesize] {Choose};
+
+
+% ===================================
+% 2. Strategic Interaction (Feedback / Interdependence)
+% ===================================
+
+% Flèches sortantes de a_i vers les autres firmes (COURBES)
+\draw[interaction_link] (ai.south west) to[bend left=55] 
+    node[midway, above, font=\footnotesize, blue!80] {Affects $\Pi_1$} (f1.south east);
+\draw[interaction_link] (ai.south east) to[bend right=55] 
+    node[midway, above, font=\footnotesize, blue!80] {Affects $\Pi_N$} (fN.south west);
+
+% Flèches entrantes vers f_i (COURBES)
+\draw[interaction_link, <-] (a1.south) to[bend right=60] 
+    node[midway, below, font=\footnotesize] {From $\bar{a}_{-i}$} (f2.south west);
+\draw[interaction_link, <-] (aN.south) to[bend left=60] 
+    node[midway, below, font=\footnotesize] {From $\bar{a}_{-i}$} (f2.south east);
+
+\end{tikzpicture}
+\caption{Conceptual diagram of the model: firms, competitive pressure (\(\gamma\)), automation costs (\(k\)), and equilibrium \(\bar{a}^*\).}
+\label{fig:schema}
+\end{figure}
