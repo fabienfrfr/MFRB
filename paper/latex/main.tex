@@ -191,8 +191,16 @@ a condition that abstracts from dynamic interactions and strategic behavior \cit
 Under these assumptions, we formalize the firm's profit maximization problem as follows:
 
 \[
+\Pi_{i}(Q_i, a_i, Q_{-i}) = \underbrace{P(Q_i + Q_{-i}) \cdot Q_i}_{\text{Incomes}} - \underbrace{(c_0 - \delta a_i) Q_i - k a_i^2}_{\text{Costs}}
+\]
+
+Component of Pi Origin (Modeling Hypothesis) Mathematical Link (Reduced Form) Term $\beta a_i$ (Absolute Productivity Gain) H1: Efficiency of AGI. The marginal cost of production $c$ is a decreasing and linear function of the automation $a_i$. $\Delta c \propto -a_i$ Captures the marginal gain (Revenue - Production Costs) which is independent of rivals' choices. Term $\gamma a_i (1 - \overline{a}_{-i})$ (Competitive Advantage) H2: Price Competition. Automation $a_i$ allows for a price decrease (or a better margin at constant price), resulting in a market share gain proportional to the automation gap with the average of rivals ($\overline{a}_{-i}$). It captures demand sensitivity to cost/price competitiveness, creating a transitory advantage. Term $-k a_i^2$ (Investment Cost) H3: Diminishing Returns on Investment. The total cost of implementing AGI increases more than proportionally ($k>0$) with the level of automation $a_i$. It anchors the equilibrium by preventing $a_i \to \infty$. It represents increasing integration difficulties. We can simplify the profit function by normalizing quantities and prices, leading to the following reduced form:
+
+\[
 \Pi_i(a_i, \bar{a}_{-i}) = \gamma a_i (1 - \bar{a}_{-i}) + \beta a_i - k a_i^2,
 \]
+
+
 
 where:
 \begin{itemize}
@@ -215,8 +223,41 @@ This expression shows that a firm's optimal automation level increases with its 
 \bar{a}^* = \min\left(1, \frac{\gamma + \beta}{2k + \gamma}\right).
 \]
 
+
+\subsection{The Social Prisoner's Dilemma}
+
+Our framework reveals a fundamental structural conflict, rendering the automation process a two-level Prisoner's Dilemma (PD).
+
+\subsubsection{Two-Level Objectives}
+Firms, operating at the micro-level, independently maximize their net profit ($\Pi_i$). The resulting Nash Equilibrium, $\overline{a}_{\text{Nash}}^*$, reflects the collectively self-destructive outcome of the competitive race. This equilibrium is compared against the Social Optimum, $\overline{a}_{W}^*$, which maximizes the aggregate Social Welfare ($W$).
+
+\subsubsection{Social Welfare Function ($W$)}
+Social welfare is defined as the balance between the aggregate economic gains from AGI efficiency ($G_{\text{effic}}$) and the macroeconomic costs associated with salary-based demand collapse ($C_{\text{social}}$):
+$$W(\overline{a}) = G_{\text{effic}}(\overline{a}) - C_{\text{social}}(\overline{a})$$
+The components are:
+\begin{enumerate}
+    \item \textbf{Efficiency Gain ($G_{\text{effic}}$):} Directly proportional to the aggregate automation level, $\overline{a}$, capturing intrinsic productivity increases ($\beta$):
+    $$G_{\text{effic}}(\overline{a}) = \beta \overline{a}$$
+    \item \textbf{Social Cost ($C_{\text{social}}$):} Non-linearly increasing with automation, reflecting the accelerating risk of demand collapse as human employment (proportional to $1-\overline{a}$) declines. We model this cost using a power function with $\lambda > 1$:
+    $$C_{\text{social}}(\overline{a}) = C_{0} \cdot \overline{a}^{\lambda}$$
+\end{enumerate}
+The full Social Welfare function is:
+$$W(\overline{a}) = \beta \overline{a} - C_{0} \overline{a}^{\lambda}$$
+
+\subsubsection{The Dilemma}
+The dilemma exists when the equilibrium chosen by firms ($\overline{a}_{\text{Nash}}^*$) significantly exceeds the socially optimal level ($\overline{a}_{W}^*$).
+The Nash Equilibrium $\overline{a}_{\text{Nash}}^*$ is the outcome of profit maximization:
+$$\overline{a}_{\text{Nash}}^* \in \arg\max \Pi_i(a_i, \overline{a}_{-i})$$
+The Social Optimum $\overline{a}_{W}^*$ is derived from maximizing welfare:
+$$\overline{a}_{W}^* = \arg\max W(\overline{a})$$
+
+If the parameters lead to a high $\overline{a}_{\text{Nash}}^*$ (e.g., $\overline{a}_{\text{Nash}}^* \approx 1$) where $C_{\text{social}}$ dominates $G_{\text{effic}}$, then:
+$$\overline{a}_{\text{Nash}}^* \gg \overline{a}_{W}^*$$
+This divergence proves that the non-cooperative pursuit of micro-profit leads to a state of **socially sub-optimal welfare** (low $W$) and validates the analogy of the "Automation Trap" as a two-level Prisoner's Dilemma.
+
+
 \subsection{The Automation Trap}
-The iterative best-response dynamics converge to the symmetric equilibrium under standard conditions.
+The iterative best-response dynamics converge to the symmetric equilibrium under standard conditions. The process of AGI automation is modeled as a two-level game, where the micro-level profit maximization drives a macro-level social sub-optimality. To formally capture this "Automation Trap," we present a dual-payoff matrix where each cell represents the outcome for both the individual firm and aggregate society.
 
 \begin{table}[ht]
     \centering
@@ -246,6 +287,32 @@ The iterative best-response dynamics converge to the symmetric equilibrium under
     \end{tabular}
     \end{table}
 
+
+The strategies are \textbf{Cooperation ($C: a=0$)}, defined as maintaining the current labor-intensive state (optimal for social stability), and \textbf{Defection ($D: a=1$)}, defined as maximum automation (optimal for short-term competitive gain). Each payoff takes the form: $(\Pi_i \text{ (Firm Profit)}, W \text{ (Social Welfare)})$.
+    
+    \begin{table}[h]
+        \centering
+        \caption{Dual Payoff Matrix of the Automation Game (Firm vs. Society)}
+        \label{tab:dual_payoff_dilemma}
+        \begin{tabular}{c c c}
+            \toprule
+            \multicolumn{3}{c}{\textbf{Payoff Pair} $(\Pi_i, W)$} \\
+            \midrule
+            & \multicolumn{2}{c}{\textbf{Firm $j$}} \\
+            \cmidrule(lr){2-3}
+            \textbf{Firm $i$} & Cooperation ($C: a_j=0$) & Defection ($D: a_j=1$) \\
+            \midrule
+            Cooperation ($C: a_i=0$) & $(0, W_{\text{Max}})$ & $(0, W_{\text{Low}})$ \\
+            Defection ($D: a_i=1$) & $(\gamma + \beta - k, W_{\text{Low}})$ & $(\beta - k, W_{\text{Trap}})$ \\
+            \bottomrule
+        \end{tabular}
+        \vspace{0.5em}
+        \begin{flushleft}
+        \footnotesize
+        \textbf{Key:} $\Pi_i$ is the firm's net profit (Sec. 2). $W$ is aggregate Social Welfare (Sec. 3), defined as $W(\overline{a}) = \beta \overline{a} - C_{0} \overline{a}^{\lambda}$.
+        \textbf{The Dilemma:} The Nash Equilibrium is (Defection, Defection), driven by the firm's strong incentive: $\Pi(D, C) > \Pi(C, C)$ and $\Pi(D, D) > \Pi(C, D)$ (assuming $\beta > k$). However, this equilibrium leads to $W_{\text{Trap}}$, where $W_{\text{Max}} > W_{\text{Trap}}$, proving the social sub-optimality.
+        \end{flushleft}
+    \end{table}
 
 This equilibrium exhibits a coordination failure with two key properties:
 \begin{itemize}
