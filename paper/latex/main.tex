@@ -120,7 +120,20 @@ This study contributes to the literature by modeling firm automation decisions a
 
 \subsection{Profit Function and Cournot-Nash Equilibrium}
 
-Standard microeconomic theory posits that firms maximize profits \(\Pi_i = R_i - C_i\), where \(\Pi_i\) denotes the profit of firm \(i\), \(R_i\) its revenue, and \(C_i\) its costs. In constrained optimization settings, firms may instead maximize a utility function \(U_i(x_i)\) subject to resource constraints \(\sum x_i \leq \omega\), where \(U_i\) represents the firm's objective (e.g., profit, market share, or a combination of economic outcomes), and \(\omega\) is the total available resource budget \cite{varian1992microeconomic}. The Pareto optimum requires equal marginal utilities across agents:
+Standard microeconomic theory posits that firms maximize profits \(\Pi_i = R_i - C_i\), where \(\Pi_i\) denotes the profit of firm \(i\), \(R_i\) its revenue, and \(C_i\) its costs. In constrained optimization settings, firms may instead maximize a utility function \(U_i(x_i)\) subject to resource constraints like : 
+
+\[
+\max W \left( U_1(x_{1,t}), \ldots, U_n(x_{n,t}) \right)
+\]
+
+\[
+x_1 + \ldots + x_n \leq \omega_t
+\]
+
+where \(U_i\) represents the firm's objective (e.g., profit, market share, or a combination of economic outcomes), and \(\omega\) is the total available resource budget \cite{varian1992microeconomic}. The Pareto optimum requires equal marginal utilities across agents:
+
+
+
 \[
 \frac{\partial U_i}{\partial x_i} = \frac{\partial U_j}{\partial x_j} = \lambda \quad \forall i,j,
 \]
@@ -193,6 +206,11 @@ Under these assumptions, we formalize the firm's profit maximization problem as 
 \[
 \Pi_{i}(Q_i, a_i, Q_{-i}) = \underbrace{P(Q_i + Q_{-i}) \cdot Q_i}_{\text{Incomes}} - \underbrace{(c_0 - \delta a_i) Q_i - k a_i^2}_{\text{Costs}}
 \]
+
+% Hypotheses à reformuler pour clarifier le modèle
+% Hypotheses 1 : Le travail est substituable par l'AGI et apporte la meme productivité
+% Hypothèses 2 : Le travail humain et de l'AGI sont chacun un cout
+% Hypothèses 3 : Le delta du cout apporte un avantage compétitif (prix de vente plus bas ou marge plus haute)
 
 Component of Pi Origin (Modeling Hypothesis) \cite{acemoglu2018race,dasgupta1980uncertainty} Mathematical Link (Reduced Form) Term $\beta a_i$ (Absolute Productivity Gain) H1: Efficiency of AGI. The marginal cost of production $c$ is a decreasing and linear function of the automation $a_i$. $\Delta c \propto -a_i$ Captures the marginal gain (Revenue - Production Costs) which is independent of rivals' choices. Term $\gamma a_i (1 - \overline{a}_{-i})$ (Competitive Advantage) H2: Price Competition. Automation $a_i$ allows for a price decrease (or a better margin at constant price), resulting in a market share gain proportional to the automation gap with the average of rivals ($\overline{a}_{-i}$). It captures demand sensitivity to cost/price competitiveness, creating a transitory advantage. Term $-k a_i^2$ (Investment Cost) H3: Diminishing Returns on Investment. The total cost of implementing AGI increases more than proportionally ($k>0$) with the level of automation $a_i$. It anchors the equilibrium by preventing $a_i \to \infty$. It represents increasing integration difficulties. We can simplify the profit function by normalizing quantities and prices, leading to the following reduced form:
 
