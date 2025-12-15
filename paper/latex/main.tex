@@ -194,7 +194,7 @@ Under these assumptions, we formalize the firm's profit maximization problem as 
 \Pi_{i}(Q_i, a_i, Q_{-i}) = \underbrace{P(Q_i + Q_{-i}) \cdot Q_i}_{\text{Incomes}} - \underbrace{(c_0 - \delta a_i) Q_i - k a_i^2}_{\text{Costs}}
 \]
 
-Component of Pi Origin (Modeling Hypothesis) Mathematical Link (Reduced Form) Term $\beta a_i$ (Absolute Productivity Gain) H1: Efficiency of AGI. The marginal cost of production $c$ is a decreasing and linear function of the automation $a_i$. $\Delta c \propto -a_i$ Captures the marginal gain (Revenue - Production Costs) which is independent of rivals' choices. Term $\gamma a_i (1 - \overline{a}_{-i})$ (Competitive Advantage) H2: Price Competition. Automation $a_i$ allows for a price decrease (or a better margin at constant price), resulting in a market share gain proportional to the automation gap with the average of rivals ($\overline{a}_{-i}$). It captures demand sensitivity to cost/price competitiveness, creating a transitory advantage. Term $-k a_i^2$ (Investment Cost) H3: Diminishing Returns on Investment. The total cost of implementing AGI increases more than proportionally ($k>0$) with the level of automation $a_i$. It anchors the equilibrium by preventing $a_i \to \infty$. It represents increasing integration difficulties. We can simplify the profit function by normalizing quantities and prices, leading to the following reduced form:
+Component of Pi Origin (Modeling Hypothesis) \cite{acemoglu2018race,dasgupta1980uncertainty} Mathematical Link (Reduced Form) Term $\beta a_i$ (Absolute Productivity Gain) H1: Efficiency of AGI. The marginal cost of production $c$ is a decreasing and linear function of the automation $a_i$. $\Delta c \propto -a_i$ Captures the marginal gain (Revenue - Production Costs) which is independent of rivals' choices. Term $\gamma a_i (1 - \overline{a}_{-i})$ (Competitive Advantage) H2: Price Competition. Automation $a_i$ allows for a price decrease (or a better margin at constant price), resulting in a market share gain proportional to the automation gap with the average of rivals ($\overline{a}_{-i}$). It captures demand sensitivity to cost/price competitiveness, creating a transitory advantage. Term $-k a_i^2$ (Investment Cost) H3: Diminishing Returns on Investment. The total cost of implementing AGI increases more than proportionally ($k>0$) with the level of automation $a_i$. It anchors the equilibrium by preventing $a_i \to \infty$. It represents increasing integration difficulties. We can simplify the profit function by normalizing quantities and prices, leading to the following reduced form:
 
 \[
 \Pi_i(a_i, \bar{a}_{-i}) = \gamma a_i (1 - \bar{a}_{-i}) + \beta a_i - k a_i^2,
@@ -226,10 +226,10 @@ This expression shows that a firm's optimal automation level increases with its 
 
 \subsection{The Social Prisoner's Dilemma}
 
-Our framework reveals a fundamental structural conflict, rendering the automation process a two-level Prisoner's Dilemma (PD).
+Our framework reveals a fundamental structural conflict, rendering the automation process a two-level Prisoner's Dilemma (PD) because its \cite{axelrod1984evolution}.
 
 \subsubsection{Two-Level Objectives}
-Firms, operating at the micro-level, independently maximize their net profit ($\Pi_i$). The resulting Nash Equilibrium, $\overline{a}_{\text{Nash}}^*$, reflects the collectively self-destructive outcome of the competitive race. This equilibrium is compared against the Social Optimum, $\overline{a}_{W}^*$, which maximizes the aggregate Social Welfare ($W$).
+Firms, operating at the micro-level, independently maximize their net profit ($\Pi_i$). The resulting Nash Equilibrium, $\overline{a}_{\text{Nash}}^*$, reflects the collectively self-destructive outcome of the competitive race. This equilibrium is compared against the Social Optimum, $\overline{a}_{W}^*$, which maximizes the aggregate Social Welfare ($W$) \cite{karabarbounis2014global, keynes1937general}.
 
 \subsubsection{Social Welfare Function ($W$)}
 Social welfare is defined as the balance between the aggregate economic gains from AGI efficiency ($G_{\text{effic}}$) and the macroeconomic costs associated with salary-based demand collapse ($C_{\text{social}}$):
