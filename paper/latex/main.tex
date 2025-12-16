@@ -189,12 +189,12 @@ a condition that abstracts from dynamic interactions and strategic behavior \cit
     \draw[interaction_link] (ai.south east) to[bend right=55] 
         node[midway, above, font=\footnotesize, blue!80] {Affects $\Pi_N$} (fN.south west);
     
-    % Flèches entrantes vers f_i (COURBES)
-    \draw[interaction_link, <-] (a1.south) to[bend right=60] 
-        node[midway, below, font=\footnotesize] {From $\bar{a}_{-i}$} (f2.south west);
-    \draw[interaction_link, <-] (aN.south) to[bend left=60] 
-        node[midway, below, font=\footnotesize] {From $\bar{a}_{-i}$} (f2.south east);
-    
+    % Flèches entrantes vers f_i (ANGLES DROITS)
+    % \draw[interaction_link, <-] (a1.south) -- ++(0,-0.7) -| (f2.south west)
+    % node[pos=0.15, below, font=\footnotesize] {From $\bar{a}_{-i}$};
+    % \draw[interaction_link, <-] (aN.south) -- ++(0,-0.7) -| (f2.south east)
+    % node[pos=0.15, below, font=\footnotesize] {From $\bar{a}_{-i}$};
+
     \end{tikzpicture}
     \caption{Conceptual diagram of the model: firms, competitive pressure (\(\gamma\)), automation costs (\(k\)), and equilibrium \(\bar{a}^*\).}
     \label{fig:schema}
