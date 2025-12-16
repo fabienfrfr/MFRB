@@ -238,40 +238,49 @@ a_i^* = \frac{\gamma (1 - \bar{a}_{-i}) + \beta}{2k}.
 \]
 This expression shows that a firm's optimal automation level increases with its competitive advantage (\(\gamma\)) and baseline gains (\(\beta\)), but decreases with costs (\(k\)) and rivals' automation levels (\(\bar{a}_{-i}\)). In the symmetric Cournot-Nash equilibrium, where all firms choose the same automation level \(\bar{a}^*\), and to account for the technological constraint that the automation level \(a_i\) must lie within the interval \([0, 1]\) (\textbf{Karush-Kuhn-Tucker conditions}),  the equilibrium is given by:
 \[
-\bar{a}^* = \min\left(1, \frac{\gamma + \beta}{2k + \gamma}\right).
+\bar{a}_{\Pi}^* = \min\left(1, \frac{\gamma + \beta}{2k + \gamma}\right).
 \]
 
 
 \subsection{The Social Prisoner's Dilemma}
 
-Our framework reveals a fundamental structural conflict, rendering the automation process a two-level Prisoner's Dilemma (PD) because its \cite{axelrod1984evolution}.
+Our framework reveals a fundamental structural conflict, rendering the automation process a two-level Prisoner's Dilemma (PD) because its \cite{axelrod1981evolution}.
 
 \subsubsection{Two-Level Objectives}
-Firms, operating at the micro-level, independently maximize their net profit ($\Pi_i$). The resulting Nash Equilibrium, $\overline{a}_{\text{Nash}}^*$, reflects the collectively self-destructive outcome of the competitive race. This equilibrium is compared against the Social Optimum, $\overline{a}_{W}^*$, which maximizes the aggregate Social Welfare ($W$) \cite{karabarbounis2014global, keynes1937general}.
+Firms, operating at the micro-level, independently maximize their net profit ($\Pi_i$). The resulting Nash Equilibrium, $\overline{a}_{\Pi}^*$, reflects the collectively self-destructive outcome of the competitive race. This equilibrium is compared against the Social Optimum, $\overline{a}_{W}^*$, which maximizes the aggregate Social Welfare ($W$) \cite{karabarbounis2014global, keynes1937general}.
 
 \subsubsection{Social Welfare Function ($W$)}
-Social welfare is defined as the balance between the aggregate economic gains from AGI efficiency ($G_{\text{effic}}$) and the macroeconomic costs associated with salary-based demand collapse ($C_{\text{social}}$):
-$$W(\overline{a}) = G_{\text{effic}}(\overline{a}) - C_{\text{social}}(\overline{a})$$
+Social welfare is defined as the balance between the aggregate economic gains from AGI efficiency ($G$) and the macroeconomic costs associated with salary-based demand collapse ($C$):
+$$W(\overline{a}) = G(\overline{a}) - C(\overline{a})$$
 The components are:
 \begin{enumerate}
-    \item \textbf{Efficiency Gain ($G_{\text{effic}}$):} Directly proportional to the aggregate automation level, $\overline{a}$, capturing intrinsic productivity increases ($\beta$):
-    $$G_{\text{effic}}(\overline{a}) = \beta \overline{a}$$
-    \item \textbf{Social Cost ($C_{\text{social}}$):} Non-linearly increasing with automation, reflecting the accelerating risk of demand collapse as human employment (proportional to $1-\overline{a}$) declines. We model this cost using a power function with $\lambda > 1$:
-    $$C_{\text{social}}(\overline{a}) = C_{0} \cdot \overline{a}^{\lambda}$$
+    \item \textbf{Efficiency Gain ($G$):} Directly proportional to the aggregate automation level, $\overline{a}$, capturing intrinsic productivity increases ($\beta$):
+    $$G(\overline{a}) = \beta \overline{a}$$
+    \item \textbf{Social Cost ($C$):} Non-linearly increasing with automation, reflecting the accelerating risk of demand collapse as human employment (proportional to $1-\overline{a}$) declines. We model this cost using a power function with $\lambda > 1$:
+    $$C(\overline{a}) = C_{0} \cdot \overline{a}^{\lambda}$$
 \end{enumerate}
 The full Social Welfare function is:
 $$W(\overline{a}) = \beta \overline{a} - C_{0} \overline{a}^{\lambda}$$
 
+Similarity, the first-order condition for welfare maximization is solving for \(a_i\) yields the \textbf{reaction function}:
+
+\[
+\frac{\partial W(\overline{a})}{\partial \overline{a}} = \beta - \lambda C_{0}\overline{a}^{\lambda-1} = 0
+\]
+\[
+\overline{a}_{W}^{*} = \left( \frac{\beta}{\lambda C_{0}} \right)^{\frac{1}{\lambda-1}}
+\]
+
 \subsubsection{The Dilemma}
-The dilemma exists when the equilibrium chosen by firms ($\overline{a}_{\text{Nash}}^*$) significantly exceeds the socially optimal level ($\overline{a}_{W}^*$).
-The Nash Equilibrium $\overline{a}_{\text{Nash}}^*$ is the outcome of profit maximization:
-$$\overline{a}_{\text{Nash}}^* \in \arg\max \Pi_i(a_i, \overline{a}_{-i})$$
+The dilemma exists when the equilibrium chosen by firms ($\overline{a}_{\Pi}^*$) significantly exceeds the socially optimal level ($\overline{a}_{W}^*$).
+The Nash Equilibrium $\overline{a}_{\Pi}^*$ is the outcome of profit maximization:
+$$\overline{a}_{\Pi}^* \in \arg\max \Pi_i(a_i, \overline{a}_{-i})$$
 The Social Optimum $\overline{a}_{W}^*$ is derived from maximizing welfare:
 $$\overline{a}_{W}^* = \arg\max W(\overline{a})$$
 
-If the parameters lead to a high $\overline{a}_{\text{Nash}}^*$ (e.g., $\overline{a}_{\text{Nash}}^* \approx 1$) where $C_{\text{social}}$ dominates $G_{\text{effic}}$, then:
-$$\overline{a}_{\text{Nash}}^* \gg \overline{a}_{W}^*$$
-This divergence proves that the non-cooperative pursuit of micro-profit leads to a state of **socially sub-optimal welfare** (low $W$) and validates the analogy of the "Automation Trap" as a two-level Prisoner's Dilemma.
+If the parameters lead to a high $\overline{a}_{\Pi}^*$ (e.g., $\overline{a}_{\Pi}^* \approx 1$) where $C_{\text{social}}$ dominates $G_{\text{effic}}$, then:
+$$\overline{a}_{\Pi}^* \gg \overline{a}_{W}^*$$
+This divergence proves that the non-cooperative pursuit of micro-profit leads to a state of \textbf{socially sub-optimal welfare} (low $W$) and validates the analogy of the "Automation Trap" as a two-level Prisoner's Dilemma.
 
 
 \subsection{The Automation Trap}
@@ -463,7 +472,7 @@ These tests suggest that the core dynamics are robust to variations in model par
 The simulation results provide empirical support for the theoretical prediction that competitive AGI-driven automation may lead to a Prisoner's Dilemma-like outcome, where individually rational firm behavior results in collectively suboptimal high automation levels. Three key insights emerge:
 
 \begin{itemize}
-\item \textbf{Competitive Pressure as a Dominant Driver}: For \(\gamma \geq 2.0\), firms automate aggressively (\(\bar{a}^* \approx 0.9\)) even at moderate costs, suggesting that competitive dynamics alone may suffice to drive labor obsolescence in sectors with high task routineness. This aligns with empirical evidence that firms prioritize market share over long-term sustainability when faced with intense competition \cite{acemoglu2025simple,glielmo2025beforeit}. The result challenges optimistic narratives of "human-AGI complementarity," instead supporting the "automation trap" hypothesis, where firms cannot unilaterally reduce automation without losing ground to rivals \cite{stiefenhofer2025artificial,smirnov2025deriving}.
+\item \textbf{Competitive Pressure as a Dominant Driver}: For \(\gamma \geq 2.0\), firms automate aggressively (\(\bar{a}^* \approx 0.9\)) even at moderate costs, suggesting that competitive dynamics alone may suffice to drive labor obsolescence in sectors with high task routineness. This aligns with empirical evidence that firms prioritize market share over long-term sustainability when faced with intense competition \cite{acemoglu2025simple,glielmo2025beforeit}. The result challenges optimistic narratives of "human-AGI complementarity," instead supporting the "automation trap" hypothesis, where firms cannot unilaterally reduce automation without losing ground to rivals \cite{stiefenhofer2025artificial}.
 
 \item \textbf{Cost as a Policy Lever}: High automation costs (\(k \geq 1.4\)) limit adoption even for \(\gamma = 3.0\), implying that policy tools targeting \(k\)—such as automation taxes, regulatory hurdles, or subsidies for labor retention—could effectively slow the transition to full automation. This contrasts with deterministic predictions of labor obsolescence and suggests that economic outcomes are not technologically predetermined but depend on controllable parameters \cite{filippucci2025macroeconomic,goertzel2014artificial}.
 
