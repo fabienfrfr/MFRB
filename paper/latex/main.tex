@@ -27,8 +27,7 @@
 %
 % Prefer:
 % - "show", "suggest", "may improve", "offers potential", "addresses some limitations"
-% - "To the best of our knowledge...", "Preliminary experiments suggest...",
-%   "Further investigation is needed...", "This approach may be of interest..."
+% - "Preliminary experiments suggest...", "Further investigation is needed...", "This approach may be of interest..."
 %
 % Apply rules : Less is More
 % Avoid:
@@ -45,6 +44,43 @@
 %
 % Always use conditional language ("could", "might", "suggests") when appropriate and prefer cautious claims.
 % Before finalizing, review each sentence with these criteria in mind.
+
+
+% RULE: Avoid unsolicited external critiques
+% NEVER add comments about real-world constraints (e.g., regulatory, social, ethical)
+% unless explicitly asked or directly relevant to the core hypothesis.
+% If the model assumes idealized conditions (e.g., γ → ∞), state it clearly ONCE:
+%   "Under the assumption of [X], we explore [Y], abstracting away from [Z constraints]."
+% Justify choices only if they impact methodology, not to preempt external critiques.
+% Example of what to AVOID:
+%   "In reality, regulations may limit this..." → Irrelevant if not part of the model scope.
+% ---
+% RULE: Abstract readability
+% The abstract MUST NOT include:
+% - Mathematical formulas (e.g., γ → ∞, ∑x_i, ∂f/∂t).
+% - Special characters (e.g., Greek letters, symbols) unless absolutely standard in the field.
+% - Numeric values or thresholds (e.g., "95% accuracy," "p < 0.05").
+% Rationale: Abstracts should be accessible to a broad audience and focus on concepts, not technical details.
+% Exception: Common abbreviations (e.g., AI, ML) if defined in the paper.
+% ---
+% RULE: Unfiltered scientific integrity
+% Do NOT self-censor or soften claims based on:
+% - Assumed reader biases (e.g., "This might be controversial, but...").
+% - Personal or societal preconceptions (e.g., "Traditionally, this is seen as...").
+% - Fear of challenging established views.
+%
+% Instead:
+% - State hypotheses, results, and limitations **as they are**, with evidence-based language.
+% - If a claim is counterintuitive or provocative, support it with data/logic, not apologies.
+% - Use neutral phrasing to describe conflicts (e.g., "This contradicts [X], which assumes...").
+%
+% Exception: Clarify assumptions if they deviate from mainstream frameworks, but avoid justifying them.
+% ---
+% RULE: Transparent edits
+% When suggesting modifications:
+% 1. Use **track changes** (e.g., ~~deleted~~ / **added**) or list changes explicitly.
+% 2. Explain edits in **≤ 2 bullet points** (e.g., "Removed X → more concise. Added Y → clarifies assumption").
+% 3. Never justify stylistic choices unless asked.
 
 % Structure IMRaD 
 % ------------------------------------------------------------------------
