@@ -524,17 +524,16 @@ While this study provides preliminary insights into the dynamics of AGI-driven a
 \end{itemize}
 
 
-
-Future work could explore:
+\underline{Future work could explore:}
 \begin{itemize}
-    \item \textbf{Heterogeneous firms}: Distributions of \(\gamma\), \(\beta\), and \(k\) across firms to capture industry diversity.
-    \item \textbf{Dynamic cost structures}: Declining \(k\) over time as AGI matures, reflecting technological progress.
-    \item \textbf{Macroeconomic integration}: Endogenous demand effects and policy feedback loops.
+    \item \textbf{Heterogeneous firms}: Distributions of \(\gamma\), \(\beta\), and \(k\) across firms to capture industry diversity and model the selection process inherent to technological shifts.
+    \item \textbf{Dynamic cost structures}: Declining \(k\) over time as AGI matures, reflecting technological progress and its effect on the speed of the automation race.
+    \item \textbf{Macroeconomic integration}: Endogenous demand effects and policy feedback loops to address the model's reliance on exogenous social costs. This could be modeled through two primary mechanisms:
+    \begin{itemize}
+        \item \textbf{Endogenous Demand Feedback}: Modifying the firm's revenue term via a \textbf{Market Contraction Multiplier} $M(\overline{a})$ to link the micro-game to the macro-outcome. This extension to $\Pi_{i}(a_{i},\overline{a}_{-i}, \overline{a}) = \left[ \gamma a_{i}(1-\overline{a}_{-i}) + \beta a_{i} \right] \cdot M(\overline{a}) - k a_{i}^{2}$ is theoretically robust and introduces a self-correction mechanism by social impact (e.g., $M(\overline{a}) = 1 - \alpha \overline{a}^{\lambda-1}$).
+        \item \textbf{Integrating UBI and Policy Transfers}: Including the mechanism of \textbf{Universal Basic Income ($\rho$)} transfers, financed by AI rents, to stabilize the demand multiplier $M(\overline{a})$. This would partially offset the demand contraction and shift the Nash equilibrium towards a socially more optimal outcome ($W(\overline{a}) = (\beta + \rho) \overline{a} - C_{0} \overline{a}^{\lambda}$).
+    \end{itemize}
 \end{itemize}
-
-
-\paragraph*{Endogenous Demand Feedback}
-The lack of macroeconomic feedback can be addressed by making firm profits dependent on aggregate automation ($\overline{a}$). This entails transforming the profit function to $\Pi_{i}(a_{i},\overline{a}_{-i}, \overline{a})$, where $\overline{a}$ inversely scales total market demand due to the wage-based demand collapse. This step is critical, as it allows for an \textit{endogenous self-correction} mechanism: excessive collective automation would diminish market size and profits for all firms, potentially slowing the automation race without external policy.
 
 
 \subsection{Broader Implications}
