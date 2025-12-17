@@ -229,7 +229,7 @@ a condition that abstracts from dynamic interactions and strategic behavior \cit
     \draw[interaction_link] (ai.south east) to[bend right=55] 
         node[midway, above, font=\footnotesize, blue!80] {Affects $\Pi_N$} (fN.south west);
     \end{tikzpicture}
-    \caption{Conceptual diagram of the model: firms, competitive pressure (\(\gamma\)), automation costs (\(k\)), and equilibrium \(\bar{a}^*\).}
+    \caption{Conceptual diagram of the model: firms in competitive pressure (\(\gamma\)), automation costs (\(k\)), and equilibrium \(\bar{a}^*\) system.}
     \label{fig:schema}
 \end{figure}
 
@@ -377,7 +377,7 @@ This divergence illustrates that the non-cooperative pursuit of firm-level profi
 
 Under standard conditions, iterative best-response dynamics converge to the symmetric equilibrium. The process of AGI-driven automation can therefore be viewed as a two-level game, in which micro-level profit maximization generates macro-level outcomes that may be socially undesirable. To formalize this ``automation trap'', the analysis considers both equilibrium values and a stylized payoff matrix.
 
-In a simplified representation, the strategies are \textbf{Cooperation} (\(C: a=0\)), interpreted as maintaining a labor-intensive state, and \textbf{Defection} (\(D: a=1\)), interpreted as full automation. Each payoff is written as \((\Pi_i, W)\), where \(\Pi_i\) denotes firm-level profit and \(W\) denotes social welfare.
+In a simplified representation, the strategies are \textbf{Cooperation} (\(C: a \rightarrow 0\)), interpreted as maintaining a labor-intensive state, and \textbf{Defection} (\(D: a \rightarrow 1\)), interpreted as full automation. Each payoff is written as \((\Pi_i, W)\), where \(\Pi_i\) denotes firm-level profit and \(W\) denotes social welfare.
 
 \begin{table}[h]
     \centering
@@ -389,10 +389,10 @@ In a simplified representation, the strategies are \textbf{Cooperation} (\(C: a=
         \midrule
         & \multicolumn{2}{c}{\textbf{Firm $j$}} \\
         \cmidrule(lr){2-3}
-        \textbf{Firm $i$} & Cooperation (\(C: a_j\rightarrow0\)) & Defection (\(D: a_j \rightarrow 1\)) \\
+        \textbf{Firm $i$} & Cooperation (\(C: a_j\rightarrow 0\)) & Defection (\(D: a_j \rightarrow 1\)) \\
         \midrule
-        Cooperation (\(C: a_i\rightarrow0\)) & \((0, W_{\text{Max}})\) & \((0, W_{\text{Low}})\) \\
-        Defection (\(D: a_i\rightarrow1\)) & \((\gamma + \beta - k, W_{\text{Low}})\) & \((\beta - k, W_{\text{Trap}})\) \\
+        Cooperation (\(C: a_i\rightarrow 0\)) & \((0, W_{\text{Max}})\) & \((0, W_{\text{Low}})\) \\
+        Defection (\(D: a_i\rightarrow 1\)) & \((\gamma + \beta - k, W_{\text{Low}})\) & \((\beta - k, W_{\text{Trap}})\) \\
         \bottomrule
     \end{tabular}
     \vspace{0.5em}
@@ -459,7 +459,7 @@ To explore the dynamics of firm-level automation decisions, we simulate an oligo
     \item \textbf{Mutation}: With a 5\% probability, firm \(i\) perturbs its automation level by a random shock \(\mathcal{N}(0, 0.1)\), clipped to \([0,1]\), to reflect innovation or idiosyncratic shocks.
 \end{enumerate}
 
-We evaluate the model across a grid of competitive pressure parameters (\(\gamma \in \{0.5, 1.0, 2.0, 3.0\}\)), automation costs (\(k \in \{0.2, 0.8, 1.4, 2.0\}\)), and baseline automation gain \(\beta  \in \{0.2, 0.8, 1.4, 2.0\}\). Each \((\gamma, k)\) combination is simulated 10 times to account for stochasticity. Results, summarized in Figure~\ref{fig:simulation_results}, highlight two key patterns: (1) rapid convergence to high automation levels \(\bar{a}^*\) when \(\gamma\) dominates \(k\), and (2) cost sensitivity, where \(k \geq 1.4\) significantly suppresses adoption even under strong competitive pressure. Time-series dynamics confirm equilibrium is reached within 500 iterations for most cases, validating the theoretical framework.
+We evaluate the model across a grid of competitive pressure parameters (\(\gamma \in \{0.5, 1.0, 2.0, 3.0\}\)), automation costs (\(k \in \{0.2, 0.8, 1.4, 2.0\}\)), and baseline automation gain \(\beta  \in \{0.2, 0.8, 1.4, 2.0\}\). Each \((\gamma, k)\) combination is simulated 10 times to account for stochasticity. Results, summarized in Figure~\ref{fig:analytical_results}-~\ref{fig:simulation_results}, highlight two key patterns: (1) rapid convergence to high automation levels \(\bar{a}^*\) when \(\gamma\) dominates \(k\), and (2) cost sensitivity, where \(k \geq 1.4\) significantly suppresses adoption even under strong competitive pressure. Time-series dynamics confirm equilibrium is reached within 500 iterations for most cases, validating the theoretical framework.
 
 
 \subsection{Key Observations}
