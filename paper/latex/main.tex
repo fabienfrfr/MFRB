@@ -76,7 +76,7 @@
 %
 % Exception: Clarify assumptions if they deviate from mainstream frameworks, but avoid justifying them.
 % ---
-% RULE: Transparent edits
+% RULE: Transparent edits 
 % When suggesting modifications:
 % 1. Use **track changes** (e.g., ~~deleted~~ / **added**) or list changes explicitly.
 % 2. Explain edits in **≤ 2 bullet points** (e.g., "Removed X → more concise. Added Y → clarifies assumption").
@@ -89,248 +89,209 @@
 \maketitle
 
 \begin{abstract}
-The potential for Artificial General Intelligence~(\textsc{agi}) to automate a wide range of economically relevant tasks raises critical questions about the future of labor markets.
+The potential for Artificial General Intelligence~(\textsc{agi}) to automate a wide range of economically relevant tasks raises important questions about the future of labor markets.
 This paper presents a microsimulation framework in which firms iteratively adjust their automation levels within a repeated non-cooperative game, structurally analogous to the Prisoner's Dilemma.
 Firms balance the competitive advantages of out-automating rivals against the costs of implementation, leading to context-dependent equilibrium outcomes.
 
-Simulations reveal that automation adoption patterns vary significantly with competitive pressure and cost structures:
-high competitive intensity drives near-complete automation in some sectors, while elevated implementation costs preserve partial labor substitution in others.
-These dynamics suggest that unregulated competitive interactions may lead to socially suboptimal automation levels, motivating the exploration of policy instruments such as automation taxation or universal basic income mechanisms funded by \textsc{agi}-generated rents.
+Simulations indicate that automation adoption patterns vary with competitive pressure and cost structures:
+high competitive intensity is associated with near-complete automation in some sectors, while higher implementation costs are associated with partial labor substitution in others.
+These dynamics suggest that unregulated competitive interactions may generate socially suboptimal automation levels, motivating the exploration of policy instruments such as automation taxation or universal basic income mechanisms funded by \textsc{agi}-generated rents.
 
-The study contributes to the literature by isolating competitive incentives as a key driver of automation, distinct from purely technological or macroeconomic determinants, and underscores the role of institutional design in shaping the economic impact of \textsc{agi}.
+The study contributes to the literature by isolating competitive incentives as a potential driver of automation, distinct from purely technological or macroeconomic determinants, and by highlighting the role of institutional design in shaping the economic impact of \textsc{agi}.
 \end{abstract}
-
+    
 
 
 \section{Introduction}
 \label{sec:introduction}
 
-The rapid advancement of Artificial General Intelligence (AGI) has sparked discussions about its potential to reshape labor markets by automating cognitive and physical tasks at declining marginal costs \cite{acemoglu2025simple,goertzel2014artificial}. This transformation carries economic implications, including possible productivity gains alongside risks of labor displacement. Observed disparities in AI adoption across regions suggest that uneven labor market impacts may arise, particularly where worker adaptation lags behind technological change \cite{cerutti2025global,filippucci2025macroeconomic}. Recent scenario-based methodologies highlight the heterogeneity of AGI's societal impacts across regions and sectors \cite{costa2025exploring}.
+The rapid advancement of Artificial General Intelligence~(\textsc{agi})---systems capable of matching or exceeding human performance across a wide range of economically relevant tasks~\cite{goertzel2014artificial,bostrom2014paths}---raises important questions about the transformation of labor markets through widespread task automation at declining marginal costs.
+Unlike narrow artificial intelligence, which targets specific routine tasks, \textsc{agi} could substitute for both cognitive and physical labor across sectors, potentially reshaping the balance between labor and capital~\cite{acemoglu2025simple,autor2015there}.
+Empirical studies indicate that even current large language models---far from full \textsc{agi}---may affect a non-trivial share of tasks across many occupations, with relatively high exposure in information-intensive roles such as administrative support and sales~\cite{eloundou2023gpts,tomlinson2025working}.
+Macroeconomic analyses further suggest that \textsc{agi}-induced task substitution may reduce labor shares, partially offset by the creation of new tasks~\cite{acemoglu2025simple,stiefenhofer2025future,gondauri2025impact}.
+However, observed disparities in \textsc{ai} adoption across regions suggest that uneven labor market impacts may arise, particularly where worker adaptation lags behind technological change~\cite{cerutti2025global,filippucci2025macroeconomic}.
+Recent scenario-based methodologies highlight the heterogeneity of \textsc{agi}'s potential societal impacts across regions and sectors~\cite{costa2025exploring}.
 
-\subsection{Context: AGI and the Future of Labor}
-Empirical and theoretical work indicates that automation has historically displaced routine tasks while complementing non-routine cognitive activities—a pattern that AGI's general capabilities might alter \cite{autor2015there}. Recent empirical studies already demonstrate that even current large language models (LLMs)---far from full AGI---could affect at least 10\% of tasks in 80\% of occupations, with real-world data confirming the highest exposure in information-intensive roles such as administrative support and sales \cite{eloundou2023gpts, tomlinson2025working}. Macroeconomic analyses suggest that AI-induced task substitution could reduce labor shares, partially offset by the creation of new tasks \cite{acemoglu2025simple}. However, models such as the Constant Elasticity of Substitution (CES) framework predict more dramatic shifts, where accelerated capital-labor substitution under AGI could lead to employment declines in certain sectors \cite{stiefenhofer2025future,gondauri2025impact}. Recent work on endogenous automation and task creation suggests that competitive firm interactions may lead to socially inefficient outcomes, such as excessive labor substitution or misallocation of resources \cite{martinez2018automation}.
+
+\subsection{Context: \textsc{agi} and the Future of Labor}
+\label{subsec:context}
+
+Empirical and theoretical work indicates that automation has historically displaced routine tasks while complementing non-routine cognitive activities, a pattern that \textsc{agi}'s general capabilities might alter~\cite{autor2015there}.
+Recent empirical studies suggest that even current large language models may affect a noticeable share of tasks across many occupations, with real-world data pointing to relatively high exposure in information-intensive roles~\cite{eloundou2023gpts,tomlinson2025working}.
+Macroeconomic analyses suggest that \textsc{ai}-induced task substitution could reduce labor shares, partially offset by the creation of new tasks~\cite{acemoglu2025simple}.
+However, models such as the Constant Elasticity of Substitution~(\textsc{ces}) framework anticipate more pronounced shifts, where accelerated capital-labor substitution under \textsc{agi} could lead to employment declines in certain sectors~\cite{stiefenhofer2025future,gondauri2025impact}.
+Recent work on endogenous automation and task creation suggests that competitive firm interactions may lead to socially inefficient outcomes, such as excessive labor substitution or misallocation of resources~\cite{martinez2018automation}.
+
 
 \subsection{Research Problem and Contribution}
-This study examines the following question: \textit{How do competitive dynamics between firms influence automation adoption, and what are the potential consequences for labor market equilibria?} The paper contributes to the literature by:
+\label{subsec:contribution}
+
+This study examines the following question: \textit{How do competitive dynamics between firms influence automation adoption, and what are the potential consequences for labor market equilibria?}
+The paper contributes to the literature by:
 \begin{itemize}
-    \item Modeling firm-level automation decisions as a non-cooperative game, with structural parallels to the Prisoner's Dilemma, to isolate the role of competitive pressure and implementation costs.
-    \item Simulating automation adoption across a range of parameters, showing that outcomes depend on the interplay between competitive incentives and cost structures.
-    \item Discussing potential policy responses, such as automation taxation or universal basic income (UBI) mechanisms, while acknowledging the exploratory nature of these findings.
+    \item Modeling firm-level automation decisions as a non-cooperative game, with structural parallels to the Prisoner's Dilemma, to isolate the role of competitive pressure and implementation costs~\cite{axelrod1981evolution}.
+    \item Simulating automation adoption across a range of parameters, showing that outcomes depend on the interplay between competitive incentives and cost structures~\cite{acemoglu2025simple,filippucci2025macroeconomic}.
+    \item Discussing potential policy responses, such as automation taxation or universal basic income~(\textsc{ubi}) mechanisms, while explicitly acknowledging the exploratory nature of these findings~\cite{schatten2025universal,nayebi2025ai,korinek2024economic}.
 \end{itemize}
 
+Preliminary results suggest that automation adoption is highly context-dependent: high competitive pressure is associated with near-complete automation, while elevated costs are associated with partial labor substitution~\cite{acemoglu2025simple}.
+These dynamics highlight the possibility of wage-based demand shortfalls in the absence of coordination, motivating the analysis of policy instruments such as automation taxation~\cite{filippucci2025macroeconomic} or \textsc{ubi} funded by \textsc{agi}-generated rents~\cite{schatten2025universal,nayebi2025ai}.
 
-Preliminary results suggest that automation adoption is highly context-dependent: high competitive pressure drives near-complete automation, while elevated costs preserve partial labor substitution \cite{acemoglu2025simple}. These dynamics highlight the potential for wage-demand collapse in the absence of coordination, motivating policy instruments such as automation taxation \cite{filippucci2025macroeconomic} or universal basic income funded by AI rents \cite{schatten2025universal, nayebi2025ai}.
+The remainder of the paper is organized as follows.
+Section~\ref{sec:theory} formalizes the theoretical framework, modeling firm-level automation decisions as a non-cooperative game and deriving equilibrium conditions.
+Section~\ref{sec:results} presents simulation results, analyzing how competitive pressure and cost structures shape long-term automation patterns.
+Section~\ref{sec:implications} discusses the implications for labor markets and policy design, while Section~\ref{sec:conclusion} concludes.
 
 
 \section{Theoretical Framework: A Non-Cooperative Game of AGI-Driven Automation}
 \label{sec:theory}
 
 \subsection{Definition of AGI and Key Assumptions}
-Artificial General Intelligence (AGI) refers to hypothetical AI systems capable of matching or exceeding human performance across most economically relevant tasks, including cognitive and physical adaptability \cite{goertzel2014artificial,bostrom2014paths}. Unlike narrow AI, AGI is characterized by cross-domain competence, autonomous improvement, and the ability to substitute for both cognitive and physical labor. By this definition, even the new tasks (eg. creative destruction) could also be replaced by the AGI. This ability to replace human tasks across a wide range of activities provides the basis for modeling automation as a continuous process in the subsequent framework.
+Artificial General Intelligence (AGI) refers to hypothetical AI systems capable of matching or exceeding human performance across most economically relevant tasks, including cognitive and physical adaptability \cite{goertzel2014artificial,bostrom2014paths}. Unlike narrow AI, AGI is characterized by cross-domain competence, autonomous improvement, and the ability to substitute for both cognitive and physical labor. By this definition, even new tasks (e.g., those associated with creative destruction) could also be performed by AGI systems. This broad substitutability provides the basis for modeling automation as a continuous process in the subsequent framework.
 
 
 \subsection{Comparison of Modeling Approaches}
 \label{subsec:comparison}
 
-Empirical evidence indicates that automation has historically displaced routine tasks while complementing non-routine cognitive work—a pattern that AGI's general capabilities could reverse \cite{autor2015there}. While this study focuses on a static, game-theoretic framework to model firm-level automation decisions, alternative approaches exist to capture additional dimensions of AGI adoption. Network effect models \cite{katz1985network,eisenmann2011platform} highlight how firms' automation choices may depend on the decisions of competitors or partners, as seen in the adoption of shared technological standards (e.g., robotic operating systems). Similarly, real options frameworks \cite{dixit1994investment,goertzel2014artificial} emphasize the role of uncertainty in delaying or accelerating automation investments, particularly for irreversible technologies like AGI. These approaches complement our analysis by addressing dynamic interdependencies and strategic timing, which are critical for long-term policy design. Agent-based simulations have shown how micro-level firm behaviors can generate emergent macroeconomic phenomena, including the rise of AI agent economies \cite{glielmo2025beforeit,hadfield2025economy}. These studies underscore the importance of modeling firm-level decision-making to understand aggregate outcomes. To contextualize our framework, we compare it with alternative approaches for modeling AGI-driven automation. Table~\ref{tab:approaches} summarizes their strengths, limitations, and relevance to AGI.
+Empirical evidence indicates that automation has historically displaced routine tasks while complementing non-routine cognitive work, a pattern that AGI's more general capabilities could modify \cite{autor2015there}. While this study focuses on a static, game-theoretic framework to model firm-level automation decisions, several alternative approaches capture additional dimensions of AGI adoption. Network effect models \cite{katz1985network,eisenmann2011platform} highlight how firms' automation choices may depend on the decisions of competitors or partners, as in the adoption of shared technological standards (e.g., robotic operating systems). Similarly, real options frameworks \cite{dixit1994investment,goertzel2014artificial} emphasize the role of uncertainty in delaying or accelerating automation investments, particularly for irreversible technologies such as AGI. These approaches complement the present analysis by addressing dynamic interdependencies and strategic timing, which are relevant for long-term policy discussions. Agent-based simulations show how micro-level firm behaviors can generate emergent macroeconomic phenomena, including the development of AI agent economies \cite{glielmo2025beforeit,hadfield2025economy}. These studies underscore the importance of modeling firm-level decision-making to understand aggregate outcomes. To contextualize the framework used here, Table~\ref{tab:approaches} summarizes alternative approaches for modeling AGI-driven automation, along with selected strengths and limitations.
 
 \begin{table}[ht]
 \centering
-\caption{Comparison of Modeling Approaches for AGI-Driven Automation}
+\caption{Comparison of modeling approaches for AGI-driven automation}
 \label{tab:approaches}
 \begin{tabular}{@{}p{5cm}p{5cm}p{5cm}@{}}
 \toprule
 \textbf{Approach}               & \textbf{Strengths}                          & \textbf{Limitations}                     \\
 \midrule
-CES Production Functions        & Simple, macro-level insights                & No strategic firm behavior               \\
-Network Models                  & Captures interdependencies                 & High complexity, data-intensive         \\
-Real Options                    & Handles uncertainty and irreversibility    & Static competitive environment           \\
-World3/Dynamic Systems          & Endogenous feedback loops, systemic view    & No firm-level strategic interaction      \\
-Agent-Based Models              & Heterogeneous agents, emergent phenomena   & Computationally intensive                \\
-\textbf{Our Game-Theoretic Model} & \textbf{Firm-level strategies, clear policy levers} & \textbf{Homogeneous firms, static} \\
+CES production functions        & Simple, macro-level insights                & No explicit strategic firm behavior       \\
+Network models                  & Captures interdependencies                 & High complexity, data-intensive          \\
+Real options                    & Represents uncertainty and irreversibility & Often assumes a static competitive environment \\
+World3/dynamic systems          & Endogenous feedback loops, systemic view    & No firm-level strategic interaction      \\
+Agent-based models              & Heterogeneous agents, emergent phenomena   & Computationally intensive                \\
+\textbf{Game-theoretic model used here} & \textbf{Firm-level strategies, transparent policy levers} & \textbf{Homogeneous firms, static setting} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 
-Macroeconomic frameworks such as World3 simulate system dynamics through differential equations, where population ($P$), capital ($K$), and resources ($R$) interact without explicit strategic firm behavior \cite{meadows2012limits,sterman1980effect}. Our model bridges this gap by focusing on micro-level competition as the driver of automation, generating macro-level labor displacement as an emergent outcome.
+Macroeconomic frameworks such as World3 simulate system dynamics through differential equations, where population ($P$), capital ($K$), and resources ($R$) interact without explicit strategic firm behavior \cite{meadows2012limits,sterman1980effect}. The present model shifts the focus to micro-level competition as a driver of automation, with macro-level labor displacement emerging as an aggregate outcome.
 
-We adopt a static, game-theoretic framework for three key reasons: (1) \textbf{parsimony}, as it isolates the core strategic interaction between firms; (2) \textbf{generality}, since equilibrium outcomes are robust to temporal assumptions; and (3) \textbf{policy relevance}, as it directly highlights levers like competition regulation ($\gamma$) or cost manipulation ($k$). While dynamic or network-based approaches \cite{dixit1994investment,katz1985network} could capture additional complexities, our focus on static equilibria provides a clear baseline for understanding the fundamental trade-offs of AGI-driven automation.
+We adopt a static, game-theoretic framework for three main reasons: (1) \textbf{parsimony}, as it isolates the core strategic interaction between firms; (2) \textbf{generality}, in the sense that equilibrium outcomes do not depend on specific temporal dynamics; and (3) \textbf{policy relevance}, as it directly highlights levers such as competition intensity ($\gamma$) or cost parameters ($k$). While dynamic or network-based approaches \cite{dixit1994investment,katz1985network} could capture additional complexities, the focus on static equilibria provides a baseline for understanding key trade-offs associated with AGI-driven automation.
 
-This study contributes to the literature by modeling firm automation decisions as a repeated non-cooperative game, structurally analogous to the Prisoner's Dilemma. In this framework, unilateral automation yields a temporary competitive advantage, but collective adoption risks labor displacement and potential demand collapse \cite{stiefenhofer2025artificial}. Unlike aggregate CES frameworks \cite{stiefenhofer2025future,gondauri2025impact}, our microsimulation examines iterative profit maximization across a grid of parameters, including competitive pressure, baseline automation gains, and implementation costs. The model explicitly captures the tension between short-term competitive incentives and long-term systemic risks.
+This study contributes to the literature by modeling firm automation decisions as a repeated non-cooperative game, with structural parallels to the Prisoner's Dilemma. In this framework, unilateral automation can yield a temporary competitive advantage, whereas widespread adoption may entail labor displacement and associated demand risks \cite{stiefenhofer2025artificial}. In contrast to aggregate CES frameworks \cite{stiefenhofer2025future,gondauri2025impact}, the microsimulation examines iterative profit maximization over a grid of parameters, including competitive pressure, baseline automation gains, and implementation costs. The model makes explicit the tension between short-term competitive incentives and potential longer-term systemic risks.
 
 
 \subsection{Profit Function and Cournot-Nash Equilibrium}
 
-Standard microeconomic theory posits that firms maximize profits \(\Pi_i = R_i - C_i\), where \(\Pi_i\) denotes the profit of firm \(i\), \(R_i\) its revenue, and \(C_i\) its costs. In constrained optimization settings, firms may instead maximize a utility function \(U_i(x_i)\) subject to resource constraints like : 
-
+Standard microeconomic theory posits that firms maximize profits \(\Pi_i = R_i - C_i\), where \(\Pi_i\) denotes the profit of firm \(i\), \(R_i\) its revenue, and \(C_i\) its costs. In constrained optimization settings, firms may instead maximize a utility function \(U_i(x_i)\) subject to a resource constraint of the form:
 \[
-\max W \left( U_1(x_{1,t}), \ldots, U_n(x_{n,t}) \right)
+\max \Omega \left( U_1(x_{1,t}), \ldots, U_n(x_{n,t}) \right)
 \]
-
 \[
-x_1 + \ldots + x_n \leq \omega_t
+x_1 + \ldots + x_n \leq \omega_t,
 \]
-
-where \(U_i\) represents the firm's objective (e.g., profit, market share, or a combination of economic outcomes), and \(\omega\) is the total available resource budget \cite{varian1992microeconomic}. The Pareto optimum requires equal marginal utilities across agents:
-
-
-
+where \(\Omega\) represent macroeconomic system and \(U_i\) are the economic's objective (e.g., profit, market share, or a combination of outcomes) \cite{varian1992microeconomic}. The Pareto-optimal allocation requires equal marginal utilities across agents:
 \[
 \frac{\partial U_i}{\partial x_i} = \frac{\partial U_j}{\partial x_j} = \lambda \quad \forall i,j,
 \]
-a condition that abstracts from dynamic interactions and strategic behavior \cite{arrow2024existence}. While general equilibrium models capture resource allocation, they typically overlook the iterative, competitive processes driving firm-level decisions in oligopolistic markets. To analyze how firms adjust their automation strategies in response to competitive pressures, we adopt a game-theoretic framework based on the following assumptions:
+a condition that abstracts from dynamic interactions and strategic behavior \cite{arrow2024existence}. While general equilibrium models capture resource allocation, they typically do not represent the iterative, competitive processes that drive firm-level decisions in oligopolistic markets. To analyze how firms adjust their automation strategies in response to competitive pressures, this study adopts a game-theoretic framework based on the following assumptions:
 \begin{itemize}
-    \item Firms operate in an oligopolistic market where automation decisions are strategic complements, meaning each firm's choice directly affects the profitability of its rivals.
+    \item Firms operate in an oligopolistic market where automation decisions are strategic, meaning each firm's choice affects the profitability of its rivals.
     \item Automation is modeled as a continuous variable \(a_i \in [0,1]\), representing the fraction of tasks automated by firm \(i\).
     \item Firms aim to maximize profits, balancing the benefits of automation (competitive advantage, cost savings) against its associated costs (implementation, disruption).
 \end{itemize}
 
-
-
-% --- Figures ---
 \begin{figure}[ht]
     \centering
     \begin{tikzpicture}[
-        % STYLES
         firm/.style={rectangle, draw=blue!80, fill=blue!5, ultra thick, minimum width=2.8cm, minimum height=1.5cm, align=center}, 
         strategy/.style={circle, draw=black!80, fill=gray!10, minimum size=1cm, align=center, thick},
-        % ARROWS
-        decision_flow/.style={->,>=Stealth, ultra thick, black!70}, % Droit pour les décisions
-        % Courbe pour l'interaction stratégique
+        decision_flow/.style={->,>=Stealth, ultra thick, black!70},
         interaction_link/.style={->,>=Stealth, ultra thick, blue!70, looseness=1.3, dashed} 
     ]
     
-    % ===================================
-    % 1. Firms (Agents) and Decisions
-    % ===================================
     \node[firm] (f1) at (0, 1.5) {Firm 1};
     \node[firm] (f2) at (4, 1.5) {Firm $i$};
     \node[firm] (fN) at (8, 1.5) {Firm $N$};
     \node at (2, 1.5) {$\dots$};
     \node at (6, 1.5) {$\dots$};
     
-    % --- Automation Strategy Output ---
     \node[strategy] (a1) at (0, -0.5) {$a_1$};
     \node[strategy] (ai) at (4, -0.5) {$a_i$};
     \node[strategy] (aN) at (8, -0.5) {$a_N$};
     
-    % Flèches de décision (Output) - LIGNES DROITES
     \draw[decision_flow] (f1) -- (a1) node[midway, right, xshift=2pt, font=\footnotesize] {Choose};
     \draw[decision_flow] (f2) -- (ai) node[midway, right, xshift=2pt, font=\footnotesize] {Choose};
     \draw[decision_flow] (fN) -- (aN) node[midway, right, xshift=2pt, font=\footnotesize] {Choose};
     
-    
-    % ===================================
-    % 2. Strategic Interaction (Feedback / Interdependence)
-    % ===================================
-    
-    % Flèches sortantes de a_i vers les autres firmes (COURBES)
     \draw[interaction_link] (ai.south west) to[bend left=55] 
         node[midway, above, font=\footnotesize, blue!80] {Affects $\Pi_1$} (f1.south east);
     \draw[interaction_link] (ai.south east) to[bend right=55] 
         node[midway, above, font=\footnotesize, blue!80] {Affects $\Pi_N$} (fN.south west);
-    
-    % Flèches entrantes vers f_i (ANGLES DROITS)
-    % \draw[interaction_link, <-] (a1.south) -- ++(0,-0.7) -| (f2.south west)
-    % node[pos=0.15, below, font=\footnotesize] {From $\bar{a}_{-i}$};
-    % \draw[interaction_link, <-] (aN.south) -- ++(0,-0.7) -| (f2.south east)
-    % node[pos=0.15, below, font=\footnotesize] {From $\bar{a}_{-i}$};
-
     \end{tikzpicture}
     \caption{Conceptual diagram of the model: firms, competitive pressure (\(\gamma\)), automation costs (\(k\)), and equilibrium \(\bar{a}^*\).}
     \label{fig:schema}
-    \end{figure}
+\end{figure}
 
+Under these assumptions, the firm's profit maximization problem can be written in structural form as:
+\[
+\Pi_{i}(Q_i, a_i, Q_{-i}) = P(Q_i, Q_{-i}) \cdot Q_i - C(Q_i, a_i),
+\]
+where \(P(\cdot)\) is the inverse demand function and \(C(Q_i, a_i)\) denotes firm \(i\)'s cost of producing quantity \(Q_i\) at automation level \(a_i\).
 
-Under these assumptions, we formalize the firm's profit maximization problem as follows:
+To obtain a tractable expression, we make three simplifying assumptions \cite{acemoglu2018race,dasgupta1980uncertainty}:
+
+\begin{itemize}
+    \item \textbf{(H1) Linear demand and quantity normalization.} The inverse demand function is approximately linear in total quantity, and quantities are normalized so that changes in \(a_i\) affect profits proportionally to \(a_i\).
+    \item \textbf{(H2) Cost reduction from automation.} The marginal cost of production is approximately linear in the automation level:
+    \[
+    C(Q_i, a_i) = (c_0 - \delta a_i)\, Q_i + k a_i^2,
+    \]
+    with \(c_0\) the baseline marginal cost, \(\delta>0\) the marginal cost reduction per unit of automation, and \(k>0\) a parameter capturing increasing implementation costs.
+    \item \textbf{(H3) Market-share response to relative costs.} Relative cost differences translate into changes in market share. In reduced form, the effect of automation on firm \(i\)'s demand is proportional to the gap between its automation level \(a_i\) and the average automation of its rivals \(\bar{a}_{-i} = \frac{1}{N-1}\sum_{j\neq i} a_j\).
+\end{itemize}
+
+Under (H1)–(H3), the impact of automation on profits can be decomposed into:
+
+\begin{itemize}
+    \item a \emph{baseline} term, capturing the net gain from lower marginal costs that does not depend on rivals' choices;
+    \item a \emph{strategic} term, capturing how relative automation affects demand through deviations from \(\bar{a}_{-i}\);
+    \item an \emph{implementation cost} term, increasing more than proportionally with \(a_i\).
+\end{itemize}
+
+Collecting these effects and absorbing constants from demand and quantity normalization into parameters, the profit function admits the following reduced form:
 
 \[
-\Pi_{i}(Q_i, a_i, Q_{-i}) = \underbrace{P(Q_i + Q_{-i}) \cdot Q_i}_{\text{Incomes}} - \underbrace{(c_0 - \delta a_i) Q_i - k a_i^2}_{\text{Costs}}
+\boxed{\Pi_i(a_i, \bar{a}_{-i}) = \gamma a_i (1 - \bar{a}_{-i}) + \beta a_i - k a_i^2}
 \]
-
-% Hypotheses à reformuler pour clarifier le modèle
-% Hypotheses 1 : Le travail est substituable par l'AGI et apporte la meme productivité
-% Hypothèses 2 : Le travail humain et de l'AGI sont chacun un cout
-% Hypothèses 3 : Le delta du cout apporte un avantage compétitif (prix de vente plus bas ou marge plus haute)
-
-Component of Pi Origin (Modeling Hypothesis) \cite{acemoglu2018race,dasgupta1980uncertainty} Mathematical Link (Reduced Form) Term $\beta a_i$ (Absolute Productivity Gain) H1: Efficiency of AGI. The marginal cost of production $c$ is a decreasing and linear function of the automation $a_i$. $\Delta c \propto -a_i$ Captures the marginal gain (Revenue - Production Costs) which is independent of rivals' choices. Term $\gamma a_i (1 - \overline{a}_{-i})$ (Competitive Advantage) H2: Price Competition. Automation $a_i$ allows for a price decrease (or a better margin at constant price), resulting in a market share gain proportional to the automation gap with the average of rivals ($\overline{a}_{-i}$). It captures demand sensitivity to cost/price competitiveness, creating a transitory advantage. Term $-k a_i^2$ (Investment Cost) H3: Diminishing Returns on Investment. The total cost of implementing AGI increases more than proportionally ($k>0$) with the level of automation $a_i$. It anchors the equilibrium by preventing $a_i \to \infty$. It represents increasing integration difficulties. We can simplify the profit function by normalizing quantities and prices, leading to the following reduced form:
-
-\[
-\Pi_i(a_i, \bar{a}_{-i}) = \gamma a_i (1 - \bar{a}_{-i}) + \beta a_i - k a_i^2,
-\]
-
-
 
 where:
 \begin{itemize}
-    \item \(\bar{a}_{-i} \in [0,1]\) is the average automation level of rival firms, with \(\bar{a}_{-i} = \frac{1}{N-1} \sum_{j \neq i} a_j\).
-    \item \(\gamma \in \mathbb{R}^+\) represents the competitive advantage from relative automation, capturing market share gains from out-automating rivals. This parameter is calibrated to reflect industry-specific competitive pressures.
-    \item \(\beta \in \mathbb{R}\) denotes the baseline net profitability of automation, which may be negative in cases where automation is less efficient than human labor (e.g., due to hidden costs, consumer resistance, or loss of craftsmanship).
-    \item \(k \in \mathbb{R}^+\) captures the quadratic cost of automation, including direct (e.g., AGI deployment) and indirect expenses (e.g., workforce retraining). The quadratic form ensures diminishing returns to automation.
+    \item \(\bar{a}_{-i} \in [0,1]\) is the average automation level of rival firms, with \(\bar{a}_{-i} = \frac{1}{N-1} \sum_{j \neq i} a_j\);
+    \item \(\gamma \in \mathbb{R}^+\) represents the competitive advantage from relative automation, calibrated to reflect industry-specific competitive pressures;
+    \item \(\beta \in \mathbb{R}\) denotes the baseline net profitability of automation (H2), which may be negative when automation is less efficient than human labor (e.g., due to hidden costs or demand responses);
+    \item \(k \in \mathbb{R}^+\) captures the quadratic cost of automation, including direct and indirect expenses (H2).
 \end{itemize}
 
-The first-order condition for profit maximization is derived by setting the partial derivative of \(\Pi_i\) with respect to \(a_i\) to zero. Solving for \(a_i\) yields the \textbf{reaction function}:
-
+The first-order condition for profit maximization is obtained by setting the partial derivative of \(\Pi_i\) with respect to \(a_i\) to zero. Solving for \(a_i\) yields the reaction function:
 \[
-\frac{\partial \Pi_i}{\partial a_i} = \gamma (1 - \bar{a}_{-i}) + \beta - 2k a_i = 0.
+\frac{\partial \Pi_i}{\partial a_i} = \gamma (1 - \bar{a}_{-i}) + \beta - 2k a_i = 0,
 \]
 \[
 a_i^* = \frac{\gamma (1 - \bar{a}_{-i}) + \beta}{2k}.
 \]
-This expression shows that a firm's optimal automation level increases with its competitive advantage (\(\gamma\)) and baseline gains (\(\beta\)), but decreases with costs (\(k\)) and rivals' automation levels (\(\bar{a}_{-i}\)). In the symmetric Cournot-Nash equilibrium, where all firms choose the same automation level \(\bar{a}^*\), and to account for the technological constraint that the automation level \(a_i\) must lie within the interval \([0, 1]\) (\textbf{Karush-Kuhn-Tucker conditions}),  the equilibrium is given by:
-\[
-\bar{a}_{\Pi}^* = \min\left(1, \frac{\gamma + \beta}{2k + \gamma}\right).
-\]
+This expression indicates that a firm's optimal automation level increases with the strength of competitive effects (\(\gamma\)) and baseline gains (\(\beta\)), and decreases with costs (\(k\)) and rivals' automation levels (\(\bar{a}_{-i}\)). In the symmetric Cournot–Nash equilibrium, where all firms choose the same automation level \(\bar{a}^*\), and imposing the technological constraint that \(a_i \in [0,1]\) (Karush–Kuhn–Tucker conditions), the equilibrium automation level is:
 
-
-\subsection{The Social Prisoner's Dilemma}
-
-Our framework reveals a fundamental structural conflict, rendering the automation process a two-level Prisoner's Dilemma (PD) because its \cite{axelrod1981evolution}.
-
-\subsubsection{Two-Level Objectives}
-Firms, operating at the micro-level, independently maximize their net profit ($\Pi_i$). The resulting Nash Equilibrium, $\overline{a}_{\Pi}^*$, reflects the collectively self-destructive outcome of the competitive race. This equilibrium is compared against the Social Optimum, $\overline{a}_{W}^*$, which maximizes the aggregate Social Welfare ($W$) \cite{karabarbounis2014global, keynes1937general}.
-
-\subsubsection{Social Welfare Function ($W$)}
-Social welfare is defined as the balance between the aggregate economic gains from AGI efficiency ($G$) and the macroeconomic costs associated with salary-based demand collapse ($C$):
-$$W(\overline{a}) = G(\overline{a}) - C(\overline{a})$$
-The components are:
-\begin{enumerate}
-    \item \textbf{Efficiency Gain ($G$):} Directly proportional to the aggregate automation level, $\overline{a}$, capturing intrinsic productivity increases ($\beta$):
-    $$G(\overline{a}) = \beta \overline{a}$$
-    \item \textbf{Social Cost ($C$):} Non-linearly increasing with automation, reflecting the accelerating risk of demand collapse as human employment (proportional to $1-\overline{a}$) declines. We model this cost using a power function with $\lambda > 1$:
-    $$C(\overline{a}) = C_{0} \cdot \overline{a}^{\lambda}$$
-\end{enumerate}
-The full Social Welfare function is:
-$$W(\overline{a}) = \beta \overline{a} - C_{0} \overline{a}^{\lambda}$$
-
-Similarity, the first-order condition for welfare maximization is solving for \(a_i\) yields the \textbf{reaction function}:
 
 \[
-\frac{\partial W(\overline{a})}{\partial \overline{a}} = \beta - \lambda C_{0}\overline{a}^{\lambda-1} = 0
-\]
-\[
-\overline{a}_{W}^{*} = \left( \frac{\beta}{\lambda C_{0}} \right)^{\frac{1}{\lambda-1}}
+\boxed{\bar{a}_{\Pi}^* = \min\left(1, \frac{\gamma + \beta}{2k + \gamma}\right)
+}
 \]
 
-\subsubsection{The Dilemma}
-The dilemma exists when the equilibrium chosen by firms ($\overline{a}_{\Pi}^*$) significantly exceeds the socially optimal level ($\overline{a}_{W}^*$).
-The Nash Equilibrium $\overline{a}_{\Pi}^*$ is the outcome of profit maximization:
-$$\overline{a}_{\Pi}^* \in \arg\max \Pi_i(a_i, \overline{a}_{-i})$$
-The Social Optimum $\overline{a}_{W}^*$ is derived from maximizing welfare:
-$$\overline{a}_{W}^* = \arg\max W(\overline{a})$$
-
-If the parameters lead to a high $\overline{a}_{\Pi}^*$ (e.g., $\overline{a}_{\Pi}^* \approx 1$) where $C_{\text{social}}$ dominates $G_{\text{effic}}$, then:
-$$\overline{a}_{\Pi}^* \gg \overline{a}_{W}^*$$
-This divergence proves that the non-cooperative pursuit of micro-profit leads to a state of \textbf{socially sub-optimal welfare} (low $W$) and validates the analogy of the "Automation Trap" as a two-level Prisoner's Dilemma.
-
-
-\subsection{The Automation Trap}
-The iterative best-response dynamics converge to the symmetric equilibrium under standard conditions. The process of AGI automation is modeled as a two-level game, where the micro-level profit maximization drives a macro-level social sub-optimality. To formally capture this "Automation Trap," we present a dual-payoff matrix where each cell represents the outcome for both the individual firm and aggregate society.
 
 \begin{table}[ht]
     \centering
-    \caption{Symmetric equilibrium values \(\bar{a}^*\) for parameters \(\gamma\), \(k\), and \(\beta\).}
+    \caption{Symmetric equilibrium values \(\bar{a}^*\) for selected parameters \(\gamma\), \(k\), and \(\beta\).}
     \label{tab:symmetric_equilibria_params}
     \begin{tabular}{@{}cccccc@{}}
     \toprule
@@ -340,72 +301,129 @@ The iterative best-response dynamics converge to the symmetric equilibrium under
     1.0 & 0.25 & 1.00 & 1.00 & 1.00 & Complete \\
     2.0 & 0.25 & 1.00 & 1.00 & 1.00 & Complete \\
     3.0 & 0.25 & 1.00 & 1.00 & 1.00 & Complete \\ \midrule
-    0.5 & 0.5 & 0.67 & 1.00 & 1.00 & Moderate to Complete \\
-    1.0 & 0.5 & 0.75 & 1.00 & 1.00 & High to Complete \\
+    0.5 & 0.5 & 0.67 & 1.00 & 1.00 & Moderate to complete \\
+    1.0 & 0.5 & 0.75 & 1.00 & 1.00 & High to complete \\
     2.0 & 0.5 & 0.83 & 1.00 & 1.00 & Near-complete \\
     3.0 & 0.5 & 0.88 & 1.00 & 1.00 & Complete \\ \midrule
-    0.5 & 1.0 & 0.40 & 0.60 & 1.00 & Low to Complete \\
-    1.0 & 1.0 & 0.50 & 0.67 & 1.00 & Moderate to Complete \\
-    2.0 & 1.0 & 0.63 & 0.75 & 1.00 & High to Complete \\
-    3.0 & 1.0 & 0.70 & 0.80 & 1.00 & High to Complete \\ \midrule
+    0.5 & 1.0 & 0.40 & 0.60 & 1.00 & Low to complete \\
+    1.0 & 1.0 & 0.50 & 0.67 & 1.00 & Moderate to complete \\
+    2.0 & 1.0 & 0.63 & 0.75 & 1.00 & High to complete \\
+    3.0 & 1.0 & 0.70 & 0.80 & 1.00 & High to complete \\ \midrule
     0.5 & 2.0 & 0.22 & 0.33 & 0.56 & Low \\
-    1.0 & 2.0 & 0.30 & 0.40 & 0.60 & Moderate Low \\
+    1.0 & 2.0 & 0.30 & 0.40 & 0.60 & Moderately low \\
     2.0 & 2.0 & 0.42 & 0.50 & 0.67 & Moderate \\
-    3.0 & 2.0 & 0.50 & 0.57 & 0.71 & Moderate High \\
+    3.0 & 2.0 & 0.50 & 0.57 & 0.71 & Moderately high \\
     \bottomrule
     \end{tabular}
-    \end{table}
+\end{table}
+
+\subsection{The Social Prisoner's Dilemma}
+
+The framework reveals a structural tension between firm-level and aggregate outcomes, which can be interpreted as a two-level Prisoner's Dilemma (PD) \cite{axelrod1981evolution}. At the micro level, firms independently maximize their net profit \(\Pi_i\). The resulting Nash equilibrium \(\overline{a}_{\Pi}^*\) captures the outcome of the competitive process. This equilibrium can be compared with a social optimum \(\overline{a}_{W}^*\), which maximizes aggregate social welfare \(W\) \cite{karabarbounis2014global,keynes1937general}.
+
+\subsubsection{Social Welfare Function \texorpdfstring{\(W\)}{}}
+
+Social welfare is defined as the difference between aggregate economic gains from AGI-related efficiency \(G\) and macroeconomic costs associated with demand-side effects \(C\):
+\[
+W(\overline{a}) = G(\overline{a}) - C(\overline{a}).
+\]
+The components are:
+\begin{enumerate}
+    \item \textbf{Efficiency gain \(G\).} Directly proportional to the aggregate automation level \(\overline{a}\), capturing productivity increases:
+    \(
+    G(\overline{a}) = \beta \overline{a}.
+    \)
+    \item \textbf{Social cost \(C\).} Non-linearly increasing with automation, reflecting the rising risk of demand shortfalls as human employment (proportional to \(1-\overline{a}\)) declines. This cost is modeled using a power function with \(\lambda > 1\):
+    \(
+    C(\overline{a}) = C_{0} \cdot \overline{a}^{\lambda}.
+    \)
+\end{enumerate}
+The resulting social welfare function is:
+\[
+W(\overline{a}) = \beta \overline{a} - C_{0} \overline{a}^{\lambda}.
+\]
+
+The first-order condition for welfare maximization, with the welfare-maximizing automation level is :
+
+\[
+\frac{\partial W(\overline{a})}{\partial \overline{a}} = \beta - \lambda C_{0}\overline{a}^{\lambda-1} = 0,
+\]
 
 
-The strategies are \textbf{Cooperation ($C: a=0$)}, defined as maintaining the current labor-intensive state (optimal for social stability), and \textbf{Defection ($D: a=1$)}, defined as maximum automation (optimal for short-term competitive gain). Each payoff takes the form: $(\Pi_i \text{ (Firm Profit)}, W \text{ (Social Welfare)})$.
-    
-    \begin{table}[h]
-        \centering
-        \caption{Dual Payoff Matrix of the Automation Game (Firm vs. Society)}
-        \label{tab:dual_payoff_dilemma}
-        \begin{tabular}{c c c}
-            \toprule
-            \multicolumn{3}{c}{\textbf{Payoff Pair} $(\Pi_i, W)$} \\
-            \midrule
-            & \multicolumn{2}{c}{\textbf{Firm $j$}} \\
-            \cmidrule(lr){2-3}
-            \textbf{Firm $i$} & Cooperation ($C: a_j=0$) & Defection ($D: a_j=1$) \\
-            \midrule
-            Cooperation ($C: a_i=0$) & $(0, W_{\text{Max}})$ & $(0, W_{\text{Low}})$ \\
-            Defection ($D: a_i=1$) & $(\gamma + \beta - k, W_{\text{Low}})$ & $(\beta - k, W_{\text{Trap}})$ \\
-            \bottomrule
-        \end{tabular}
-        \vspace{0.5em}
-        \begin{flushleft}
-        \footnotesize
-        \textbf{Key:} $\Pi_i$ is the firm's net profit (Sec. 2). $W$ is aggregate Social Welfare (Sec. 3), defined as $W(\overline{a}) = \beta \overline{a} - C_{0} \overline{a}^{\lambda}$.
-        \textbf{The Dilemma:} The Nash Equilibrium is (Defection, Defection), driven by the firm's strong incentive: $\Pi(D, C) > \Pi(C, C)$ and $\Pi(D, D) > \Pi(C, D)$ (assuming $\beta > k$). However, this equilibrium leads to $W_{\text{Trap}}$, where $W_{\text{Max}} > W_{\text{Trap}}$, proving the social sub-optimality.
-        \end{flushleft}
-    \end{table}
+\[
+\boxed{\overline{a}_{W}^{*} = \left( \frac{\beta}{\lambda C_{0}} \right)^{\frac{1}{\lambda-1}}
+}
+\]
 
-This equilibrium exhibits a coordination failure with two key properties:
+
+\subsubsection{The Dilemma}
+
+The dilemma arises when the equilibrium chosen by firms \(\overline{a}_{\Pi}^*\) substantially exceeds the socially optimal level \(\overline{a}_{W}^*\). The Nash equilibrium \(\overline{a}_{\Pi}^*\) solves the firm-level problem, whereas the social optimum \(\overline{a}_{W}^*\) solves:
+\[
+\overline{a}_{\Pi}^* \in \arg\max \Pi_i(a_i, \overline{a}_{-i}),
+\]
+\[
+\overline{a}_{W}^* = \arg\max W(\overline{a}).
+\]
+
+If the parameters imply a high \(\overline{a}_{\Pi}^*\) (for instance, \(\overline{a}_{\Pi}^*\) close to one) in a region where social costs dominate efficiency gains, then:
+\[
+\overline{a}_{\Pi}^* \gg \overline{a}_{W}^*.
+\]
+This divergence illustrates that the non-cooperative pursuit of firm-level profit can lead to \textbf{socially suboptimal} welfare outcomes (low \(W\)), supporting the interpretation of an ``automation trap'' with a Prisoner's Dilemma structure.
+
+
+\subsection{The Automation Trap}
+
+Under standard conditions, iterative best-response dynamics converge to the symmetric equilibrium. The process of AGI-driven automation can therefore be viewed as a two-level game, in which micro-level profit maximization generates macro-level outcomes that may be socially undesirable. To formalize this ``automation trap'', the analysis considers both equilibrium values and a stylized payoff matrix.
+
+In a simplified representation, the strategies are \textbf{Cooperation} (\(C: a=0\)), interpreted as maintaining a labor-intensive state, and \textbf{Defection} (\(D: a=1\)), interpreted as full automation. Each payoff is written as \((\Pi_i, W)\), where \(\Pi_i\) denotes firm-level profit and \(W\) denotes social welfare.
+
+\begin{table}[h]
+    \centering
+    \caption{Dual payoff matrix of the automation game (firm vs. society)}
+    \label{tab:dual_payoff_dilemma}
+    \begin{tabular}{c c c}
+        \toprule
+        \multicolumn{3}{c}{\textbf{Payoff pair} \((\Pi_i, W)\)} \\
+        \midrule
+        & \multicolumn{2}{c}{\textbf{Firm $j$}} \\
+        \cmidrule(lr){2-3}
+        \textbf{Firm $i$} & Cooperation (\(C: a_j\rightarrow0\)) & Defection (\(D: a_j \rightarrow 1\)) \\
+        \midrule
+        Cooperation (\(C: a_i\rightarrow0\)) & \((0, W_{\text{Max}})\) & \((0, W_{\text{Low}})\) \\
+        Defection (\(D: a_i\rightarrow1\)) & \((\gamma + \beta - k, W_{\text{Low}})\) & \((\beta - k, W_{\text{Trap}})\) \\
+        \bottomrule
+    \end{tabular}
+    \vspace{0.5em}
+    \begin{flushleft}
+    \footnotesize
+    \textbf{Key:} \(\Pi_i\) is the firm's net profit (Section~\ref{sec:theory}). \(W\) is aggregate social welfare, defined as \(W(\overline{a}) = \beta \overline{a} - C_{0} \overline{a}^{\lambda}\). The Nash equilibrium in this stylized game is (Defection, Defection) under the condition \(\beta > k\), since \(\Pi(D, C) > \Pi(C, C)\) and \(\Pi(D, D) > \Pi(C, D)\). However, this outcome is associated with \(W_{\text{Trap}}\), where \(W_{\text{Max}} > W_{\text{Trap}}\), indicating a socially inferior outcome relative to the cooperative benchmark.
+    \end{flushleft}
+\end{table}
+
+This equilibrium exhibits a coordination failure with two main properties:
 \begin{itemize}
-    \item \textbf{Automation race}: When the ratio \(\gamma/k\) is high, firms approach near-complete automation, regardless of social costs.
-    \item \textbf{Prisoners Dilemma structure}: While firms collectively prefer lower automation to maintain labor demand, each has an individual incentive to deviate and automate more, leading to a socially suboptimal outcome.
+    \item \textbf{Automation race}: When the ratio \(\gamma/k\) is high, firms tend toward high or near-complete automation, even when social costs are substantial.
+    \item \textbf{Prisoner's Dilemma structure}: Although firms may collectively prefer lower automation to preserve labor-based demand, each individual firm has an incentive to automate more, leading to higher aggregate automation and a socially less desirable outcome.
 \end{itemize}
-The model thus formalizes the \textbf{"automation trap"}: competitive pressures (\(\gamma\)) and low automation costs (\(k\)) drive firms toward excessive automation, risking labor displacement and demand collapse.
+The model therefore formalizes an \textbf{automation trap}, in which competitive pressures (\(\gamma\)) and relatively low automation costs (\(k\)) push firms toward extensive automation, with the possibility of significant labor displacement and associated demand shortfalls.
+
 
 \section{Analytical and Simulation Results}
 \label{sec:results}
 
 
-\subsection{Analytical Results}
-\subsubsection{Analytical Benchmark}
+\subsection{Analytical Benchmark}
 
 To establish a theoretical reference, we derive the closed-form exponential convergence of the average automation level under deterministic adjustment. Starting from the iterative update rule:
 \[
-\bar{a}^{t+1} = (1 - \epsilon) \bar{a}^t + \epsilon \cdot \frac{\gamma + \beta}{2k + \gamma},
+\bar{a}^{t+1} = (1 - \epsilon) \bar{a}^t + \epsilon \cdot \overline{a}_{\Pi}^*,
 \]
 we can express the dynamics as a first-order linear recurrence relation. The solution to this recurrence yields the explicit exponential form:
 \[
 \bar{a}^t = \bar{a}^* + (\bar{a}^0 - \bar{a}^*) (1 - \epsilon)^t,
 \]
-where \(\bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}\) is the symmetric Cournot-Nash equilibrium and \(\bar{a}^0\) represents the initial average automation level.
 
 This expression shows that the convergence toward \(\bar{a}^*\) follows a geometric progression with common ratio \((1 - \epsilon)\). The half-life of the convergence process, defined as the number of iterations required to reduce the initial gap by half, is given by:
 \[
@@ -417,59 +435,34 @@ t_{1/2} = \frac{\ln(2)}{-\ln(1 - \epsilon)}.
 
 The continuous-time approximation of the automation adjustment process is governed by the differential equation:
 \[
-\frac{d\bar{a}(t)}{dt} = \epsilon \left( \frac{\gamma + \beta}{2k + \gamma} - \bar{a}(t) \right),
+\frac{d\bar{a}(t)}{dt} = \epsilon \left( \overline{a}_{\Pi}^* - \bar{a}(t) \right),
 \]
 with analytical solution:
 \[
 \bar{a}(t) = \bar{a}^* + (\bar{a}^0 - \bar{a}^*) e^{-\epsilon t},
 \]
-where \(\bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}\) is the equilibrium automation level. This formulation aligns with empirical observations of firm-level automation decisions, where adjustment periods typically range from quarterly to annual cycles depending on the technology's disruptiveness~\cite{acemoglu2025simple,autor2015there}. For instance, with \(\epsilon = 0.1\) per quarter, the model implies a half-life of \(\ln(2)/\epsilon \approx 6.93\) quarters (~1.73 years) for convergence to equilibrium, consistent with observed 1--5 year investment cycles in industrial automation.
+This formulation aligns with empirical observations of firm-level automation decisions, where adjustment periods typically range from quarterly to annual cycles depending on the technology's disruptiveness~\cite{acemoglu2025simple,autor2015there}. For instance, with \(\epsilon = 0.1\) per quarter, the model implies a half-life of \(\ln(2)/\epsilon \approx 6.93\) quarters (~1.73 years) for convergence to equilibrium, consistent with observed 1--5 year investment cycles in industrial automation.
 
+\subsection{Agent-based Simulation Results}
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.95\textwidth]{analytical_results.pdf}
-\caption{Analytical results: Analytic curves.}
-\label{fig:analytical_results}
+    \centering
+    \includegraphics[width=0.95\textwidth]{simulation_dynamics.pdf}
+    \caption{\textbf{Evolution of the average automation level over time.} The panels illustrate the convergence of the system across 1000 iterations compared with analytical curve (dotted line) and for different levels of competitive advantage: $\gamma=0.5$, $\gamma=1.0$, and $\gamma=2.0$. In each scenario, four distinct cost regimes are plotted: $k=0.2$, $k=0.8$, $k=1.4$, and $k=2.0$. Results show that higher competitive advantages ($\gamma$) drive higher steady-state automation, while increasing marginal costs ($k$) significantly suppress the adoption rate.}
+    \label{fig:analytical_results}
 \end{figure}
 
-\subsection{Simulation Results}
 \subsubsection{Methodology}
-To explore the dynamics of firm-level automation decisions, we simulate an oligopolistic market with \(N=10\) firms over \(T=1000\) rounds. Firms iteratively adjust their automation levels \(a_i \in [0,1]\) through an imitation-mutation process, which captures both competitive benchmarking and stochastic innovation.
-
-At each round, firms evaluate their profit \(\Pi_i\) based on the profit function:
-\[
-\Pi_i(a_i, \bar{a}_{-i}) = \gamma a_i (1 - \bar{a}_{-i}) + \beta a_i - k a_i^2,
-\]
-where \(\bar{a}_{-i}\) is the average automation level of rival firms. Firms then update their automation levels by:
+To explore the dynamics of firm-level automation decisions, we simulate an oligopolistic market with \(N=10\) firms over \(T=1000\) rounds. Firms iteratively adjust their automation levels \(a_i \in [0,1]\) through an imitation-mutation process, which captures both competitive benchmarking and stochastic innovation. At each round, firms evaluate their profit \(\Pi_i\) based on the profit function. Firms then update their automation levels by:
 \begin{enumerate}
     \item \textbf{Imitation}: With probability \(p_{\text{adopt}} = \frac{1}{1 + e^{-(\Pi_j - \Pi_i)}}\), firm \(i\) adopts the automation level of a randomly selected firm \(j\) if \(j\) is more profitable.
     \item \textbf{Mutation}: With a 5\% probability, firm \(i\) perturbs its automation level by a random shock \(\mathcal{N}(0, 0.1)\), clipped to \([0,1]\), to reflect innovation or idiosyncratic shocks.
 \end{enumerate}
 
-We evaluate the model across a grid of parameters:
-\begin{itemize}
-    \item \(\gamma \in \{0.5, 1.0, 2.0, 3.0\}\): competitive advantage from relative automation.
-    \item \(k \in \{0.2, 0.8, 1.4, 2.0\}\): cost of automation.
-    \item \(\beta = 1.0\): fixed baseline automation gain.
-\end{itemize}
-Each parameter combination is simulated 10 times to account for stochasticity.
+We evaluate the model across a grid of competitive pressure parameters (\(\gamma \in \{0.5, 1.0, 2.0, 3.0\}\)) and automation costs (\(k \in \{0.2, 0.8, 1.4, 2.0\}\)), fixing the baseline automation gain at \(\beta = 1.0\). Each \((\gamma, k)\) combination is simulated 10 times to account for stochasticity. Results, summarized in Figure~\ref{fig:simulation_results}, highlight two key patterns: (1) rapid convergence to high automation levels \(\bar{a}^*\) when \(\gamma\) dominates \(k\), and (2) cost sensitivity, where \(k \geq 1.4\) significantly suppresses adoption even under strong competitive pressure. Time-series dynamics confirm equilibrium is reached within 500 iterations for most cases, validating the theoretical framework.
 
-\subsubsection{Simulation Outputs}
-The simulation results are summarized in Figure~\ref{fig:simulation_results}, which combines:
-\begin{itemize}
-    \item A heatmap of final automation levels \(\bar{a}^*\) for each \((\gamma, k)\) pair, averaged over 10 runs.
-    \item Time-series dynamics of average automation (mean \(\pm\) standard deviation) over 1000 rounds.
-\end{itemize}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.95\textwidth]{simulation_results.pdf}
-\caption{Simulation results: (left) Heatmap of final automation levels \(\bar{a}^*\) for varying \(\gamma\) (competitive advantage) and \(k\) (cost of automation); (right) Dynamics of average automation (mean \(\pm\) standard deviation) over 1000 rounds.}
-\label{fig:simulation_results}
-\end{figure}
-
-\subsubsection{Key Observations}
+\subsection{Key Observations}
 The simulation results highlight several key patterns:
 
 \begin{itemize}
@@ -488,24 +481,19 @@ The simulation results highlight several key patterns:
 
 
 \subsubsection{Equilibrium Analysis}
-The simulation results confirm the theoretical equilibrium:
-\[
-\bar{a}^* = \frac{\gamma + \beta}{2k + \gamma}.
-\]
-However, the dynamics reveal additional insights:
+The simulation results confirm the theoretical equilibrium. However, the dynamics reveal additional insights:
 \begin{itemize}
     \item \textbf{Convergence Speed}: High \(\gamma\) leads to faster convergence, as firms have stronger incentives to adjust \(a_i\) quickly.
     \item \textbf{Stability}: Low \(k\) and high \(\gamma\) combinations yield stable high-automation equilibria, while high \(k\) and low \(\gamma\) combinations result in stable low-automatio equilibria.
 \end{itemize}
 
-\subsubsection{Robustness and Sensitivity Analysis}
-To ensure the robustness of our findings, we conducted sensitivity analyses by varying:
-\begin{itemize}
-    \item The number of firms (\(N = 5, 10, 20\)): Results are qualitatively similar, though convergence is slower for larger \(N\).
-    \item The adjustment speed (\(\epsilon = 0.05, 0.1, 0.2\)): Faster adjustment accelerates convergence but does not alter equilibrium levels.
-    \item The mutation rate (0\%, 5\%, 10\%): Higher mutation rates introduce noise but do not change the long-term equilibrium.
-\end{itemize}
-These tests suggest that the core dynamics are robust to variations in model parameters.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{simulation_heatmap.pdf}
+    \caption{\textbf{Sensitivity analysis of the final automation level $\bar{a}^*$.} The heatmaps represent the equilibrium automation level as a function of the cost parameter $k$ and the competitive advantage $\gamma$. Three distinct configurations are shown for varying values of the parameter $\beta$ ($\beta=0.0$, $\beta=1.0$, and $\beta=2.0$). The color gradient (from 0.0 to 1.0) indicates that the system reaches full automation only when the competitive gain sufficiently outweighs the implementation costs.}
+    \label{fig:simulation_results}
+\end{figure}
+
 
 \section{Implications: Toward a Post-Labor Economy?}
 \label{sec:implications}
