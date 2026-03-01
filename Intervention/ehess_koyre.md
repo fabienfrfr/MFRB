@@ -17,7 +17,7 @@ Suite à une directive du CNRS proscrivant l'usage d'outils d'IA générative ex
 
 ### Plan
 
-- Présentation de mon role (Lead Tech, Architect AI, Datascientist) --> Globalement Consultant IA
+- Présentation de mon role (Lead Tech, Architect AI, Datascientist, ML Engineer, Analyst) --> Globalement Consultant IA
 - Mon travail concret : comprendre le contexte, traduire besoin en solution IA
 - Historique ressenti : changement de paradigme IA specialisé vers IA généralisé (GPT-2 en 2019)
 - Parcours personnel et mission que j'ai réalisé, et les futures missions (conflit d'interet possible)
