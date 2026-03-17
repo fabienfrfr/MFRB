@@ -23,9 +23,9 @@ Suite à une directive du CNRS proscrivant l'usage d'outils d'IA générative ex
 Merci pour l'invitation.
 
 * **Présentation de mon rôle :** Lead Tech, Architecte IA, Data Scientist, ML Engineer, Analyste --> Globalement Consultant IA.
-* **Mon travail concret :** Comprendre le contexte, évaluer la valeur, traduire le besoin en solution IA et mise en pratique.
-* **Mon expérience :** Industrie automobile, défense, aérospatiale, mais aussi recherche en économie-association avec le MFRB.
-* **Historique ressenti :** Changement de paradigme de l'IA spécialisée vers l'IA généralisée (GPT-2 en 2019) ; de la Data Science/ML vers l'IA générative.
+* **Mon travail concret :** Comprendre le contexte/besoin/problématique métier, évaluer/identifier la valeur, définir et traduire le besoin en solution IA et mise en pratique.
+* **Mon expérience :** These en Physique / Datascience-CV puis RL. (Secteur) Industrie automobile, défense, aérospatiale, mais aussi recherche en économie-association avec le MFRB.
+* **Historique ressenti :** Objectif de "géant de la tech", créer l'AGI. Changement de paradigme de l'IA spécialisée vers l'IA généralisée (GPT-2 en 2019) ; de la Data Science/ML vers l'IA générative.
 * **Parcours personnel :** Missions réalisées et futures missions (robotique NVIDIA).
 * **Fonctionnement des LLM :** Les limites et les verrous à lever (causalité/incertitude : presque OK ; multimodalité : presque OK ; mémoire/récurrence : presque OK ; autonomie : moyen ; reduction de la taille des modèles : moyen ; interaction avec le monde réel : très loin).
 * **Format :** Mettre en place un atelier "Automatisation de leurs tâches" ou échanger directement ? (Quelle est votre besoin ? et à quelle besoin vous répondez dans votre société ?)
