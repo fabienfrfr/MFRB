@@ -74,7 +74,7 @@ bar "Taux de chômage" [1.96, 7.22, 8.26, 7.41, 7.55]
 
 **Destruction creatrice :** Processus économique où l'innovation remplace les anciennes activités, stimulant la croissance.
 
-*On remarque qu'on a surtout une transition des secteurs d'activités vers le tertiaire, dans une période en abondance énergétique.*
+*On remarque qu'on a surtout une transition des secteurs d'activités vers le tertiaire, dans une période en abondance énergétique. (remarque : les chiffre en France sont d'autant plus fort via la mondialisation)*
 
 Selon le **OCDE**, d’ici 2030, 30% des emplois seront confrontés à des transformations structurelles majeures et près de **50%** des métier du tertiaire.
 
