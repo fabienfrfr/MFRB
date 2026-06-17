@@ -11,7 +11,7 @@
 Bonus : 
 - Travail pourquoi ? Gagner de l'argent et contribuer à la société.
 - L'IA pourra creer, car l'innovation n'est qu'un processus de selection.
-- Toute affirmations non clair, non precise, non rationnelle, ou sans preuve peut etre refuté sans justification. (demander de clarifier à minima)
+- Toute affirmations non clair, non precise, non défini, non rationnelle, ou sans preuve peut etre refuté sans justification. (demander de clarifier/definir/prouver à minima)
 - Exemple :
     - Ludite, --> dogme
     - Destruction creatrice, --> dogme
